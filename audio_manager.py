@@ -17,7 +17,7 @@ class AudioManager:
         """
         if file_path.lower().endswith('.mp4'):
             try:
-                from moviepy.editor import AudioFileClip
+                from moviepy import AudioFileClip
                 clip = AudioFileClip(file_path)
                 data = clip.to_soundarray()
                 samplerate = clip.fps

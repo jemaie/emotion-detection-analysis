@@ -44,27 +44,33 @@ class EmotionOrchestrator:
         
         return None
 
-    async def run_analysis(self, file_path=None):
+    async def run_analysis(self, file_path=None, status_callback=None):
         """
         Runs the full analysis pipeline.
         If file_path is None, it automatically picks the next unprocessed file.
         """
+        if status_callback: status_callback("Finding next file...")
+        
         if file_path is None:
             file_path = self.get_next_file()
             
         if not file_path:
+            if status_callback: status_callback("No more files.")
             return {"error": "No more unprocessed files found."}
 
         if not os.path.exists(file_path):
+            if status_callback: status_callback("File not found.")
             return {"error": "File not found"}
             
         self.current_file = file_path
 
+        if status_callback: status_callback(f"Loading {os.path.basename(file_path)}...")
         print(f"Starting analysis for: {file_path}")
 
         # Load audio (used for both playback and sending)
         data, fs = self.audio.load_audio(file_path)
 
+        if status_callback: status_callback("Analyzing (OpenAI + Local)...")
         # Create tasks
         # 1. Playback (we can await this or run safely in background if we want parallel processing)
         # However, we want the user to listen WHILE processing happens.
@@ -82,6 +88,7 @@ class EmotionOrchestrator:
         # Wait for analysis to finish (playback handles its own timing)
         openai_result_raw, local_result = await asyncio.gather(openai_task, local_task)
         
+        if status_callback: status_callback("Parsing results...")
         # Parse OpenAI result if it's a string JSON or similar
         openai_result = {"emotion": "unknown", "confidence": 0.0}
         if openai_result_raw:
@@ -96,6 +103,7 @@ class EmotionOrchestrator:
             except Exception as e:
                 print(f"Failed to parse OpenAI JSON: {e} | Raw: {openai_result_raw}")
 
+        if status_callback: status_callback("Ready for feedback.")
         return {
             "file": file_path,
             "openai": openai_result,

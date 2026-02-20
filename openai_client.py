@@ -24,7 +24,7 @@ class OpenAIRealtimeClient:
             "OpenAI-Beta": "realtime=v1",
         }
 
-        async with websockets.connect(self.url, extra_headers=headers) as websocket:
+        async with websockets.connect(self.url, additional_headers=headers) as websocket:
             # 1. Initialize Session
             session_update = {
                 "type": "session.update",
