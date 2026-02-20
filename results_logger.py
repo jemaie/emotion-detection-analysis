@@ -3,16 +3,19 @@ import os
 from datetime import datetime
 
 class ResultsLogger:
-    def __init__(self, filename="results.csv"):
+    def __init__(self, filename="results.csv", log_callback=None):
         self.filename = filename
+        self.log_callback = log_callback
         self.columns = [
             "timestamp", "filename", "openai_emotion", "openai_confidence",
             "local_emotion", "local_confidence", "user_preference", "comments"
         ]
         
-        if not os.path.exists(self.filename):
-            df = pd.DataFrame(columns=self.columns)
-            df.to_csv(self.filename, index=False)
+    def log(self, message):
+        """Helper to log to callback with colorized identifier."""
+        if self.log_callback:
+            # Magenta [LOGGER]
+            self.log_callback(f"\033[95m[LOGGER]\033[0m {message}")
 
     def log_result(self, filename, openai_res, local_res, user_pref, comments=""):
         """
@@ -33,7 +36,7 @@ class ResultsLogger:
         
         df = pd.DataFrame([entry])
         df.to_csv(self.filename, mode='a', header=False, index=False)
-        print(f"Result logged to {self.filename}")
+        self.log(f"Result logged to {self.filename}")
 
     def get_processed_filenames(self):
         """Returns a set of filenames that have already been processed."""
@@ -45,5 +48,5 @@ class ResultsLogger:
             if 'filename' in df.columns:
                 return set(df['filename'].astype(str).tolist())
         except Exception as e:
-            print(f"Error reading results log: {e}")
+            self.log(f"Error reading results log: {e}")
         return set()

@@ -1,14 +1,20 @@
 import sounddevice as sd
 import soundfile as sf
 import asyncio
-import numpy as np
 
 class AudioManager:
     """
     Handles audio file loading and playback.
     """
-    def __init__(self):
+    def __init__(self, log_callback=None):
         self.current_stream = None
+        self.log_callback = log_callback
+
+    def log(self, message):
+        """Helper to log to callback with colorized identifier."""
+        if self.log_callback:
+            # Yellow [AUDIO]
+            self.log_callback(f"\033[93m[AUDIO]\033[0m {message}")
 
     def load_audio(self, file_path):
         """
@@ -24,14 +30,16 @@ class AudioManager:
                 clip.close()
                 return data, samplerate
             except ImportError:
-                print("MoviePy not installed. Cannot process MP4.")
+                self.log("MoviePy not installed. Cannot process MP4.")
                 raise
             except Exception as e:
-                print(f"Error loading MP4: {e}")
+                self.log(f"Error loading MP4: {e}")
                 raise
         
         # Fallback for WAV etc.
+        self.log(f"Loading standard audio file: {file_path}")
         data, samplerate = sf.read(file_path)
+        self.log(f"Loaded: {len(data)} samples, samplerate: {samplerate}")
         return data, samplerate
 
     async def play_audio(self, file_path):
@@ -46,14 +54,14 @@ class AudioManager:
 
         def callback(outdata, frames, time, status):
             if status:
-                print(status)
+                self.log(status)
             # This is for output stream, but we are just playing a file.
             # simpler to use sd.play and sleep for duration, or sd.wait() in a thread.
             pass
 
         # Calculate duration
         duration = len(data) / fs
-        print(f"Playing audio: {file_path} ({duration:.2f}s)")
+        self.log(f"Playing audio: {file_path} ({duration:.2f}s)")
         
         sd.play(data, fs)
         
@@ -61,7 +69,7 @@ class AudioManager:
         # minimal implementation for now. ideally we use a stream and callback for precise timing/stop.
         await asyncio.sleep(duration)
         sd.stop()
-        print("Audio playback finished.")
+        self.log("Audio playback finished.")
 
     def stop(self):
         sd.stop()
