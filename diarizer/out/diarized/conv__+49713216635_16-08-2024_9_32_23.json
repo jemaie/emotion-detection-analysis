@@ -1,0 +1,185 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.9000000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " großer Wunsch, mein Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 8.200000000000001,
+      "speaker": "B",
+      "start": 1.1000000000000003,
+      "text": " Ja, hier ist Gerl. Guten Tag, ich hätte gern Herrn Börkle gesprochen und ich habe prinzipielle Fragen zum Ganthornfest. Wer kann mir da Auskunft geben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 10.8,
+      "speaker": "A",
+      "start": 9.05,
+      "text": " Ja, das ist der Herr Böckle.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 11.05,
+      "speaker": "B",
+      "start": 10.8,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 13.05,
+      "speaker": "A",
+      "start": 11.05,
+      "text": " Einen kleinen Moment einmal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 13.9,
+      "speaker": "B",
+      "start": 13.05,
+      "text": " Ja, bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 17.8,
+      "speaker": "A",
+      "start": 16.05,
+      "text": " Ich gucke noch einmal,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 21.700000000000003,
+      "speaker": "A",
+      "start": 17.900000000000002,
+      "text": " weil gestern habe ich was mitgekriegt von Ganthornfest.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 41.278,
+      "speaker": "A",
+      "start": 39.028,
+      "text": " Haartransplant-Fischt habe ich mir davon gemerkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 42.678,
+      "speaker": "A",
+      "start": 41.478,
+      "text": " Das ist sportamt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 44.327999999999996,
+      "speaker": "A",
+      "start": 42.928,
+      "text": " Ettnager sollen Punkt.de,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 47.428,
+      "speaker": "A",
+      "start": 44.528,
+      "text": " wo man sich hinwenden soll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 48.678,
+      "speaker": "B",
+      "start": 48.278,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 48.978,
+      "speaker": "B",
+      "start": 48.728,
+      "text": " nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 51.428,
+      "speaker": "B",
+      "start": 49.028,
+      "text": " ich habe noch eine spezielle Frage wegen Flohmarkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 52.328,
+      "speaker": "A",
+      "start": 52.128,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 55.428,
+      "speaker": "B",
+      "start": 52.328,
+      "text": " Warte mal, da möchte ich schon mal mit Herrn Sörgl sprechen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 56.828,
+      "speaker": "B",
+      "start": 55.678,
+      "text": " Ist er zu sprechen oder?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 58.028,
+      "speaker": "A",
+      "start": 57.528,
+      "text": " kleinen Moment,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 60.828,
+      "speaker": "A",
+      "start": 58.078,
+      "text": " ich gucke gerade schnell nach der Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 66.828,
+      "speaker": "A",
+      "start": 64.77799999999999,
+      "text": " So, sagen Sie mir nochmal kurz Ihren Namen.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "großer Wunsch, mein Guten Tag. Ja, hier ist Gerl. Guten Tag, ich hätte gern Herrn Börkle gesprochen und ich habe prinzipielle Fragen zum Ganthornfest. Wer kann mir da Auskunft geben? Ja, das ist der Herr Böckle. Ja. Einen kleinen Moment einmal. Ja, bitte. Ich gucke noch einmal, weil gestern habe ich was mitgekriegt von Ganthornfest.\nHaartransplant -Fischt habe ich mir davon gemerkt. Das ist sportamt. Ettnager sollen Punkt.de, wo man sich hinwenden soll. Ja, nee, ich habe noch eine spezielle Frage wegen Flohmarkt. Ja, Warte mal, da möchte ich schon mal mit Herrn Sörgl sprechen. Ist er zu sprechen oder? kleinen Moment, ich gucke gerade schnell nach der Telefonnummer. So, sagen Sie mir nochmal kurz Ihren Namen.",
+  "usage": {
+    "input_tokens": 691,
+    "output_tokens": 1580,
+    "total_tokens": 2271,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 668,
+      "text_tokens": 23
+    }
+  }
+}

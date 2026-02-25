@@ -1,0 +1,161 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 4.95,
+      "speaker": "B",
+      "start": 1.2,
+      "text": " Der Volksbund Deutsche Kriegsgräberfürsorge in Stuttgart, Schuster, guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 6.45,
+      "speaker": "A",
+      "start": 4.95,
+      "text": " Ja, guten Morgen Frau Schuster.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 9.4,
+      "speaker": "B",
+      "start": 6.95,
+      "text": " Ich hatte am 15.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 12.799999999999999,
+      "speaker": "B",
+      "start": 9.6,
+      "text": " Dezember eine E-Mail geschrieben an info-stadt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 20.35,
+      "speaker": "B",
+      "start": 13.3,
+      "text": " Wegen der Veranstaltungen zum Volkstrauertag in Neckarsulm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 26.65,
+      "speaker": "B",
+      "start": 20.45,
+      "text": " Und da hatte ich Termin gesetzt bis 31.07. und noch keine Antwort erhalten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 31.6,
+      "speaker": "B",
+      "start": 27.3,
+      "text": " Letztes Jahr habe ich die E-Mail von der Frau Mauer, glaube ich, war es, bekommen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 36.2,
+      "speaker": "B",
+      "start": 33.150000000000006,
+      "text": " Weiß nicht, ob die dieses Jahr immer noch zuständig ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 42.050000000000004,
+      "speaker": "A",
+      "start": 36.5,
+      "text": " Ja, ich gucke mal schnell nach Ihrer Durchwahl, dann fragen wir sie.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 43.092,
+      "speaker": "A",
+      "start": 43.092,
+      "text": " Nein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 44.792,
+      "speaker": "B",
+      "start": 43.092,
+      "text": " Ich hätte ja direkt angerufen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 47.492,
+      "speaker": "B",
+      "start": 44.842,
+      "text": " aber ich habe auf der Homepage nichts gefunden für",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 49.492,
+      "speaker": "A",
+      "start": 48.842,
+      "text": " Kultur und",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 49.992,
+      "speaker": "B",
+      "start": 49.492,
+      "text": " die MTA.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 51.342,
+      "speaker": "A",
+      "start": 49.992,
+      "text": " Verwaltung,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 52.542,
+      "speaker": "A",
+      "start": 51.592,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 58.092,
+      "speaker": "A",
+      "start": 57.042,
+      "text": " So, ich...",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Morgen. Der Volksbund Deutsche Kriegsgräberfürsorge in Stuttgart, Schuster, guten Morgen. Ja, guten Morgen Frau Schuster. Ich hatte am 15. Dezember eine E-Mail geschrieben an info -stadt.\nWegen der Veranstaltungen zum Volkstrauertag in Neckarsulm. Und da hatte ich Termin gesetzt bis 31.07. und noch keine Antwort erhalten. Letztes Jahr habe ich die E-Mail von der Frau Mauer, glaube ich, war es, bekommen. Weiß nicht, ob die dieses Jahr immer noch zuständig ist. Ja, ich gucke mal schnell nach Ihrer Durchwahl, dann fragen wir sie.\nNein. Ich hätte ja direkt angerufen, aber ich habe auf der Homepage nichts gefunden für Kultur und die MTA. Verwaltung, ja. So, ich...",
+  "usage": {
+    "input_tokens": 780,
+    "output_tokens": 1725,
+    "total_tokens": 2505,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 732,
+      "text_tokens": 48
+    }
+  }
+}

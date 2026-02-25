@@ -1,0 +1,953 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.15000000000000013,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Tag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 0.7000000000000002,
+      "speaker": "A",
+      "start": 0.2500000000000002,
+      "text": " oh",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 1.9500000000000004,
+      "speaker": "B",
+      "start": 0.7000000000000002,
+      "text": " Guten Tag, ich bin Baumgart.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 5.25,
+      "speaker": "B",
+      "start": 2.1500000000000004,
+      "text": " Ich habe eine Frage wegen Parkplatz,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 8.250000000000002,
+      "speaker": "B",
+      "start": 5.35,
+      "text": " Bahnhof West wegen der Parkdauer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 10.400000000000002,
+      "speaker": "B",
+      "start": 8.500000000000002,
+      "text": " Wer kann mir da Auskunft geben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 17.400000000000002,
+      "speaker": "A",
+      "start": 12.100000000000001,
+      "text": " das ist gar nicht unser Parkplatz, das ist da bei der Shell drüben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 18.8,
+      "speaker": "B",
+      "start": 17.900000000000002,
+      "text": " Ja, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 26.38,
+      "speaker": "A",
+      "start": 20.18,
+      "text": " Ah, da muss es ja Parktickets lösen, dem Parkding steht ja drauf, wie lange dass sie parken können.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 33.480000000000004,
+      "speaker": "B",
+      "start": 26.73,
+      "text": " Ja, es geht darum, ob ich auch mehrere Tage am Stück parken kann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 37.53,
+      "speaker": "B",
+      "start": 34.08,
+      "text": " Wissen Sie, man kann ja lösen stundenweise Tagesticket,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 41.230000000000004,
+      "speaker": "B",
+      "start": 38.18,
+      "text": " Wochenticket und Monatsticket. Das habe ich mir schon angeguckt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 46.83,
+      "speaker": "B",
+      "start": 41.480000000000004,
+      "text": " Aber meine Frage ist, und da wollte ich mich vergewissern, kann ich das Auto über Nacht stehen lassen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 51.228,
+      "speaker": "A",
+      "start": 48.628,
+      "text": " Das focuss mich jetzt was.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 54.378,
+      "speaker": "A",
+      "start": 53.728,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 55.178,
+      "speaker": "A",
+      "start": 54.428,
+      "text": " nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 56.928,
+      "speaker": "A",
+      "start": 55.328,
+      "text": " das wusste ich jetzt gerade auch nicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 58.178,
+      "speaker": "A",
+      "start": 57.178,
+      "text": " Also ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 62.328,
+      "speaker": "A",
+      "start": 58.278,
+      "text": " ich bin selber schon verreist und habe einen ganzen Tag von morgens bis abends steig gehabt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 63.128,
+      "speaker": "A",
+      "start": 62.928,
+      "text": " aber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 63.628,
+      "speaker": "B",
+      "start": 63.128,
+      "text": " Ja, das reicht",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 63.978,
+      "speaker": "A",
+      "start": 63.628,
+      "text": " Nacht",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 64.528,
+      "speaker": "B",
+      "start": 63.978,
+      "text": " mir wohl nicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 66.72800000000001,
+      "speaker": "A",
+      "start": 64.528,
+      "text": " eigentlich nicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 74.77199999999999,
+      "speaker": "B",
+      "start": 69.172,
+      "text": " Ja, aber ich müsste doch mit dem Wochenticket das dann auch stehen lassen können.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 74.972,
+      "speaker": "A",
+      "start": 74.822,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 75.27199999999999,
+      "speaker": "B",
+      "start": 74.972,
+      "text": " Weil",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 75.422,
+      "speaker": "A",
+      "start": 75.27199999999999,
+      "text": " mit dem",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 75.52199999999999,
+      "speaker": "B",
+      "start": 75.422,
+      "text": " ich",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 75.622,
+      "speaker": "A",
+      "start": 75.52199999999999,
+      "text": " Ticket",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 76.52199999999999,
+      "speaker": "B",
+      "start": 75.622,
+      "text": " zahle schon, neun",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 77.072,
+      "speaker": "A",
+      "start": 76.52199999999999,
+      "text": " ja klar,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 77.172,
+      "speaker": "B",
+      "start": 77.072,
+      "text": "",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 78.172,
+      "speaker": "A",
+      "start": 77.172,
+      "text": " aber Sie haben ja gesagt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 80.472,
+      "speaker": "A",
+      "start": 78.222,
+      "text": " ein oder zwei Tage, so Tage ist Ticket.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 92.02199999999999,
+      "speaker": "B",
+      "start": 81.77199999999999,
+      "text": " Tage, wenn ich das Wochenticket kaufe, weil gut, es könnte ja auch sein, ich kann fünfmal tagsüber parken, wäre ja auch eine Woche.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 94.402,
+      "speaker": "B",
+      "start": 92.852,
+      "text": " Oder fiebermal tagsüber.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 96.652,
+      "speaker": "B",
+      "start": 94.702,
+      "text": " Aber mir geht einfach darum,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 98.352,
+      "speaker": "B",
+      "start": 96.702,
+      "text": " kann ich das Auto nachts stehen lassen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 100.602,
+      "speaker": "A",
+      "start": 99.452,
+      "text": " Ja, ich denke ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 101.302,
+      "speaker": "A",
+      "start": 100.75200000000001,
+      "text": " Und zwar,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 106.352,
+      "speaker": "A",
+      "start": 101.402,
+      "text": " es gibt ja nicht bloß die Plätze, die man sieht von der Straße aus,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 111.302,
+      "speaker": "A",
+      "start": 106.552,
+      "text": " sondern wenn man hinten fährt an die Schelle, gibt es nochmal einen Kreisel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 117.75200000000001,
+      "speaker": "A",
+      "start": 112.452,
+      "text": " Dreiviertels um den Kreisel rum und durch die Hecke, durch die Einfahrt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 123.024,
+      "speaker": "A",
+      "start": 118.324,
+      "text": " Und da stehen auch viele Autos, die dann mehrere Dinge stehen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 124.67399999999999,
+      "speaker": "A",
+      "start": 123.224,
+      "text": " Also da ist mir wieder so aufgefallen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 128.124,
+      "speaker": "A",
+      "start": 124.774,
+      "text": " dass die alle noch vereist sind und die niemand geholt hat.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 129.424,
+      "speaker": "B",
+      "start": 128.824,
+      "text": " Mm-hmm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 135.374,
+      "speaker": "B",
+      "start": 129.824,
+      "text": " Also nicht den Parkplatz vorne an der Straße quasi, an der Kanalstraße, sondern...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 136.624,
+      "speaker": "A",
+      "start": 135.374,
+      "text": " Die kosten alle gleich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 137.474,
+      "speaker": "B",
+      "start": 137.124,
+      "text": " Bitte?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 139.224,
+      "speaker": "A",
+      "start": 137.474,
+      "text": " Die kosten alle gleich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 140.72400000000002,
+      "speaker": "B",
+      "start": 139.924,
+      "text": " Ja, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 142.824,
+      "speaker": "A",
+      "start": 141.124,
+      "text": " Aber auf jeden Fall geht die hinter,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 144.824,
+      "speaker": "A",
+      "start": 142.924,
+      "text": " weil da viele Züge fahren und",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 144.874,
+      "speaker": "B",
+      "start": 144.824,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 150.674,
+      "speaker": "A",
+      "start": 144.874,
+      "text": " die Leute immer aus dem Fenster gucken und da das Auto vielleicht mehr unter Beobachtung ist. So der Gedanke, denke ich mal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 152.024,
+      "speaker": "B",
+      "start": 151.124,
+      "text": " Ach so, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 153.524,
+      "speaker": "A",
+      "start": 153.274,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 154.324,
+      "speaker": "B",
+      "start": 153.524,
+      "text": " Ja, gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_60",
+      "end": 155.774,
+      "speaker": "B",
+      "start": 154.47400000000002,
+      "text": " das wäre Überlegung wert.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_61",
+      "end": 157.47400000000002,
+      "speaker": "B",
+      "start": 156.22400000000002,
+      "text": " Also dann sagen Sie,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_62",
+      "end": 159.324,
+      "speaker": "B",
+      "start": 157.624,
+      "text": " das kann man stehen lassen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_63",
+      "end": 159.474,
+      "speaker": "A",
+      "start": 159.324,
+      "text": " Das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_64",
+      "end": 159.774,
+      "speaker": "B",
+      "start": 159.474,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_65",
+      "end": 160.924,
+      "speaker": "A",
+      "start": 159.774,
+      "text": " kann man stehen lassen, ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_66",
+      "end": 165.024,
+      "speaker": "B",
+      "start": 161.674,
+      "text": " Dann geben Sie mir mal Ihren Namen, bitte nochmal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_67",
+      "end": 170.196,
+      "speaker": "A",
+      "start": 166.196,
+      "text": " Mein Name Fischnagel, könnten Sie mich nicht uns können die Parkplätze nicht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_68",
+      "end": 173.446,
+      "speaker": "A",
+      "start": 170.346,
+      "text": " dann müssen Sie sich bei der Bayerdeutsche Bahn nochmal versichern.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_69",
+      "end": 173.946,
+      "speaker": "A",
+      "start": 173.696,
+      "text": " Das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_70",
+      "end": 174.196,
+      "speaker": "B",
+      "start": 173.946,
+      "text": " Aber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_71",
+      "end": 176.496,
+      "speaker": "A",
+      "start": 174.196,
+      "text": " ist weder Ihr Gelände und nicht unseres.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_72",
+      "end": 179.746,
+      "speaker": "B",
+      "start": 176.796,
+      "text": " das ist nicht von, das ist Bahn.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_73",
+      "end": 181.14600000000002,
+      "speaker": "A",
+      "start": 180.746,
+      "text": " Ne,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_74",
+      "end": 181.39600000000002,
+      "speaker": "B",
+      "start": 181.14600000000002,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_75",
+      "end": 183.046,
+      "speaker": "A",
+      "start": 181.39600000000002,
+      "text": " warten Sie, lassen Sie mich nochmal gucken.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_76",
+      "end": 187.956,
+      "speaker": "A",
+      "start": 187.956,
+      "text": " Bei",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_77",
+      "end": 188.356,
+      "speaker": "B",
+      "start": 187.956,
+      "text": " Die können",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_78",
+      "end": 188.706,
+      "speaker": "A",
+      "start": 188.356,
+      "text": " uns hat",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_79",
+      "end": 188.856,
+      "speaker": "B",
+      "start": 188.706,
+      "text": " ja",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_80",
+      "end": 195.006,
+      "speaker": "A",
+      "start": 188.856,
+      "text": " der Wessi selber gesagt, dass die eigentlich noch vereist waren und dass die dann hier über Nacht gestanden sind.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_81",
+      "end": 196.30599999999998,
+      "speaker": "A",
+      "start": 195.106,
+      "text": " Also sagt er,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_82",
+      "end": 196.80599999999998,
+      "speaker": "A",
+      "start": 196.40599999999998,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_83",
+      "end": 198.956,
+      "speaker": "A",
+      "start": 197.606,
+      "text": " Jetzt gucken wir nochmal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_84",
+      "end": 206.05599999999998,
+      "speaker": "B",
+      "start": 200.206,
+      "text": " Weil da ist ja ein Betreiber von dem Parkplatz und bei dem habe ich dann schon angerufen, wo ich mir das angeguckt habe.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_85",
+      "end": 210.006,
+      "speaker": "B",
+      "start": 206.456,
+      "text": " Aber der könnte mir das auch nicht hundertprozentig sagen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_86",
+      "end": 217.486,
+      "speaker": "A",
+      "start": 213.236,
+      "text": " Parkplätze am Bahnhof Neckarsulm, Kanalstraße 1,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_87",
+      "end": 223.236,
+      "speaker": "A",
+      "start": 217.636,
+      "text": " Gebührenpflichtige Parkplätze, da können Sie online sogar Tickets, 30 Minuten frei,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_88",
+      "end": 226.08599999999998,
+      "speaker": "A",
+      "start": 223.43599999999998,
+      "text": " 2 Stunden Tagestarif, Wochenkarte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_89",
+      "end": 235.83599999999998,
+      "speaker": "A",
+      "start": 227.736,
+      "text": " Ja, Beginnsinformationen, Anreiseplanen, Bahnhof Neckarsulm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_90",
+      "end": 242.65,
+      "speaker": "A",
+      "start": 238.1,
+      "text": " Kontakt Parkplatz Bahnhof Kanalstraße 1.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_91",
+      "end": 246.6,
+      "speaker": "A",
+      "start": 244.7,
+      "text": " Ein Win-Win, da muss ich da.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_92",
+      "end": 247.79999999999998,
+      "speaker": "A",
+      "start": 246.79999999999998,
+      "text": " Das ist ja glatt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_93",
+      "end": 251.54999999999998,
+      "speaker": "A",
+      "start": 248.95,
+      "text": " E-Mail statt eine Gesulm, jetzt bin ich gerade glatt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_94",
+      "end": 255.95,
+      "speaker": "A",
+      "start": 252.45,
+      "text": " Ja, da ist doch Info, wenn Sie da nochmal nachschreiben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_95",
+      "end": 261.35,
+      "speaker": "A",
+      "start": 256.05,
+      "text": " Info at Stadtne Gesulm. Also ich wüsste jetzt gerade nicht, was bei uns, ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_96",
+      "end": 263.5,
+      "speaker": "A",
+      "start": 261.5,
+      "text": " wo die landet, aber.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_97",
+      "end": 267.932,
+      "speaker": "B",
+      "start": 266.132,
+      "text": " Also ist schon Niemandsland irgendwo.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_98",
+      "end": 272.632,
+      "speaker": "A",
+      "start": 269.182,
+      "text": " Ja, ich bin fast ganz riskiert, wenn ich ehrlich bin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_99",
+      "end": 278.482,
+      "speaker": "A",
+      "start": 273.532,
+      "text": " Ja, aber da steht jetzt im Vollstand mit der Sulm.de drin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_100",
+      "end": 278.932,
+      "speaker": "B",
+      "start": 278.532,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_101",
+      "end": 281.182,
+      "speaker": "A",
+      "start": 279.732,
+      "text": " Schreib es doch noch einmal danach.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_102",
+      "end": 285.532,
+      "speaker": "A",
+      "start": 281.782,
+      "text": " Aber ich bin überzeugt, dass das nach... Weil sonst gäbe es ja keine Wochenkarte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_103",
+      "end": 286.932,
+      "speaker": "A",
+      "start": 285.682,
+      "text": " Das macht ja jetzt kein",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_104",
+      "end": 287.182,
+      "speaker": "B",
+      "start": 286.932,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_105",
+      "end": 287.382,
+      "speaker": "A",
+      "start": 287.182,
+      "text": " Sinn.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_106",
+      "end": 294.282,
+      "speaker": "B",
+      "start": 287.382,
+      "text": " aber wissen Sie, die Wochenkarte könnte auch bedeuten, dass ich eben die fünf oder sieben Tage wie eine Woche tagsüber parken kann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_107",
+      "end": 295.118,
+      "speaker": "A",
+      "start": 294.868,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_108",
+      "end": 296.968,
+      "speaker": "B",
+      "start": 295.118,
+      "text": " Das kann man ja auch so auslegen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_109",
+      "end": 300.918,
+      "speaker": "A",
+      "start": 296.968,
+      "text": " aber stehen doch nachts auch immer Autos da, wenn man mal vorbeifährt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_110",
+      "end": 302.168,
+      "speaker": "B",
+      "start": 301.368,
+      "text": " Also gut.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_111",
+      "end": 307.018,
+      "speaker": "A",
+      "start": 302.168,
+      "text": " Inzwischen komme ich da immer mal öfters vorbei und da ist immer irgendwas belegt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_112",
+      "end": 308.068,
+      "speaker": "B",
+      "start": 307.568,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_113",
+      "end": 310.618,
+      "speaker": "B",
+      "start": 308.668,
+      "text": " Also gut, dann gehe ich davon aus,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_114",
+      "end": 315.26800000000003,
+      "speaker": "B",
+      "start": 310.668,
+      "text": " dass das Tatsache ist und dass es dann so auch klappt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_115",
+      "end": 321.418,
+      "speaker": "B",
+      "start": 315.368,
+      "text": " Gut, vielen Dank fürs Nachgucken und Überlegen und ich wünsche Ihnen einen guten Tag noch. Danke.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_116",
+      "end": 322.918,
+      "speaker": "A",
+      "start": 321.418,
+      "text": " Auch Dankeschön.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag, oh Guten Tag, ich bin Baumgart. Ich habe eine Frage wegen Parkplatz, Bahnhof West wegen der Parkdauer. Wer kann mir da Auskunft geben? das ist gar nicht unser Parkplatz, das ist da bei der Shell drüben. Ja, genau.\nAh, da muss es ja Parktickets lösen, dem Parkding steht ja drauf, wie lange dass sie parken können. Ja, es geht darum, ob ich auch mehrere Tage am Stück parken kann. Wissen Sie, man kann ja lösen stundenweise Tagesticket, Wochenticket und Monatsticket. Das habe ich mir schon angeguckt. Aber meine Frage ist, und da wollte ich mich vergewissern, kann ich das Auto über Nacht stehen lassen?\nDas focuss mich jetzt was. Ja, nee, das wusste ich jetzt gerade auch nicht. Also ja, ich bin selber schon verreist und habe einen ganzen Tag von morgens bis abends steig gehabt, aber Ja, das reicht Nacht mir wohl nicht. eigentlich nicht.\nJa, aber ich müsste doch mit dem Wochenticket das dann auch stehen lassen können. Ja, Weil mit dem ich Ticket zahle schon, neun ja klar, aber Sie haben ja gesagt, ein oder zwei Tage, so Tage ist Ticket. Tage, wenn ich das Wochenticket kaufe, weil gut, es könnte ja auch sein, ich kann fünfmal tagsüber parken, wäre ja auch eine Woche.\nOder fiebermal tagsüber. Aber mir geht einfach darum, kann ich das Auto nachts stehen lassen? Ja, ich denke ja. Und zwar, es gibt ja nicht bloß die Plätze, die man sieht von der Straße aus, sondern wenn man hinten fährt an die Schelle, gibt es nochmal einen Kreisel. Dreiviertels um den Kreisel rum und durch die Hecke, durch die Einfahrt.\nUnd da stehen auch viele Autos, die dann mehrere Dinge stehen. Also da ist mir wieder so aufgefallen, dass die alle noch vereist sind und die niemand geholt hat. Mm-hmm. Also nicht den Parkplatz vorne an der Straße quasi, an der Kanalstraße, sondern... Die kosten alle gleich. Bitte? Die kosten alle gleich.\nJa, okay. Aber auf jeden Fall geht die hinter, weil da viele Züge fahren und Ja. die Leute immer aus dem Fenster gucken und da das Auto vielleicht mehr unter Beobachtung ist. So der Gedanke, denke ich mal. Ach so, okay. Ja. Ja, gut, das wäre Überlegung wert. Also dann sagen Sie, das kann man stehen lassen, Das ja. kann man stehen lassen, ja. Dann geben Sie mir mal Ihren Namen, bitte nochmal.\nMein Name Fischnagel, könnten Sie mich nicht uns können die Parkplätze nicht, dann müssen Sie sich bei der Bayerdeutsche Bahn nochmal versichern. Das Aber ist weder Ihr Gelände und nicht unseres. das ist nicht von, das ist Bahn. Ne, Okay. warten Sie, lassen Sie mich nochmal gucken.\nBei Die können uns hat ja der Wessi selber gesagt, dass die eigentlich noch vereist waren und dass die dann hier über Nacht gestanden sind. Also sagt er, ja. Jetzt gucken wir nochmal. Weil da ist ja ein Betreiber von dem Parkplatz und bei dem habe ich dann schon angerufen, wo ich mir das angeguckt habe. Aber der könnte mir das auch nicht hundertprozentig sagen.\nParkplätze am Bahnhof Neckarsulm, Kanalstraße 1, Gebührenpflichtige Parkplätze, da können Sie online sogar Tickets, 30 Minuten frei, 2 Stunden Tagestarif, Wochenkarte. Ja, Beginnsinformationen, Anreiseplanen, Bahnhof Neckarsulm.\nKontakt Parkplatz Bahnhof Kanalstraße 1. Ein Win-Win, da muss ich da. Das ist ja glatt. E-Mail statt eine Gesulm, jetzt bin ich gerade glatt. Ja, da ist doch Info, wenn Sie da nochmal nachschreiben. Info at Stadtne Gesulm. Also ich wüsste jetzt gerade nicht, was bei uns, ja, wo die landet, aber.\nAlso ist schon Niemandsland irgendwo. Ja, ich bin fast ganz riskiert, wenn ich ehrlich bin. Ja, aber da steht jetzt im Vollstand mit der Sulm.de drin. Okay. Schreib es doch noch einmal danach. Aber ich bin überzeugt, dass das nach... Weil sonst gäbe es ja keine Wochenkarte. Das macht ja jetzt kein Ja, Sinn. aber wissen Sie, die Wochenkarte könnte auch bedeuten, dass ich eben die fünf oder sieben Tage wie eine Woche tagsüber parken kann.\nJa, Das kann man ja auch so auslegen. aber stehen doch nachts auch immer Autos da, wenn man mal vorbeifährt. Also gut. Inzwischen komme ich da immer mal öfters vorbei und da ist immer irgendwas belegt. Okay. Also gut, dann gehe ich davon aus, dass das Tatsache ist und dass es dann so auch klappt. Gut, vielen Dank fürs Nachgucken und Überlegen und ich wünsche Ihnen einen guten Tag noch. Danke. Auch Dankeschön.",
+  "usage": {
+    "input_tokens": 5003,
+    "output_tokens": 9755,
+    "total_tokens": 14758,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 4703,
+      "text_tokens": 300
+    }
+  }
+}

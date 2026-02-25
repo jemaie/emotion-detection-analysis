@@ -1,0 +1,193 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.30000000000000004,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Grüß Gott,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 5.8999999999999995,
+      "speaker": "B",
+      "start": 1.9000000000000001,
+      "text": " Grüß Gott, ich wollte eigentlich das Liegenschaftsamt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 19.400000000000002,
+      "speaker": "B",
+      "start": 6.05,
+      "text": " der Herr Ritzler hat das immer belegt, dann habe ich gedacht, das kann doch was nicht stimmen, dann habe ich die Zentrale angerufen und dann ist da gekommen, also dass man nächster freier Mitarbeiter verbunden wird.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 21.450000000000003,
+      "speaker": "B",
+      "start": 20.000000000000004,
+      "text": " Bin ich ziemlich jetzt?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 23.750000000000004,
+      "speaker": "A",
+      "start": 21.700000000000003,
+      "text": " Der Herr Ritz hat wohl gesehen, gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 24.050000000000004,
+      "speaker": "B",
+      "start": 23.750000000000004,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 27.032,
+      "speaker": "A",
+      "start": 25.332,
+      "text": " Ich habe gesagt, hoch halten wir mal, ne?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 27.932000000000002,
+      "speaker": "B",
+      "start": 27.032,
+      "text": " 3, 1,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 28.782,
+      "speaker": "B",
+      "start": 27.982,
+      "text": " 1, 4.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 30.082,
+      "speaker": "A",
+      "start": 29.082,
+      "text": " Ja, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 32.132,
+      "speaker": "A",
+      "start": 30.832,
+      "text": " Das habe ich auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 37.032000000000004,
+      "speaker": "A",
+      "start": 33.282000000000004,
+      "text": " Lass es mich noch was anderes probieren, weil ich weiß ja gar nicht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 38.032000000000004,
+      "speaker": "A",
+      "start": 37.132000000000005,
+      "text": " ob er da ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 40.332,
+      "speaker": "A",
+      "start": 38.882000000000005,
+      "text": " Probieren Sie mal über Outlook.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 44.882000000000005,
+      "speaker": "B",
+      "start": 40.332,
+      "text": " Ja, oder halt der Vertreter oder Sekretärin oder...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 51.332,
+      "speaker": "B",
+      "start": 47.332,
+      "text": " Und zwar geht es um die Sulm Revitalisierung.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 54.132000000000005,
+      "speaker": "B",
+      "start": 51.582,
+      "text": " Und da habe ich einen Termin und ja...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 56.214000000000006,
+      "speaker": "A",
+      "start": 55.764,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 57.564,
+      "speaker": "A",
+      "start": 56.314,
+      "text": " aber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 66.164,
+      "speaker": "B",
+      "start": 59.564,
+      "text": " Aber ich bin gar nicht Eigentümer, das noch in der Erbegemeinschaft und das wollte ihm halt jetzt mal sagen, ob das dann Sinn macht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 67.214,
+      "speaker": "B",
+      "start": 66.214,
+      "text": " ob ich da überhaupt komme.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 70.81400000000001,
+      "speaker": "A",
+      "start": 68.26400000000001,
+      "text": " dann lasse es mich mal kurz.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Grüß Gott, Grüß Gott, ich wollte eigentlich das Liegenschaftsamt, der Herr Ritzler hat das immer belegt, dann habe ich gedacht, das kann doch was nicht stimmen, dann habe ich die Zentrale angerufen und dann ist da gekommen, also dass man nächster freier Mitarbeiter verbunden wird. Bin ich ziemlich jetzt? Der Herr Ritz hat wohl gesehen, gell? Ja.\nIch habe gesagt, hoch halten wir mal, ne? 3, 1, 1, 4. Ja, genau. Das habe ich auch. Lass es mich noch was anderes probieren, weil ich weiß ja gar nicht, ob er da ist. Probieren Sie mal über Outlook. Ja, oder halt der Vertreter oder Sekretärin oder... Und zwar geht es um die Sulm Revitalisierung. Und da habe ich einen Termin und ja...\nJa, aber Aber ich bin gar nicht Eigentümer, das noch in der Erbegemeinschaft und das wollte ihm halt jetzt mal sagen, ob das dann Sinn macht, ob ich da überhaupt komme. dann lasse es mich mal kurz.",
+  "usage": {
+    "input_tokens": 985,
+    "output_tokens": 2051,
+    "total_tokens": 3036,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 939,
+      "text_tokens": 46
+    }
+  }
+}

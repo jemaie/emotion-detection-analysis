@@ -1,0 +1,377 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Woll Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.25,
+      "speaker": "B",
+      "start": 0.75,
+      "text": " Ja, Benedikt, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 3.6000000000000005,
+      "speaker": "B",
+      "start": 2.5,
+      "text": " Ich habe eine Frage.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 7.6000000000000005,
+      "speaker": "B",
+      "start": 3.7,
+      "text": " Ich brauche eine Beglaubigung für einen Zeugnis.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 8.750000000000002,
+      "speaker": "A",
+      "start": 8.450000000000001,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 10.550000000000002,
+      "speaker": "B",
+      "start": 8.750000000000002,
+      "text": " Wohin muss ich mich dahin wenden?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 13.100000000000003,
+      "speaker": "A",
+      "start": 10.950000000000003,
+      "text": " Sind Sie im Bürgerbüro richtig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 14.250000000000004,
+      "speaker": "B",
+      "start": 13.250000000000004,
+      "text": " Ja, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 17.900000000000002,
+      "speaker": "A",
+      "start": 14.900000000000002,
+      "text": " Jetzt muss ich bloß gerade schnell gucken.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 25.900000000000002,
+      "speaker": "B",
+      "start": 22.85,
+      "text": " Ich war nicht sicher, Standesamt oder Bürgerbüro.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 28.282,
+      "speaker": "A",
+      "start": 27.732,
+      "text": " Ja gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 30.932,
+      "speaker": "A",
+      "start": 28.381999999999998,
+      "text": " Sie wollen ja kein neues Dokument ausgestellt haben vom",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 31.031999999999996,
+      "speaker": "B",
+      "start": 30.932,
+      "text": " Nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 31.581999999999997,
+      "speaker": "A",
+      "start": 31.031999999999996,
+      "text": " Standesamt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 31.982,
+      "speaker": "B",
+      "start": 31.581999999999997,
+      "text": " das ist",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 33.832,
+      "speaker": "A",
+      "start": 31.982,
+      "text": " Sie bringen Ihr Dokumente mit?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 37.132,
+      "speaker": "B",
+      "start": 33.832,
+      "text": " nur ein Zeugnis, ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 40.632,
+      "speaker": "B",
+      "start": 37.232,
+      "text": " Und da braucht es dann eine beglaubigte Abschrift oder wie das heißt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 44.632,
+      "speaker": "A",
+      "start": 40.982,
+      "text": " Ja, da bräuchte man aber einen Termin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 51.084,
+      "speaker": "A",
+      "start": 48.884,
+      "text": " Das ist ein bisschen heute mal gucken. Heute ist voll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 57.784,
+      "speaker": "A",
+      "start": 52.184,
+      "text": " Wir haben jeden Tag eigentlich noch freie Termine, bloß sehe ich die auch erst wie Sie morgen um 8 Uhr.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 59.184,
+      "speaker": "B",
+      "start": 58.634,
+      "text": " Aha, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 64.334,
+      "speaker": "A",
+      "start": 60.634,
+      "text": " Entweder Sie rufen morgen um 8 Uhr noch einmal an, am Tag, wo Sie können,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 64.98400000000001,
+      "speaker": "A",
+      "start": 64.434,
+      "text": " wo Sie wissen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 65.184,
+      "speaker": "B",
+      "start": 64.98400000000001,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 67.634,
+      "speaker": "A",
+      "start": 65.184,
+      "text": " oder Sie gucken online.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 74.684,
+      "speaker": "A",
+      "start": 67.934,
+      "text": " Wir haben unsere Homepage Stadtneckersulm unter Burgerbüro gibt es Online Terminvergabe, wenn man da morgen...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 77.30799999999999,
+      "speaker": "A",
+      "start": 75.508,
+      "text": " um 8 Uhr sich einloggt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 80.10799999999999,
+      "speaker": "A",
+      "start": 77.35799999999999,
+      "text": " kriegt man da auch drüber einen Termin, also wie sie möchte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 81.60799999999999,
+      "speaker": "B",
+      "start": 80.508,
+      "text": " Okay, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 81.908,
+      "speaker": "A",
+      "start": 81.60799999999999,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 86.05799999999999,
+      "speaker": "B",
+      "start": 81.908,
+      "text": " Ja, weiß ich Bescheid. Gut, aber ich weiß jetzt mal, auf welches Amt ich muss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 86.508,
+      "speaker": "A",
+      "start": 86.158,
+      "text": " ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 87.458,
+      "speaker": "A",
+      "start": 86.658,
+      "text": " wo sie hin müssen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 87.80799999999999,
+      "speaker": "A",
+      "start": 87.508,
+      "text": " genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 88.508,
+      "speaker": "B",
+      "start": 88.05799999999999,
+      "text": " Richtig.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 89.758,
+      "speaker": "B",
+      "start": 88.658,
+      "text": " Dann alles klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 90.30799999999999,
+      "speaker": "B",
+      "start": 89.80799999999999,
+      "text": " Dankeschön.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 90.708,
+      "speaker": "A",
+      "start": 90.30799999999999,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 91.30799999999999,
+      "speaker": "A",
+      "start": 90.758,
+      "text": " bitteschön,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 91.458,
+      "speaker": "B",
+      "start": 91.30799999999999,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 91.858,
+      "speaker": "A",
+      "start": 91.458,
+      "text": " schönes Wochenende.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 92.458,
+      "speaker": "B",
+      "start": 91.858,
+      "text": " Ihnen auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 92.758,
+      "speaker": "A",
+      "start": 92.458,
+      "text": " Tschüss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 93.108,
+      "speaker": "B",
+      "start": 92.758,
+      "text": " Danke.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Woll Guten Tag. Ja, Benedikt, guten Tag. Ich habe eine Frage. Ich brauche eine Beglaubigung für einen Zeugnis. Ja. Wohin muss ich mich dahin wenden? Sind Sie im Bürgerbüro richtig? Ja, okay. Jetzt muss ich bloß gerade schnell gucken. Ich war nicht sicher, Standesamt oder Bürgerbüro.\nJa gut, Sie wollen ja kein neues Dokument ausgestellt haben vom Nee, Standesamt. das ist Sie bringen Ihr Dokumente mit? nur ein Zeugnis, ja. Und da braucht es dann eine beglaubigte Abschrift oder wie das heißt. Ja, da bräuchte man aber einen Termin.\nDas ist ein bisschen heute mal gucken. Heute ist voll. Wir haben jeden Tag eigentlich noch freie Termine, bloß sehe ich die auch erst wie Sie morgen um 8 Uhr. Aha, okay. Entweder Sie rufen morgen um 8 Uhr noch einmal an, am Tag, wo Sie können, wo Sie wissen, Ja. oder Sie gucken online. Wir haben unsere Homepage Stadtneckersulm unter Burgerbüro gibt es Online Terminvergabe, wenn man da morgen...\num 8 Uhr sich einloggt, kriegt man da auch drüber einen Termin, also wie sie möchte. Okay, okay. Ja, Ja, weiß ich Bescheid. Gut, aber ich weiß jetzt mal, auf welches Amt ich muss. ja, wo sie hin müssen, genau. Richtig. Dann alles klar. Dankeschön. Okay, bitteschön, Ja, schönes Wochenende. Ihnen auch. Tschüss. Danke.",
+  "usage": {
+    "input_tokens": 1269,
+    "output_tokens": 2899,
+    "total_tokens": 4168,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1194,
+      "text_tokens": 75
+    }
+  }
+}

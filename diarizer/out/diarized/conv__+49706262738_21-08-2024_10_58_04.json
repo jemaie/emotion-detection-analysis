@@ -1,0 +1,185 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.5,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Will you attack?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.6500000000000004,
+      "speaker": "B",
+      "start": 1.2500000000000002,
+      "text": " Wilhelm, grüß Gott.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 4.2,
+      "speaker": "A",
+      "start": 3.05,
+      "text": " Liebe Frau Wilhelm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 10.450000000000001,
+      "speaker": "B",
+      "start": 4.45,
+      "text": " Ich rufe aus einem bestimmten Grund an und zwar vermisse ich oder finde es nicht mehr.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 16.350000000000005,
+      "speaker": "B",
+      "start": 10.500000000000002,
+      "text": " Und zwar die Grundsteuerbescheide für 23 und 24.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 23.750000000000007,
+      "speaker": "B",
+      "start": 17.150000000000006,
+      "text": " Jetzt wollte ich fragen, ob ich da nochmal neue beauftragen kann oder ob sie mir nochmal neue zukommen lassen könnten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 27.85,
+      "speaker": "C",
+      "start": 24.5,
+      "text": " Ja, ich gebe Ihnen da die Mitarbeiterin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 31.25,
+      "speaker": "B",
+      "start": 28.3,
+      "text": " Ja, ich habe so durchgehalten, aber da geht nie jemand nahe.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 34.45,
+      "speaker": "B",
+      "start": 31.3,
+      "text": " Ich habe da von 22 habe ich was gehabt, aber Ja, noch eher.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 36.7,
+      "speaker": "C",
+      "start": 34.45,
+      "text": " nee, unsere Nummer haben sich geändert von unseren",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 37.4,
+      "speaker": "B",
+      "start": 36.7,
+      "text": " So, ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 37.55,
+      "speaker": "C",
+      "start": 37.4,
+      "text": " Mitarbeitern.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 38.9,
+      "speaker": "B",
+      "start": 37.55,
+      "text": " dann ist klar, dass es stimmt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 43.0,
+      "speaker": "C",
+      "start": 38.9,
+      "text": " Ja, möchten Sie es aufschreiben, dass das gleich in der Ordnung wieder mit einlegen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 43.8,
+      "speaker": "C",
+      "start": 43.150000000000006,
+      "text": " Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 49.599999999999994,
+      "speaker": "B",
+      "start": 44.45,
+      "text": " So, ja, dann schreibe ich auf den 22 Kapella-Dingnein und streiche das durch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 57.002,
+      "speaker": "C",
+      "start": 51.252,
+      "text": " Das ist also AD 35 fürs Rathaus 1 1 224.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 59.752,
+      "speaker": "B",
+      "start": 58.102000000000004,
+      "text": " 1, 2, 3, 4,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 60.05200000000001,
+      "speaker": "B",
+      "start": 59.80200000000001,
+      "text": " ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 60.602000000000004,
+      "speaker": "B",
+      "start": 60.152,
+      "text": " gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 60.952000000000005,
+      "speaker": "B",
+      "start": 60.702000000000005,
+      "text": " danke.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Will you attack? Wilhelm, grüß Gott. Liebe Frau Wilhelm. Ich rufe aus einem bestimmten Grund an und zwar vermisse ich oder finde es nicht mehr. Und zwar die Grundsteuerbescheide für 23 und 24. Jetzt wollte ich fragen, ob ich da nochmal neue beauftragen kann oder ob sie mir nochmal neue zukommen lassen könnten.\nJa, ich gebe Ihnen da die Mitarbeiterin. Ja, ich habe so durchgehalten, aber da geht nie jemand nahe. Ich habe da von 22 habe ich was gehabt, aber Ja, noch eher. nee, unsere Nummer haben sich geändert von unseren So, ja, Mitarbeitern. dann ist klar, dass es stimmt. Ja, möchten Sie es aufschreiben, dass das gleich in der Ordnung wieder mit einlegen, Telefonnummer. So, ja, dann schreibe ich auf den 22 Kapella-Dingnein und streiche das durch.\nDas ist also AD 35 fürs Rathaus 1 1 224. 1, 2, 3, 4, ja, gut, danke.",
+  "usage": {
+    "input_tokens": 817,
+    "output_tokens": 1871,
+    "total_tokens": 2688,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 780,
+      "text_tokens": 37
+    }
+  }
+}
