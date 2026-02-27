@@ -1,0 +1,27 @@
+{
+  "call_id": "conv__+49713216717_05-08-2024_13_44_05",
+  "source_file": "..\\aufnahmen20\\conv__+49713216717_05-08-2024_13_44_05.mp4",
+  "normalized_file": "data\\normalized\\conv__+49713216717_05-08-2024_13_44_05.wav",
+  "diarized_file": "out\\diarized\\conv__+49713216717_05-08-2024_13_44_05.json",
+  "speaker_to_role": {
+    "agent": "agent"
+  },
+  "speaker_durations_sec": {
+    "agent": 12.05
+  },
+  "flags": {
+    "agent_matched_by_reference": true,
+    "fallback_used": false,
+    "num_speakers": 1
+  },
+  "num_segments_total": 5,
+  "num_segments_caller_raw": 0,
+  "num_segments_caller_final": 0,
+  "caller_segments_dir": "out\\caller_segments\\conv__+49713216717_05-08-2024_13_44_05",
+  "caller_concat_file": null,
+  "segment_params": {
+    "trim_ms": 250,
+    "merge_gap_ms": 300,
+    "min_seg_dur_s": 0.7
+  }
+}

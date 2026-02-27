@@ -1,0 +1,145 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 4.95,
+      "speaker": "agent",
+      "start": 1.2500000000000002,
+      "text": " Der Volksbund Deutsche Kriegsgräbervorsorge in Stuttgart, Schuster, guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 6.45,
+      "speaker": "A",
+      "start": 4.95,
+      "text": " Ja, guten Morgen, Frau Schuster.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 9.200000000000001,
+      "speaker": "agent",
+      "start": 6.95,
+      "text": " Ich hatte am 15.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 9.8,
+      "speaker": "agent",
+      "start": 9.4,
+      "text": "07.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 12.65,
+      "speaker": "agent",
+      "start": 10.05,
+      "text": " eine E-Mail geschrieben an Info-Stadt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 20.3,
+      "speaker": "A",
+      "start": 13.3,
+      "text": " wegen der Veranstaltungen zum Volkstrauertag in Neckarsulm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 26.65,
+      "speaker": "A",
+      "start": 20.65,
+      "text": " Und da hatte ich Termin gesetzt bis 31.07. und noch keine Antwort erhalten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 31.7,
+      "speaker": "A",
+      "start": 27.3,
+      "text": " Letztes Jahr habe ich die E-Mail von der Frau Mauer, glaube ich war es, bekommen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 36.2,
+      "speaker": "A",
+      "start": 33.25,
+      "text": " Weiß nicht, ob die dieses Jahr immer noch zuständig ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 42.0,
+      "speaker": "A",
+      "start": 36.55,
+      "text": " Ja, ich gucke mal geschwind nach Ihrer Durchwahl, dann fragen wir sie.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 43.092,
+      "speaker": "B",
+      "start": 43.092,
+      "text": " Nein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 46.342,
+      "speaker": "A",
+      "start": 43.092,
+      "text": " Ich hätte ja direkt angerufen, aber ich habe auf der Homepage nichts gefunden.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 51.242,
+      "speaker": "B",
+      "start": 48.641999999999996,
+      "text": " Kultur und Verwaltung,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 52.492,
+      "speaker": "B",
+      "start": 51.542,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 58.342,
+      "speaker": "B",
+      "start": 57.141999999999996,
+      "text": " So, ich probiere.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Morgen. Der Volksbund Deutsche Kriegsgräbervorsorge in Stuttgart, Schuster, guten Morgen. Ja, guten Morgen, Frau Schuster. Ich hatte am 15. 07. eine E-Mail geschrieben an Info-Stadt.\nwegen der Veranstaltungen zum Volkstrauertag in Neckarsulm. Und da hatte ich Termin gesetzt bis 31.07. und noch keine Antwort erhalten. Letztes Jahr habe ich die E-Mail von der Frau Mauer, glaube ich war es, bekommen. Weiß nicht, ob die dieses Jahr immer noch zuständig ist. Ja, ich gucke mal geschwind nach Ihrer Durchwahl, dann fragen wir sie.\nNein. Ich hätte ja direkt angerufen, aber ich habe auf der Homepage nichts gefunden. Kultur und Verwaltung, ja. So, ich probiere.",
+  "usage": {
+    "input_tokens": 1208,
+    "output_tokens": 1697,
+    "total_tokens": 2905,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1109,
+      "text_tokens": 99
+    }
+  }
+}

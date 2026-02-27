@@ -1,0 +1,153 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.9500000000000004,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Ich begrüße euch nochmal guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.3,
+      "speaker": "B",
+      "start": 1.1000000000000003,
+      "text": " Ja, hier ist Geld.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 6.8999999999999995,
+      "speaker": "B",
+      "start": 2.4000000000000004,
+      "text": " Guten Tag. Ich hätte gern Herrn Börkle gesprochen und ich habe prinzipielle Fragen zum Ganzhornfest.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 8.2,
+      "speaker": "B",
+      "start": 6.999999999999999,
+      "text": " Wer kann mir da Auskunft geben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 10.749999999999998,
+      "speaker": "A",
+      "start": 9.149999999999999,
+      "text": " Ja, das ist der Herr Böckler.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 11.149999999999999,
+      "speaker": "B",
+      "start": 10.749999999999998,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 13.45,
+      "speaker": "A",
+      "start": 11.149999999999999,
+      "text": " Einen kleinen Moment mal bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 13.95,
+      "speaker": "B",
+      "start": 13.5,
+      "text": " Ja, bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 21.8,
+      "speaker": "A",
+      "start": 16.25,
+      "text": " Ich gucke nochmal, weil gestern habe ich was mitgekriegt von ganz Herrn Fisch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 44.327999999999996,
+      "speaker": "A",
+      "start": 39.028,
+      "text": " Haargrenzhornfischt habe ich mir davor gemerkt, das ist sportamt-neckershulm.de,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 47.428,
+      "speaker": "A",
+      "start": 44.528,
+      "text": " wo man sich wenden soll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 51.478,
+      "speaker": "B",
+      "start": 48.328,
+      "text": " Ja, nee, ich habe noch einen speziellen Fachgebiger Flohmarkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 55.578,
+      "speaker": "B",
+      "start": 52.128,
+      "text": " Was auch noch... Da müsste ich schon mal mit Herrn Sörgle sprechen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 56.978,
+      "speaker": "B",
+      "start": 55.628,
+      "text": " Ist der zu sprechen oder...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 57.978,
+      "speaker": "A",
+      "start": 56.978,
+      "text": " Ja, kleinen Moment,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 60.928,
+      "speaker": "A",
+      "start": 58.028000000000006,
+      "text": " ich gucke gerade schnell nach der Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 66.828,
+      "speaker": "A",
+      "start": 64.528,
+      "text": " So, sagen Sie mir nochmal kurz Ihren Namen.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Ich begrüße euch nochmal guten Tag. Ja, hier ist Geld. Guten Tag. Ich hätte gern Herrn Börkle gesprochen und ich habe prinzipielle Fragen zum Ganzhornfest. Wer kann mir da Auskunft geben? Ja, das ist der Herr Böckler. Ja. Einen kleinen Moment mal bitte. Ja, bitte. Ich gucke nochmal, weil gestern habe ich was mitgekriegt von ganz Herrn Fisch.\nHaargrenzhornfischt habe ich mir davor gemerkt, das ist sportamt-neckershulm .de, wo man sich wenden soll. Ja, nee, ich habe noch einen speziellen Fachgebiger Flohmarkt. Was auch noch... Da müsste ich schon mal mit Herrn Sörgle sprechen. Ist der zu sprechen oder... Ja, kleinen Moment, ich gucke gerade schnell nach der Telefonnummer. So, sagen Sie mir nochmal kurz Ihren Namen.",
+  "usage": {
+    "input_tokens": 690,
+    "output_tokens": 1553,
+    "total_tokens": 2243,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 667,
+      "text_tokens": 23
+    }
+  }
+}

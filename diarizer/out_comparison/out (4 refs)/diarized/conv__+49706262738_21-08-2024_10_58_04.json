@@ -1,0 +1,217 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.6000000000000005,
+      "speaker": "agent",
+      "start": 1.2500000000000002,
+      "text": " Guten Tag Frau Scott.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 4.15,
+      "speaker": "agent",
+      "start": 2.95,
+      "text": " Ruf mal Wilhelm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 16.45,
+      "speaker": "agent",
+      "start": 4.5,
+      "text": " Ich rufe aus einem bestimmten Grund an und zwar vermisse ich oder finde es nicht mehr und zwar die Grundscheibe, beschädigt für 23 und 24.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 23.849999999999998,
+      "speaker": "agent",
+      "start": 17.4,
+      "text": " Jetzt wollte ich fragen, ob ich da nochmal neue beauftragen kann oder ob sie mir nochmal neue zukommen lassen könnten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 28.0,
+      "speaker": "agent",
+      "start": 24.5,
+      "text": " Ja, ich gebe Ihnen die Mitarbeiterin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 34.0,
+      "speaker": "agent",
+      "start": 28.25,
+      "text": " Ja, ich habe da doch auch keine, aber da geht nie jemand nahe. Ich habe da von 22 habe ich was gehet, aber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 34.15,
+      "speaker": "agent",
+      "start": 34.0,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 34.45,
+      "speaker": "agent",
+      "start": 34.15,
+      "text": " auch keine.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 37.0,
+      "speaker": "agent",
+      "start": 34.45,
+      "text": " nee, unsere Nummern haben sich geändert vom Büro.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 37.95,
+      "speaker": "agent",
+      "start": 37.0,
+      "text": " So, heuer neue Karte,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 38.2,
+      "speaker": "agent",
+      "start": 37.95,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 38.95,
+      "speaker": "agent",
+      "start": 38.2,
+      "text": " das ist bestimmt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 43.8,
+      "speaker": "agent",
+      "start": 38.95,
+      "text": " möchten Sie es aufschreiben, dass Sie es gleich in den Ordner wieder mit einlegen, Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 49.55,
+      "speaker": "agent",
+      "start": 44.7,
+      "text": " So, ja, dann schreibe ich auf den 22 Kabela Ding rein und streiche das durch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 50.400000000000006,
+      "speaker": "agent",
+      "start": 50.05,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 54.252,
+      "speaker": "agent",
+      "start": 51.252,
+      "text": " Das ist also AT35 fürs Rathaus,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 54.752,
+      "speaker": "agent",
+      "start": 54.302,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 54.902,
+      "speaker": "agent",
+      "start": 54.752,
+      "text": " 1",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 55.202000000000005,
+      "speaker": "agent",
+      "start": 54.902,
+      "text": " 1,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 56.902,
+      "speaker": "agent",
+      "start": 55.202000000000005,
+      "text": " 224,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 58.502,
+      "speaker": "agent",
+      "start": 56.952000000000005,
+      "text": " 4, gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 60.05200000000001,
+      "speaker": "agent",
+      "start": 58.502,
+      "text": " 2, 2, 4, ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 60.55200000000001,
+      "speaker": "agent",
+      "start": 60.152,
+      "text": " gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 61.002,
+      "speaker": "agent",
+      "start": 60.652,
+      "text": " danke.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag. Guten Tag Frau Scott. Ruf mal Wilhelm. Ich rufe aus einem bestimmten Grund an und zwar vermisse ich oder finde es nicht mehr und zwar die Grundscheibe, beschädigt für 23 und 24. Jetzt wollte ich fragen, ob ich da nochmal neue beauftragen kann oder ob sie mir nochmal neue zukommen lassen könnten.\nJa, ich gebe Ihnen die Mitarbeiterin. Ja, ich habe da doch auch keine, aber da geht nie jemand nahe. Ich habe da von 22 habe ich was gehet, aber Ja, auch keine. nee, unsere Nummern haben sich geändert vom Büro. So, heuer neue Karte, Ja, das ist bestimmt. möchten Sie es aufschreiben, dass Sie es gleich in den Ordner wieder mit einlegen, Telefonnummer. So, ja, dann schreibe ich auf den 22 Kabela Ding rein und streiche das durch. Ja.\nDas ist also AT35 fürs Rathaus, Ja, 1 1, 224, 4, gell? 2, 2, 4, ja, gut, danke.",
+  "usage": {
+    "input_tokens": 1531,
+    "output_tokens": 1945,
+    "total_tokens": 3476,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1387,
+      "text_tokens": 144
+    }
+  }
+}

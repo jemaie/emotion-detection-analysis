@@ -1,0 +1,57 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Guten Tag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.55,
+      "speaker": "agent",
+      "start": 1.1500000000000001,
+      "text": " Hitler, guten Tag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 9.150000000000002,
+      "speaker": "agent",
+      "start": 2.8499999999999996,
+      "text": " hier frage ich Suchsordnungsamt und bin zu Ihnen verwiesen worden, bin ich doch richtig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 12.650000000000002,
+      "speaker": "agent",
+      "start": 9.650000000000002,
+      "text": " neu sind jetzt in der Telefonzentrale.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 13.600000000000001,
+      "speaker": "agent",
+      "start": 12.650000000000002,
+      "text": " Ja, weil...",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag, Hitler, guten Tag, hier frage ich Suchsordnungsamt und bin zu Ihnen verwiesen worden, bin ich doch richtig? neu sind jetzt in der Telefonzentrale. Ja, weil...",
+  "usage": {
+    "input_tokens": 446,
+    "output_tokens": 448,
+    "total_tokens": 894,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 391,
+      "text_tokens": 55
+    }
+  }
+}

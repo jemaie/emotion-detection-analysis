@@ -1,0 +1,97 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6500000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.5999999999999996,
+      "speaker": "B",
+      "start": 1.05,
+      "text": " Melanie Drecht, guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 3.5999999999999996,
+      "speaker": "A",
+      "start": 2.8,
+      "text": " Guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 6.449999999999999,
+      "speaker": "B",
+      "start": 4.3999999999999995,
+      "text": " Ich habe die 5 gedrückt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 9.5,
+      "speaker": "B",
+      "start": 6.499999999999999,
+      "text": " habe Ihnen ausgeflogen, da habe ich belegt zwei erreicht plötzlich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 15.602,
+      "speaker": "B",
+      "start": 10.452,
+      "text": " Äh, die... Äh... Äh... Das Ordnungsamt der Herr Rixinger direkt geht gar niemand mehr.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 18.752,
+      "speaker": "B",
+      "start": 15.652,
+      "text": " Ich brauche jetzt jemanden, der für die Weinbergshut bitte zuständig ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 24.951999999999998,
+      "speaker": "C",
+      "start": 18.902,
+      "text": " Der Rixinger hat noch Urlaub, der kommt erst nächste Woche wieder und die Sekretärin war gerade unten und hat uns versprochen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 27.552,
+      "speaker": "C",
+      "start": 25.201999999999998,
+      "text": " Also kann es durchaus sein, dass niemand dran ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 29.952000000000005,
+      "speaker": "C",
+      "start": 28.152,
+      "text": " Ich verbinde Sie gerade noch einmal.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Morgen. Melanie Drecht, guten Morgen. Guten Morgen. Ich habe die 5 gedrückt, habe Ihnen ausgeflogen, da habe ich belegt zwei erreicht plötzlich.\nÄh, die... Äh... Äh... Das Ordnungsamt der Herr Rixinger direkt geht gar niemand mehr. Ich brauche jetzt jemanden, der für die Weinbergshut bitte zuständig ist. Der Rixinger hat noch Urlaub, der kommt erst nächste Woche wieder und die Sekretärin war gerade unten und hat uns versprochen. Also kann es durchaus sein, dass niemand dran ist. Ich verbinde Sie gerade noch einmal.",
+  "usage": {
+    "input_tokens": 369,
+    "output_tokens": 964,
+    "total_tokens": 1333,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 358,
+      "text_tokens": 11
+    }
+  }
+}

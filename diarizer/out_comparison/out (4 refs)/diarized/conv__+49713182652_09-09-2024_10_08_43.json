@@ -1,0 +1,497 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.3500000000000001,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Grüß Gott,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 6.15,
+      "speaker": "agent",
+      "start": 0.7,
+      "text": " ich möchte für meine Mutter einen Behindertenparkausweis beantragen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 14.046,
+      "speaker": "agent",
+      "start": 6.996,
+      "text": " Das habe ich gelesen, ich brauche Vollmacht. Dazu muss was Bestimmtes drin stehen oder bestimmtes Formular sein oder kann sie das reinschreiben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 15.996000000000002,
+      "speaker": "agent",
+      "start": 14.346,
+      "text": " Das könnt ihr euch reinschreiben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 18.246000000000002,
+      "speaker": "agent",
+      "start": 16.196,
+      "text": " Und es ist auch nicht bevollmächtigt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 19.096,
+      "speaker": "agent",
+      "start": 18.396,
+      "text": " Und ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 23.396,
+      "speaker": "agent",
+      "start": 19.546,
+      "text": " Ja, und ein Passbild steht drin, braucht man.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 31.496000000000002,
+      "speaker": "agent",
+      "start": 24.246000000000002,
+      "text": " Müsste jetzt erst machen lassen oder sehen sie Zugriff auf die Passbilder vom Personalausweis und könnte sie das nehmen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 33.596000000000004,
+      "speaker": "agent",
+      "start": 31.846000000000004,
+      "text": " Nein, nein, das können wir nicht nehmen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 34.062,
+      "speaker": "agent",
+      "start": 34.012,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 36.512,
+      "speaker": "agent",
+      "start": 34.062,
+      "text": " Abe, ihr müsst eh geschwind abklären.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 38.711999999999996,
+      "speaker": "agent",
+      "start": 37.512,
+      "text": " Kleinen Moment,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 39.762,
+      "speaker": "agent",
+      "start": 38.812,
+      "text": " ich muss mal geschwind fragen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 65.456,
+      "speaker": "agent",
+      "start": 64.756,
+      "text": " Hallo, wie geht's dir?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 66.106,
+      "speaker": "agent",
+      "start": 65.656,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 68.606,
+      "speaker": "agent",
+      "start": 66.606,
+      "text": " Geht schriftlich, sagt gerade unsere Chefin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 71.562,
+      "speaker": "agent",
+      "start": 69.812,
+      "text": " Sie können die Vollmacht beilegen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 72.91199999999999,
+      "speaker": "agent",
+      "start": 71.66199999999999,
+      "text": " eine Bild beilegen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 73.962,
+      "speaker": "agent",
+      "start": 72.962,
+      "text": " einen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 75.562,
+      "speaker": "agent",
+      "start": 73.962,
+      "text": " Das heißt, dann muss man das ganze selber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 75.612,
+      "speaker": "agent",
+      "start": 75.562,
+      "text": " Ausdruck.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 76.012,
+      "speaker": "agent",
+      "start": 75.612,
+      "text": " kommen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 76.66199999999999,
+      "speaker": "agent",
+      "start": 76.012,
+      "text": " Nein, nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 76.812,
+      "speaker": "agent",
+      "start": 76.66199999999999,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 77.66199999999999,
+      "speaker": "agent",
+      "start": 76.812,
+      "text": " sie können perfekt. das drohen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 81.912,
+      "speaker": "agent",
+      "start": 77.66199999999999,
+      "text": " Gut, dann gucke ich, dass man Bilder macht. Das kann jetzt natürlich ein bisschen dauern.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 82.912,
+      "speaker": "agent",
+      "start": 81.912,
+      "text": " Ja, klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 83.362,
+      "speaker": "agent",
+      "start": 82.912,
+      "text": " Ja, aha.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 87.262,
+      "speaker": "agent",
+      "start": 83.362,
+      "text": " Und dann können Sie es in der Rathausbriefkäste werfen zu jedem Bürgerbüro.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 88.062,
+      "speaker": "agent",
+      "start": 87.71199999999999,
+      "text": " Perfekt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 90.612,
+      "speaker": "agent",
+      "start": 88.062,
+      "text": " Und dann die sind ausgestellt, gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 93.412,
+      "speaker": "agent",
+      "start": 90.612,
+      "text": " Ach so, aber Sie brauchen doch den Behindertenausweis.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 93.962,
+      "speaker": "agent",
+      "start": 93.412,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 96.062,
+      "speaker": "agent",
+      "start": 94.062,
+      "text": " den in Kopie beilegen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 97.562,
+      "speaker": "agent",
+      "start": 96.062,
+      "text": " Ach, Kopie. Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 97.748,
+      "speaker": "agent",
+      "start": 97.748,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 100.348,
+      "speaker": "agent",
+      "start": 97.748,
+      "text": " Ja, und vom normalen Ausweis.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 102.312,
+      "speaker": "A",
+      "start": 101.812,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 102.462,
+      "speaker": "agent",
+      "start": 102.312,
+      "text": " Ist",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 102.762,
+      "speaker": "A",
+      "start": 102.462,
+      "text": " mache",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 103.012,
+      "speaker": "agent",
+      "start": 102.762,
+      "text": " das erste",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 103.262,
+      "speaker": "A",
+      "start": 103.012,
+      "text": " ich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 106.312,
+      "speaker": "agent",
+      "start": 103.262,
+      "text": " schwerbehinderte Parkausweis?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 109.012,
+      "speaker": "A",
+      "start": 106.312,
+      "text": " Also einen behinderten Ausweis hat sie schon länger,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 117.312,
+      "speaker": "A",
+      "start": 109.062,
+      "text": " aber jetzt hat sie 100% uns AG bekommen und jetzt möchte sie natürlich den Parkausweis, weil wir haben immer Probleme,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 122.812,
+      "speaker": "A",
+      "start": 117.412,
+      "text": " wenn wir irgendwo mit einer Narbe sind, dass wir irgendwo einen Parkplatz kriegen, wo sie gescheit laufen kann, wo sie nahe kommt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 128.412,
+      "speaker": "agent",
+      "start": 122.812,
+      "text": " Ja, also dann halt von ihrem Personalausweis, von einem schwäbehinderten Ausweis.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 128.468,
+      "speaker": "agent",
+      "start": 128.468,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 128.56799999999998,
+      "speaker": "A",
+      "start": 128.468,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 130.968,
+      "speaker": "agent",
+      "start": 128.56799999999998,
+      "text": " wenn nicht alles drin steht mit einem Namen leer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 131.56799999999998,
+      "speaker": "agent",
+      "start": 131.06799999999998,
+      "text": " Gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 132.81799999999998,
+      "speaker": "A",
+      "start": 131.56799999999998,
+      "text": " alles klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 132.91799999999998,
+      "speaker": "agent",
+      "start": 132.81799999999998,
+      "text": " Dann",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 133.118,
+      "speaker": "A",
+      "start": 132.91799999999998,
+      "text": " Prima.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 134.618,
+      "speaker": "agent",
+      "start": 133.118,
+      "text": " können wir es machen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 134.81799999999998,
+      "speaker": "A",
+      "start": 134.618,
+      "text": " Gut.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 135.018,
+      "speaker": "agent",
+      "start": 134.81799999999998,
+      "text": " Gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 136.16799999999998,
+      "speaker": "A",
+      "start": 135.018,
+      "text": " Vielen Dank.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 136.56799999999998,
+      "speaker": "A",
+      "start": 136.268,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 138.56799999999998,
+      "speaker": "agent",
+      "start": 136.718,
+      "text": " Danke Ihnen auch. Gell? Tschüss.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Grüß Gott, ich möchte für meine Mutter einen Behindertenparkausweis beantragen.\nDas habe ich gelesen, ich brauche Vollmacht. Dazu muss was Bestimmtes drin stehen oder bestimmtes Formular sein oder kann sie das reinschreiben? Das könnt ihr euch reinschreiben. Und es ist auch nicht bevollmächtigt. Und ja. Ja, und ein Passbild steht drin, braucht man. Müsste jetzt erst machen lassen oder sehen sie Zugriff auf die Passbilder vom Personalausweis und könnte sie das nehmen? Nein, nein, das können wir nicht nehmen.\nOkay. Abe, ihr müsst eh geschwind abklären. Kleinen Moment, ich muss mal geschwind fragen.\nHallo, wie geht's dir? Ja. Geht schriftlich, sagt gerade unsere Chefin.\nSie können die Vollmacht beilegen, eine Bild beilegen, einen Das heißt, dann muss man das ganze selber Ausdruck. kommen. Nein, nee, Ja, sie können perfekt. das drohen. Gut, dann gucke ich, dass man Bilder macht. Das kann jetzt natürlich ein bisschen dauern. Ja, klar. Ja, aha. Und dann können Sie es in der Rathausbriefkäste werfen zu jedem Bürgerbüro. Perfekt. Und dann die sind ausgestellt, gell? Ach so, aber Sie brauchen doch den Behindertenausweis. Ja, den in Kopie beilegen. Ach, Kopie. Okay.\nOkay. Ja, und vom normalen Ausweis.\nOkay, Ist mache das erste ich. schwerbehinderte Parkausweis? Also einen behinderten Ausweis hat sie schon länger, aber jetzt hat sie 100% uns AG bekommen und jetzt möchte sie natürlich den Parkausweis, weil wir haben immer Probleme, wenn wir irgendwo mit einer Narbe sind, dass wir irgendwo einen Parkplatz kriegen, wo sie gescheit laufen kann, wo sie nahe kommt. Ja, also dann halt von ihrem Personalausweis, von einem schwäbehinderten Ausweis.\nJa, Ja, wenn nicht alles drin steht mit einem Namen leer. Gell? alles klar. Dann Prima. können wir es machen. Gut. Gell? Vielen Dank. Ja. Danke Ihnen auch. Gell? Tschüss.",
+  "usage": {
+    "input_tokens": 3884,
+    "output_tokens": 4192,
+    "total_tokens": 8076,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 3453,
+      "text_tokens": 431
+    }
+  }
+}

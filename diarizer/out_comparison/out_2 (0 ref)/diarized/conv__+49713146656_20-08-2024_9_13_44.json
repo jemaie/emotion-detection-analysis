@@ -1,0 +1,201 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 1.5000000000000002,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Tag, Frau Grosch, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 3.1000000000000005,
+      "speaker": "B",
+      "start": 2.0,
+      "text": " Grüß Gott,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 5.900000000000001,
+      "speaker": "B",
+      "start": 3.250000000000001,
+      "text": " ich wollte eigentlich das Liegenschaftsamt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 14.750000000000002,
+      "speaker": "B",
+      "start": 6.100000000000001,
+      "text": " der Herr Ritz hat auch immer belegt, dann habe ich gedacht, die kann doch was nicht stimmen, habe ich die Zentrale angerufen und dann ist da gekommen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 19.5,
+      "speaker": "B",
+      "start": 14.8,
+      "text": " also dass einem nächsten freien Mitarbeiter verbunden wird.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 21.6,
+      "speaker": "B",
+      "start": 20.25,
+      "text": " Sind Sie mich jetzt?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 23.800000000000004,
+      "speaker": "A",
+      "start": 21.700000000000003,
+      "text": " Der Herr Ritz hat heute Sieger,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 23.850000000000005,
+      "speaker": "B",
+      "start": 23.800000000000004,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 24.100000000000005,
+      "speaker": "A",
+      "start": 23.850000000000005,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 26.982,
+      "speaker": "A",
+      "start": 25.332,
+      "text": " Kann ich jetzt auch gerade meinen Namen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 28.882,
+      "speaker": "B",
+      "start": 26.982,
+      "text": " 3 1 1 4.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 30.032,
+      "speaker": "A",
+      "start": 28.882,
+      "text": " Ja, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 32.132,
+      "speaker": "A",
+      "start": 30.732,
+      "text": " Das habe ich auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 37.982,
+      "speaker": "A",
+      "start": 33.282000000000004,
+      "text": " Lass es mich noch was anderes probieren, weil ich weiß ja gar nicht, ob er da ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 40.382000000000005,
+      "speaker": "A",
+      "start": 38.532000000000004,
+      "text": " Probieren Sie mal über Outlook.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 44.882000000000005,
+      "speaker": "B",
+      "start": 40.382000000000005,
+      "text": " Ja, oder halt der Vertreter oder Sekretärin oder...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 51.332,
+      "speaker": "B",
+      "start": 47.432,
+      "text": " Und zwar geht es um die Sullenrevitalisierung.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 53.982,
+      "speaker": "B",
+      "start": 51.482,
+      "text": " Da habe ich einen Termin und... Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 56.414,
+      "speaker": "A",
+      "start": 55.764,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 59.964000000000006,
+      "speaker": "B",
+      "start": 59.564,
+      "text": " Aber",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 60.014,
+      "speaker": "A",
+      "start": 59.964000000000006,
+      "text": " dann",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 67.26400000000001,
+      "speaker": "B",
+      "start": 60.014,
+      "text": " ich bin gar nicht Eigentümer, das ist noch in der Erbegemeinschaft und das wollte ihm halt jetzt mal sagen, ob das dann Sinn macht, ob ich da überhaupt komme.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 70.76400000000001,
+      "speaker": "A",
+      "start": 69.51400000000001,
+      "text": " lasse es mich mal kommen.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag, Frau Grosch, guten Tag. Grüß Gott, ich wollte eigentlich das Liegenschaftsamt, der Herr Ritz hat auch immer belegt, dann habe ich gedacht, die kann doch was nicht stimmen, habe ich die Zentrale angerufen und dann ist da gekommen, also dass einem nächsten freien Mitarbeiter verbunden wird. Sind Sie mich jetzt? Der Herr Ritz hat heute Sieger, Ja. ja.\nKann ich jetzt auch gerade meinen Namen? 3 1 1 4. Ja, genau. Das habe ich auch. Lass es mich noch was anderes probieren, weil ich weiß ja gar nicht, ob er da ist. Probieren Sie mal über Outlook. Ja, oder halt der Vertreter oder Sekretärin oder... Und zwar geht es um die Sullenrevitalisierung. Da habe ich einen Termin und... Ja.\nJa, Aber dann ich bin gar nicht Eigentümer, das ist noch in der Erbegemeinschaft und das wollte ihm halt jetzt mal sagen, ob das dann Sinn macht, ob ich da überhaupt komme. lasse es mich mal kommen.",
+  "usage": {
+    "input_tokens": 989,
+    "output_tokens": 2105,
+    "total_tokens": 3094,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 935,
+      "text_tokens": 54
+    }
+  }
+}

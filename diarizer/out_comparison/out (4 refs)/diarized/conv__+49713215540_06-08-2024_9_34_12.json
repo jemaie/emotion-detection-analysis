@@ -1,0 +1,305 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.7500000000000002,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Grüß Gott, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.5,
+      "speaker": "agent",
+      "start": 1.3,
+      "text": " Ja, und nochmal,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 6.8500000000000005,
+      "speaker": "agent",
+      "start": 2.55,
+      "text": " ich hatte es vorhin schon probiert bei Ihnen und zwar wollte ich ja den Herrn Knapp sprechen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 9.9,
+      "speaker": "agent",
+      "start": 6.95,
+      "text": " Ich habe es jetzt schon ein paar Mal probiert. Ist der sicher heute im Haus?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 12.25,
+      "speaker": "agent",
+      "start": 10.85,
+      "text": " Der ist da wahrscheinlich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 14.3,
+      "speaker": "agent",
+      "start": 12.55,
+      "text": " Ja, also gesehen habe ich ihn noch nicht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 16.25,
+      "speaker": "agent",
+      "start": 14.350000000000001,
+      "text": " aber die sind halt viel draußen unterwegs.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 20.8,
+      "speaker": "agent",
+      "start": 17.05,
+      "text": " Der Knapp gehört ja zum Ordnungsamt und der Herr guckt ja draußen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 24.150000000000002,
+      "speaker": "agent",
+      "start": 21.650000000000002,
+      "text": " Hat der dann eine Handynummer, wo ich ihn erreichen kann?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 25.546,
+      "speaker": "agent",
+      "start": 25.396,
+      "text": " Hätte",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 25.896,
+      "speaker": "agent",
+      "start": 25.546,
+      "text": " Ich",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 33.396,
+      "speaker": "agent",
+      "start": 25.896,
+      "text": " ich jetzt keine, wäre das ja weggenommen, gesprint oder noch eine abgespeichert gehabt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 37.996,
+      "speaker": "agent",
+      "start": 37.046,
+      "text": " Ja, nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 38.996,
+      "speaker": "agent",
+      "start": 38.096000000000004,
+      "text": " ich habe nur die.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 46.546,
+      "speaker": "A",
+      "start": 44.296,
+      "text": " Oder dass ich eben eine E-Mail schreibe, das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 47.396,
+      "speaker": "agent",
+      "start": 46.546,
+      "text": " Ja gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 48.946,
+      "speaker": "agent",
+      "start": 47.446,
+      "text": " das könntest du natürlich auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 50.996,
+      "speaker": "A",
+      "start": 49.896,
+      "text": " wäre vielleicht noch gut.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 53.304,
+      "speaker": "A",
+      "start": 51.604,
+      "text": " Würden Sie mir die E-Mail-Adresse sagen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 59.004,
+      "speaker": "agent",
+      "start": 53.304,
+      "text": " Ja, jetzt habe ich, sorry, jetzt habe ich die falsche Person hier aufgerufen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 61.454,
+      "speaker": "A",
+      "start": 60.704,
+      "text": " Kein Problem.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 63.704,
+      "speaker": "agent",
+      "start": 61.454,
+      "text": " Katrin heißt oder mit Frau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 65.704,
+      "speaker": "agent",
+      "start": 65.154,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 68.104,
+      "speaker": "agent",
+      "start": 65.854,
+      "text": " Steffen mit",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 69.20400000000001,
+      "speaker": "A",
+      "start": 69.104,
+      "text": " Steffen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 72.404,
+      "speaker": "agent",
+      "start": 69.20400000000001,
+      "text": " zwei f knapp at",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 72.95400000000001,
+      "speaker": "A",
+      "start": 72.404,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 75.104,
+      "speaker": "agent",
+      "start": 72.95400000000001,
+      "text": " neckershelm.de",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 81.188,
+      "speaker": "A",
+      "start": 80.788,
+      "text": " Perfekt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 81.488,
+      "speaker": "A",
+      "start": 81.238,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 83.588,
+      "speaker": "A",
+      "start": 81.538,
+      "text": " dann schreibe ich ihm lieber eine E-Mail. Das ist vielleicht einfacher.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 85.338,
+      "speaker": "agent",
+      "start": 83.588,
+      "text": " Ja, alles klar, gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 86.088,
+      "speaker": "A",
+      "start": 85.338,
+      "text": " Dankeschön.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 86.788,
+      "speaker": "agent",
+      "start": 86.13799999999999,
+      "text": " Bitte,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 87.538,
+      "speaker": "agent",
+      "start": 86.88799999999999,
+      "text": " tschüss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 87.938,
+      "speaker": "A",
+      "start": 87.538,
+      "text": " Tschüss.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Grüß Gott, guten Tag. Ja, und nochmal, ich hatte es vorhin schon probiert bei Ihnen und zwar wollte ich ja den Herrn Knapp sprechen. Ich habe es jetzt schon ein paar Mal probiert. Ist der sicher heute im Haus? Der ist da wahrscheinlich. Ja, also gesehen habe ich ihn noch nicht, aber die sind halt viel draußen unterwegs. Der Knapp gehört ja zum Ordnungsamt und der Herr guckt ja draußen. Hat der dann eine Handynummer, wo ich ihn erreichen kann?\nHätte Ich ich jetzt keine, wäre das ja weggenommen, gesprint oder noch eine abgespeichert gehabt. Ja, nee, ich habe nur die. Oder dass ich eben eine E-Mail schreibe, das Ja gut, das könntest du natürlich auch. wäre vielleicht noch gut.\nWürden Sie mir die E-Mail-Adresse sagen? Ja, jetzt habe ich, sorry, jetzt habe ich die falsche Person hier aufgerufen. Kein Problem. Katrin heißt oder mit Frau. Okay, Steffen mit Steffen? zwei f knapp at Ja. neckershelm.de\nPerfekt. Okay, dann schreibe ich ihm lieber eine E-Mail. Das ist vielleicht einfacher. Ja, alles klar, gell? Dankeschön. Bitte, tschüss. Tschüss.",
+  "usage": {
+    "input_tokens": 2118,
+    "output_tokens": 2519,
+    "total_tokens": 4637,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1896,
+      "text_tokens": 222
+    }
+  }
+}

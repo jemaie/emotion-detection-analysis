@@ -1,0 +1,345 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.55,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Woll guten Tag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 3.5999999999999996,
+      "speaker": "agent",
+      "start": 0.75,
+      "text": " Ja, Benedikt, guten Tag. Ich habe eine Frage.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 7.599999999999999,
+      "speaker": "agent",
+      "start": 3.6999999999999993,
+      "text": " Ich brauche eine Beglaubigung für ein Zeugnis.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 8.95,
+      "speaker": "agent",
+      "start": 8.799999999999999,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 10.549999999999999,
+      "speaker": "agent",
+      "start": 8.95,
+      "text": " Wo muss ich mich dahin wenden?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 13.149999999999999,
+      "speaker": "agent",
+      "start": 11.049999999999999,
+      "text": " sind Sie im Bürgerbüro richtig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 14.349999999999998,
+      "speaker": "agent",
+      "start": 13.399999999999999,
+      "text": " Aha, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 18.099999999999998,
+      "speaker": "agent",
+      "start": 15.049999999999997,
+      "text": " Jetzt muss ich bloß gerade geschwingt gucken.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 26.45,
+      "speaker": "agent",
+      "start": 22.9,
+      "text": " Ich war nicht sicher, Standesamt oder Bürgerbüro.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 28.332,
+      "speaker": "agent",
+      "start": 27.732,
+      "text": " Ja gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 31.482,
+      "speaker": "agent",
+      "start": 28.381999999999998,
+      "text": " sie will ja kein neues Dokument ausgestellt habe vom Standesamt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 31.932,
+      "speaker": "agent",
+      "start": 31.482,
+      "text": " Nee, das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 33.832,
+      "speaker": "agent",
+      "start": 31.932,
+      "text": " Sie bringe ihre Dokumente mit.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 37.132,
+      "speaker": "agent",
+      "start": 35.782,
+      "text": " ist nur ein Zeugnis, ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 40.581999999999994,
+      "speaker": "agent",
+      "start": 37.232,
+      "text": " Und da braucht es eine beglaubigte Abschrift oder wie das heißt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 44.63199999999999,
+      "speaker": "agent",
+      "start": 40.982,
+      "text": " Ja, da bräuchte man aber einen Termin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 51.134,
+      "speaker": "agent",
+      "start": 48.884,
+      "text": " Was sie heute mal gucken, heute ist voll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 57.734,
+      "speaker": "agent",
+      "start": 52.134,
+      "text": " Wir haben jeden Tag eigentlich noch freie Termine, bloß sehe ich die auch erst wie sie morgens um 8 Uhr.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 59.184,
+      "speaker": "agent",
+      "start": 58.084,
+      "text": " Aha, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 63.584,
+      "speaker": "agent",
+      "start": 60.534,
+      "text": " Entweder sie rufen morgen zum 8 Uhr nochmal an, am Tag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 64.334,
+      "speaker": "agent",
+      "start": 63.684,
+      "text": " wo sie können,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 65.084,
+      "speaker": "agent",
+      "start": 64.484,
+      "text": " wo sie wissen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 67.634,
+      "speaker": "agent",
+      "start": 65.184,
+      "text": " oder sie gucken online.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 74.534,
+      "speaker": "agent",
+      "start": 67.934,
+      "text": " Bei unserem Homepage Stadt Neckarsulm unter Bürgerbüro gibt es eine Online-Terminvergabe, wenn wir da wollten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 74.784,
+      "speaker": "agent",
+      "start": 74.534,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 80.158,
+      "speaker": "agent",
+      "start": 75.508,
+      "text": " um 8 Uhr sich einloggt, kriegt man da auch drüber einen Termin, also wie sie möchte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 81.208,
+      "speaker": "agent",
+      "start": 80.80799999999999,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 81.30799999999999,
+      "speaker": "agent",
+      "start": 81.208,
+      "text": " Ja?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 81.658,
+      "speaker": "agent",
+      "start": 81.30799999999999,
+      "text": " okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 82.30799999999999,
+      "speaker": "agent",
+      "start": 81.908,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 86.05799999999999,
+      "speaker": "agent",
+      "start": 82.35799999999999,
+      "text": " weiß ich Bescheid. Gut, aber ich weiß erst mal, auf welches Amt ich muss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 86.60799999999999,
+      "speaker": "agent",
+      "start": 86.258,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 87.458,
+      "speaker": "agent",
+      "start": 86.658,
+      "text": " wo sie hin müssen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 87.758,
+      "speaker": "agent",
+      "start": 87.508,
+      "text": " genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 89.708,
+      "speaker": "agent",
+      "start": 88.008,
+      "text": " Richtig, dann alles klar,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 90.258,
+      "speaker": "agent",
+      "start": 89.758,
+      "text": " Dankeschön.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 91.008,
+      "speaker": "agent",
+      "start": 90.258,
+      "text": " Okay, bitte,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 91.958,
+      "speaker": "agent",
+      "start": 91.158,
+      "text": " schöne Woche Ende,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 92.208,
+      "speaker": "agent",
+      "start": 91.958,
+      "text": " Ihnen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 92.408,
+      "speaker": "agent",
+      "start": 92.208,
+      "text": " bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 93.05799999999999,
+      "speaker": "agent",
+      "start": 92.408,
+      "text": " auch, danke.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Woll guten Tag, Ja, Benedikt, guten Tag. Ich habe eine Frage. Ich brauche eine Beglaubigung für ein Zeugnis. Ja, Wo muss ich mich dahin wenden? sind Sie im Bürgerbüro richtig? Aha, okay. Jetzt muss ich bloß gerade geschwingt gucken. Ich war nicht sicher, Standesamt oder Bürgerbüro.\nJa gut, sie will ja kein neues Dokument ausgestellt habe vom Standesamt. Nee, das Sie bringe ihre Dokumente mit. ist nur ein Zeugnis, ja. Und da braucht es eine beglaubigte Abschrift oder wie das heißt. Ja, da bräuchte man aber einen Termin.\nWas sie heute mal gucken, heute ist voll. Wir haben jeden Tag eigentlich noch freie Termine, bloß sehe ich die auch erst wie sie morgens um 8 Uhr. Aha, okay. Entweder sie rufen morgen zum 8 Uhr nochmal an, am Tag, wo sie können, wo sie wissen, oder sie gucken online. Bei unserem Homepage Stadt Neckarsulm unter Bürgerbüro gibt es eine Online-Terminvergabe, wenn wir da wollten. Okay.\num 8 Uhr sich einloggt, kriegt man da auch drüber einen Termin, also wie sie möchte. Okay, Ja? okay. Ja, weiß ich Bescheid. Gut, aber ich weiß erst mal, auf welches Amt ich muss. Ja, wo sie hin müssen, genau. Richtig, dann alles klar, Dankeschön. Okay, bitte, schöne Woche Ende, Ihnen bitte. auch, danke.",
+  "usage": {
+    "input_tokens": 2135,
+    "output_tokens": 2887,
+    "total_tokens": 5022,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1943,
+      "text_tokens": 192
+    }
+  }
+}

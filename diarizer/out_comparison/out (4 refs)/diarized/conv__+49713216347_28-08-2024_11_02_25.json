@@ -1,0 +1,529 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8500000000000003,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Wo ist mein Kontakt?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 3.55,
+      "speaker": "agent",
+      "start": 1.2500000000000002,
+      "text": " Ja, Lache in Ehrenbach, guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 15.2,
+      "speaker": "agent",
+      "start": 4.55,
+      "text": " Also ich bin ja normalerweise freudig aufgelegt, aber was ich erlebt habe mit Ihrer Anlage, mit Ihrer Telefonanlage, um überhaupt mal in die Stadtnähe gesund zu kommen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 24.0,
+      "speaker": "agent",
+      "start": 15.3,
+      "text": " das ist also schon fast verheerend. Ich hatte vorher hier gewählt, glaube ich, diese 2700, das war regional,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 26.05,
+      "speaker": "agent",
+      "start": 24.3,
+      "text": " das war übers Wasser.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 29.384,
+      "speaker": "agent",
+      "start": 26.484,
+      "text": " dann blockiert ein automatischer Beantworter durch,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 31.934,
+      "speaker": "agent",
+      "start": 29.584000000000003,
+      "text": " der sagt, dann wählen Sie die 1, dann wählen Sie die 2,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 33.184,
+      "speaker": "agent",
+      "start": 31.984,
+      "text": " wählen Sie alles wahr, nicht?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 36.234,
+      "speaker": "agent",
+      "start": 33.584,
+      "text": " Dann bleiben Sie in der Leitung, wählen Sie die 4.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 39.634,
+      "speaker": "agent",
+      "start": 36.434,
+      "text": " Dann wählen Sie die 4, dann fängt das Gerät wieder von vorne an.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 41.784000000000006,
+      "speaker": "agent",
+      "start": 39.684,
+      "text": " Das war die eine Sache, habe ich dreimal probiert,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 42.634,
+      "speaker": "agent",
+      "start": 41.884,
+      "text": " das war gar nichts.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 49.284000000000006,
+      "speaker": "agent",
+      "start": 43.034000000000006,
+      "text": " Jetzt sind Sie mit freudlicher oder mit freundlicher Stimme,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 51.384,
+      "speaker": "agent",
+      "start": 49.384,
+      "text": " haben Sie sich jetzt gemeldet,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 52.884,
+      "speaker": "agent",
+      "start": 51.434000000000005,
+      "text": " auf die letztendlich 35.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 56.118,
+      "speaker": "agent",
+      "start": 53.268,
+      "text": " Die Null ist ja eigentlich die Zentralnummer, in halb",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 56.318,
+      "speaker": "agent",
+      "start": 56.118,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 57.918,
+      "speaker": "agent",
+      "start": 56.318,
+      "text": " eins heißt die 56-Null,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 60.868,
+      "speaker": "agent",
+      "start": 57.968,
+      "text": " und jetzt endlich habe ich jemanden dran,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 63.268,
+      "speaker": "agent",
+      "start": 60.967999999999996,
+      "text": " ob es natürlich weitergeht, steht in den Sternen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 65.268,
+      "speaker": "agent",
+      "start": 64.068,
+      "text": " ach du liebe Zeit,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 65.418,
+      "speaker": "agent",
+      "start": 65.268,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 66.068,
+      "speaker": "agent",
+      "start": 65.418,
+      "text": " das tut mir leid.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 68.018,
+      "speaker": "agent",
+      "start": 66.068,
+      "text": " das ist ganz schlimm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 70.568,
+      "speaker": "agent",
+      "start": 68.168,
+      "text": " Dann kommen Störgeräusche rein, da hast du immer gemacht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 72.91799999999999,
+      "speaker": "agent",
+      "start": 70.768,
+      "text": " piep, piep, piep, piep, düüüt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 74.946,
+      "speaker": "agent",
+      "start": 73.396,
+      "text": " Düüd, beep, beep, beep.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 78.446,
+      "speaker": "agent",
+      "start": 75.146,
+      "text": " Ach, ich habe doch gesagt, wo bin ich denn? Bin ich hier in der Steinzeit angekommen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 80.446,
+      "speaker": "agent",
+      "start": 78.546,
+      "text": " Also das hört sich nicht gut an.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 82.24600000000001,
+      "speaker": "agent",
+      "start": 80.696,
+      "text": " Jetzt würde ich Sie bitten,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 88.346,
+      "speaker": "agent",
+      "start": 82.346,
+      "text": " ich möchte jemand von den Wasseraufbereitungs-Spezialisten, also vom Wasserwerk jemand,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 96.99600000000001,
+      "speaker": "agent",
+      "start": 88.396,
+      "text": " der Ahnung hat, der was über Filterweise oder über Lebendtitfilter, über Ionen-Austauscher, über Epoxy hat und das gehört Ja, alles zum Wasser dazu.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 98.096,
+      "speaker": "agent",
+      "start": 96.99600000000001,
+      "text": " ich denke,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 100.99600000000001,
+      "speaker": "agent",
+      "start": 98.146,
+      "text": " das sind dann die Regionalwerke in Ihrem Betrieb.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 101.346,
+      "speaker": "agent",
+      "start": 100.99600000000001,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 104.8,
+      "speaker": "agent",
+      "start": 102.1,
+      "text": " um die woche die wasserohre tausche und wo die anlage",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 108.89999999999999,
+      "speaker": "agent",
+      "start": 104.8,
+      "text": " Ja, die Wasseruhren tauschen, da können Sie einen Hilfsarbeiter dazu nehmen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 109.0,
+      "speaker": "agent",
+      "start": 108.89999999999999,
+      "text": " nee",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 109.19999999999999,
+      "speaker": "agent",
+      "start": 109.0,
+      "text": " Das soll",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 109.25,
+      "speaker": "agent",
+      "start": 109.19999999999999,
+      "text": " nee",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 109.5,
+      "speaker": "agent",
+      "start": 109.25,
+      "text": " ja selber.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 111.44999999999999,
+      "speaker": "agent",
+      "start": 109.5,
+      "text": " ich meine die abteilung die halt für",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 111.6,
+      "speaker": "agent",
+      "start": 111.44999999999999,
+      "text": " Ach",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 111.75,
+      "speaker": "agent",
+      "start": 111.6,
+      "text": " das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 111.8,
+      "speaker": "agent",
+      "start": 111.75,
+      "text": " so,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 112.19999999999999,
+      "speaker": "agent",
+      "start": 111.8,
+      "text": " jetzt zuständig",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 112.75,
+      "speaker": "agent",
+      "start": 112.19999999999999,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 118.75,
+      "speaker": "agent",
+      "start": 112.75,
+      "text": " ist ich habe ihnen den abteilungsleiter das ist der herr mark enge meier wo",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 119.94999999999999,
+      "speaker": "agent",
+      "start": 118.75,
+      "text": " Herr Meier ist das.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 120.44999999999999,
+      "speaker": "agent",
+      "start": 119.94999999999999,
+      "text": " ja",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 120.64999999999999,
+      "speaker": "agent",
+      "start": 120.44999999999999,
+      "text": " Meier,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 121.1,
+      "speaker": "agent",
+      "start": 120.64999999999999,
+      "text": " der herr",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 123.75,
+      "speaker": "agent",
+      "start": 121.1,
+      "text": " wie 70% aller deutschen heißen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 127.94999999999999,
+      "speaker": "agent",
+      "start": 123.75,
+      "text": " nee enge meier heißt er enchel enchel e",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 128.1,
+      "speaker": "agent",
+      "start": 127.94999999999999,
+      "text": " Enchel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 129.39999999999998,
+      "speaker": "agent",
+      "start": 128.1,
+      "text": " n c h",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 131.25,
+      "speaker": "agent",
+      "start": 130.9,
+      "text": " Ach du lieber Käse.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 131.70000000000002,
+      "speaker": "agent",
+      "start": 131.25,
+      "text": " I,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 131.8,
+      "speaker": "agent",
+      "start": 131.70000000000002,
+      "text": " Hat",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 132.15,
+      "speaker": "agent",
+      "start": 131.8,
+      "text": " I, I, E,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_60",
+      "end": 132.65,
+      "speaker": "agent",
+      "start": 132.15,
+      "text": " der jetzt einen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_61",
+      "end": 134.4,
+      "speaker": "agent",
+      "start": 132.65,
+      "text": " H, E, L und dann Meier.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_62",
+      "end": 138.65,
+      "speaker": "agent",
+      "start": 134.4,
+      "text": " extra Ruf, wenn sie es nicht verbinden können?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_63",
+      "end": 141.0,
+      "speaker": "agent",
+      "start": 138.70000000000002,
+      "text": " Doch, doch, ich probiere es gleich einmal.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Wo ist mein Kontakt? Ja, Lache in Ehrenbach, guten Morgen. Also ich bin ja normalerweise freudig aufgelegt, aber was ich erlebt habe mit Ihrer Anlage, mit Ihrer Telefonanlage, um überhaupt mal in die Stadtnähe gesund zu kommen, das ist also schon fast verheerend. Ich hatte vorher hier gewählt, glaube ich, diese 2700, das war regional, das war übers Wasser.\ndann blockiert ein automatischer Beantworter durch, der sagt, dann wählen Sie die 1, dann wählen Sie die 2, wählen Sie alles wahr, nicht? Dann bleiben Sie in der Leitung, wählen Sie die 4. Dann wählen Sie die 4, dann fängt das Gerät wieder von vorne an. Das war die eine Sache, habe ich dreimal probiert, das war gar nichts. Jetzt sind Sie mit freudlicher oder mit freundlicher Stimme, haben Sie sich jetzt gemeldet, auf die letztendlich 35.\nDie Null ist ja eigentlich die Zentralnummer, in halb Ja, eins heißt die 56-Null, und jetzt endlich habe ich jemanden dran, ob es natürlich weitergeht, steht in den Sternen. ach du liebe Zeit, Ja, das tut mir leid. das ist ganz schlimm. Dann kommen Störgeräusche rein, da hast du immer gemacht, piep, piep, piep, piep, düüüt.\nDüüd, beep, beep, beep. Ach, ich habe doch gesagt, wo bin ich denn? Bin ich hier in der Steinzeit angekommen? Also das hört sich nicht gut an. Jetzt würde ich Sie bitten, ich möchte jemand von den Wasseraufbereitungs-Spezialisten, also vom Wasserwerk jemand, der Ahnung hat, der was über Filterweise oder über Lebendtitfilter, über Ionen -Austauscher, über Epoxy hat und das gehört Ja, alles zum Wasser dazu. ich denke, das sind dann die Regionalwerke in Ihrem Betrieb. Ja.\num die woche die wasserohre tausche und wo die anlage Ja, die Wasseruhren tauschen, da können Sie einen Hilfsarbeiter dazu nehmen. nee Das soll nee ja selber. ich meine die abteilung die halt für Ach das so, jetzt zuständig ja. ist ich habe ihnen den abteilungsleiter das ist der herr mark enge meier wo Herr Meier ist das. ja Meier, der herr wie 70% aller deutschen heißen. nee enge meier heißt er enchel enchel e Enchel. n c h\nAch du lieber Käse. I, Hat I, I, E, der jetzt einen H, E, L und dann Meier. extra Ruf, wenn sie es nicht verbinden können? Doch, doch, ich probiere es gleich einmal.",
+  "usage": {
+    "input_tokens": 3258,
+    "output_tokens": 4643,
+    "total_tokens": 7901,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 2946,
+      "text_tokens": 312
+    }
+  }
+}

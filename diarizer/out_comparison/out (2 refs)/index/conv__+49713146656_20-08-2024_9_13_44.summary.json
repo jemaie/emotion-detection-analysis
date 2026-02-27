@@ -1,0 +1,31 @@
+{
+  "call_id": "conv__+49713146656_20-08-2024_9_13_44",
+  "source_file": "..\\aufnahmen20\\conv__+49713146656_20-08-2024_9_13_44.mp4",
+  "normalized_file": "data\\normalized\\conv__+49713146656_20-08-2024_9_13_44.wav",
+  "diarized_file": "out\\diarized\\conv__+49713146656_20-08-2024_9_13_44.json",
+  "speaker_to_role": {
+    "agent": "agent",
+    "@": "caller",
+    "A": "caller"
+  },
+  "speaker_durations_sec": {
+    "agent": 37.39999999999999,
+    "@": 0.6499999999999986,
+    "A": 19.700000000000003
+  },
+  "flags": {
+    "agent_matched_by_reference": true,
+    "fallback_used": false,
+    "num_speakers": 3
+  },
+  "num_segments_total": 22,
+  "num_segments_caller_raw": 4,
+  "num_segments_caller_final": 3,
+  "caller_segments_dir": "out\\caller_segments\\conv__+49713146656_20-08-2024_9_13_44",
+  "caller_concat_file": "out\\caller_concat\\conv__+49713146656_20-08-2024_9_13_44.wav",
+  "segment_params": {
+    "trim_ms": 250,
+    "merge_gap_ms": 300,
+    "min_seg_dur_s": 0.7
+  }
+}

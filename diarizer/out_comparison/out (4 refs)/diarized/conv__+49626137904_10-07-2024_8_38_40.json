@@ -1,0 +1,201 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.30000000000000004,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Grüß Gott,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 0.8499999999999999,
+      "speaker": "agent",
+      "start": 0.3500000000000001,
+      "text": " guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 6.75,
+      "speaker": "agent",
+      "start": 1.3499999999999999,
+      "text": " Guten Tag, mein Name ist Hermann. Ich bräuchte Meldebescheinigung. Mein Arbeitgeber bräuchte sie.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 17.0,
+      "speaker": "agent",
+      "start": 7.45,
+      "text": " Ja, steht da irgendein Aktenteil hier drauf, dann bringen Sie bitte mit, dass man das mit eintippe, ansonsten mit Termin zu unserer Öffnungszeit hier vorbeikommen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 20.07,
+      "speaker": "agent",
+      "start": 17.62,
+      "text": " Oh, können Sie mir das nicht zuschicken per E-Mail?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 20.62,
+      "speaker": "agent",
+      "start": 20.32,
+      "text": " Bitte?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 27.32,
+      "speaker": "agent",
+      "start": 20.62,
+      "text": " Weil ich bin seit drei Jahren bei Ihnen gemeldet. Können Sie mir das nicht per E-Mail zuschicken?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 27.82,
+      "speaker": "agent",
+      "start": 27.32,
+      "text": " Nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 30.07,
+      "speaker": "agent",
+      "start": 27.92,
+      "text": " sie müsste eigentlich persönlich kommen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 37.92,
+      "speaker": "agent",
+      "start": 33.22,
+      "text": " Oder ich gucke gerade noch einmal, aber also so viel ich weiß.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 52.178000000000004,
+      "speaker": "agent",
+      "start": 50.228,
+      "text": " Ja, nette Stadt persönlich kommen,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 54.278,
+      "speaker": "agent",
+      "start": 52.278,
+      "text": " aber halt ohne Termin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 59.128,
+      "speaker": "agent",
+      "start": 56.178000000000004,
+      "text": " Sich einfach vorne in die Infotheke bei uns melden.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 61.628,
+      "speaker": "agent",
+      "start": 61.378,
+      "text": " Danke.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 63.378,
+      "speaker": "agent",
+      "start": 61.628,
+      "text": " Ja, wir haben heute bis 17 Uhr,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 63.428000000000004,
+      "speaker": "agent",
+      "start": 63.378,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 64.128,
+      "speaker": "agent",
+      "start": 63.428000000000004,
+      "text": " nur so.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 65.028,
+      "speaker": "agent",
+      "start": 64.128,
+      "text": " das geht heute nicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 65.578,
+      "speaker": "agent",
+      "start": 65.128,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 65.678,
+      "speaker": "agent",
+      "start": 65.578,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 66.078,
+      "speaker": "agent",
+      "start": 65.678,
+      "text": " danke.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 66.72800000000001,
+      "speaker": "agent",
+      "start": 66.128,
+      "text": " Tschüss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 67.678,
+      "speaker": "agent",
+      "start": 66.72800000000001,
+      "text": " Bitte. Tschüss.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Grüß Gott, guten Tag. Guten Tag, mein Name ist Hermann. Ich bräuchte Meldebescheinigung. Mein Arbeitgeber bräuchte sie. Ja, steht da irgendein Aktenteil hier drauf, dann bringen Sie bitte mit, dass man das mit eintippe, ansonsten mit Termin zu unserer Öffnungszeit hier vorbeikommen.\nOh, können Sie mir das nicht zuschicken per E -Mail? Bitte? Weil ich bin seit drei Jahren bei Ihnen gemeldet. Können Sie mir das nicht per E-Mail zuschicken? Nee, sie müsste eigentlich persönlich kommen. Oder ich gucke gerade noch einmal, aber also so viel ich weiß.\nJa, nette Stadt persönlich kommen, aber halt ohne Termin. Sich einfach vorne in die Infotheke bei uns melden. Danke. Ja, wir haben heute bis 17 Uhr, Ja, nur so. das geht heute nicht. Okay, Okay. danke. Tschüss. Bitte. Tschüss.",
+  "usage": {
+    "input_tokens": 1485,
+    "output_tokens": 1782,
+    "total_tokens": 3267,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1338,
+      "text_tokens": 147
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 1.2,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Tag, schönen guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 4.45,
+      "speaker": "B",
+      "start": 2.2,
+      "text": " Ja, guten Tag, Frau Susanne Ehrenfried.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 7.999999999999999,
+      "speaker": "B",
+      "start": 4.8,
+      "text": " Ich weiß nicht, mit wem Sie mich vielleicht verbinden könnten,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 9.4,
+      "speaker": "B",
+      "start": 8.15,
+      "text": " der Buchhaltung.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 17.85,
+      "speaker": "B",
+      "start": 10.25,
+      "text": " Ich kümmere mich zusammen mit meiner Schwester um das Konto meiner Mutter und da gab es einen Lastschrifteinzug am 15.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 18.550000000000004,
+      "speaker": "B",
+      "start": 17.950000000000003,
+      "text": " August,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 20.6,
+      "speaker": "B",
+      "start": 18.950000000000003,
+      "text": " nicht viel, 10 Euro,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 27.05,
+      "speaker": "B",
+      "start": 20.8,
+      "text": " wegen einer Grundsteuer. Und wir hätten gern gewusst, welches Objekt das betrifft.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 28.264,
+      "speaker": "A",
+      "start": 27.764,
+      "text": " Mhm.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 31.214,
+      "speaker": "A",
+      "start": 28.913999999999998,
+      "text": " Gebe ich Ihnen mal die Frau Bayer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 35.464,
+      "speaker": "B",
+      "start": 32.263999999999996,
+      "text": " Ja, aber ist es jetzt dann eine Abteilung oder ich weiß nicht warum.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 36.914,
+      "speaker": "A",
+      "start": 35.814,
+      "text": " Steuern. Gehen wir rein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 37.513999999999996,
+      "speaker": "A",
+      "start": 36.964,
+      "text": " Steuern.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag, schönen guten Tag. Ja, guten Tag, Frau Susanne Ehrenfried. Ich weiß nicht, mit wem Sie mich vielleicht verbinden könnten, der Buchhaltung. Ich kümmere mich zusammen mit meiner Schwester um das Konto meiner Mutter und da gab es einen Lastschrifteinzug am 15. August, nicht viel, 10 Euro, wegen einer Grundsteuer. Und wir hätten gern gewusst, welches Objekt das betrifft.\nMhm. Gebe ich Ihnen mal die Frau Bayer. Ja, aber ist es jetzt dann eine Abteilung oder ich weiß nicht warum. Steuern. Gehen wir rein. Steuern.",
+  "usage": {
+    "input_tokens": 650,
+    "output_tokens": 1138,
+    "total_tokens": 1788,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 600,
+      "text_tokens": 50
+    }
+  }
+}

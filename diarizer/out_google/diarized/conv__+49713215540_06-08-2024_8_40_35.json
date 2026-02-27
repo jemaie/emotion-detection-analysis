@@ -1,0 +1,703 @@
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "guten Morgen Ich bin auf der Suche nach jemanden und zwar den hätte ich gern gesprochen bin mir aber nicht mehr ganz sicher wie die Durchwahl ist müssen verlegt haben wie heißt dieser Moment so Sendung wenn ich versuch sie durch zu",
+          "confidence": 0.88969547,
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "1.500s",
+              "word": "guten",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "1.500s",
+              "end_time": "1.900s",
+              "word": "Morgen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "1.900s",
+              "end_time": "5.100s",
+              "word": "Ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "5.100s",
+              "end_time": "5.600s",
+              "word": "bin",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "5.600s",
+              "end_time": "6.100s",
+              "word": "auf",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.100s",
+              "end_time": "6.300s",
+              "word": "der",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.300s",
+              "end_time": "6.600s",
+              "word": "Suche",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.600s",
+              "end_time": "6.700s",
+              "word": "nach",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.700s",
+              "end_time": "7.200s",
+              "word": "jemanden",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "7.200s",
+              "end_time": "7.400s",
+              "word": "und",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "7.500s",
+              "word": "zwar",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "7.500s",
+              "end_time": "7.700s",
+              "word": "den",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "7.700s",
+              "end_time": "8.500s",
+              "word": "hätte",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "8.500s",
+              "end_time": "8.600s",
+              "word": "ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "8.600s",
+              "end_time": "8.800s",
+              "word": "gern",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "8.800s",
+              "end_time": "9.200s",
+              "word": "gesprochen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "9.200s",
+              "end_time": "10s",
+              "word": "bin",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10s",
+              "end_time": "10.100s",
+              "word": "mir",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.100s",
+              "end_time": "10.200s",
+              "word": "aber",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.200s",
+              "end_time": "10.400s",
+              "word": "nicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.400s",
+              "end_time": "10.500s",
+              "word": "mehr",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.500s",
+              "end_time": "10.600s",
+              "word": "ganz",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.600s",
+              "end_time": "10.900s",
+              "word": "sicher",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "10.900s",
+              "end_time": "11.200s",
+              "word": "wie",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.200s",
+              "end_time": "11.300s",
+              "word": "die",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "11.800s",
+              "word": "Durchwahl",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.800s",
+              "end_time": "11.900s",
+              "word": "ist",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.900s",
+              "end_time": "12.400s",
+              "word": "müssen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.600s",
+              "word": "verlegt",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12.600s",
+              "end_time": "13s",
+              "word": "haben",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "13s",
+              "end_time": "14.300s",
+              "word": "wie",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.300s",
+              "end_time": "14.500s",
+              "word": "heißt",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.500s",
+              "end_time": "14.900s",
+              "word": "dieser",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.900s",
+              "end_time": "19.300s",
+              "word": "Moment",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "19.300s",
+              "end_time": "25.400s",
+              "word": "so",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "25.400s",
+              "end_time": "26.600s",
+              "word": "Sendung",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "26.600s",
+              "end_time": "26.800s",
+              "word": "wenn",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "26.800s",
+              "end_time": "27s",
+              "word": "ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "27s",
+              "end_time": "27.200s",
+              "word": "versuch",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "27.200s",
+              "end_time": "27.400s",
+              "word": "sie",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "27.400s",
+              "end_time": "27.700s",
+              "word": "durch",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "27.700s",
+              "end_time": "27.800s",
+              "word": "zu",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            }
+          ]
+        }
+      ],
+      "result_end_time": "27.930s",
+      "language_code": "de-de",
+      "channel_tag": 0
+    },
+    {
+      "alternatives": [
+        {
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "1.500s",
+              "word": "guten",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "1.500s",
+              "end_time": "1.900s",
+              "word": "Morgen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "1.900s",
+              "end_time": "5.100s",
+              "word": "Ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "5.100s",
+              "end_time": "5.600s",
+              "word": "bin",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "5.600s",
+              "end_time": "6.100s",
+              "word": "auf",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.100s",
+              "end_time": "6.300s",
+              "word": "der",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.300s",
+              "end_time": "6.600s",
+              "word": "Suche",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.600s",
+              "end_time": "6.700s",
+              "word": "nach",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.700s",
+              "end_time": "7.200s",
+              "word": "jemanden",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "7.200s",
+              "end_time": "7.400s",
+              "word": "und",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "7.500s",
+              "word": "zwar",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "7.500s",
+              "end_time": "7.700s",
+              "word": "den",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "7.700s",
+              "end_time": "8.500s",
+              "word": "hätte",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "8.500s",
+              "end_time": "8.600s",
+              "word": "ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "8.600s",
+              "end_time": "8.800s",
+              "word": "gern",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "8.800s",
+              "end_time": "9.200s",
+              "word": "gesprochen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "9.200s",
+              "end_time": "10s",
+              "word": "bin",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10s",
+              "end_time": "10.100s",
+              "word": "mir",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.100s",
+              "end_time": "10.200s",
+              "word": "aber",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.200s",
+              "end_time": "10.400s",
+              "word": "nicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.400s",
+              "end_time": "10.500s",
+              "word": "mehr",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.500s",
+              "end_time": "10.600s",
+              "word": "ganz",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.600s",
+              "end_time": "10.900s",
+              "word": "sicher",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "10.900s",
+              "end_time": "11.200s",
+              "word": "wie",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.200s",
+              "end_time": "11.300s",
+              "word": "die",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "11.800s",
+              "word": "Durchwahl",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.800s",
+              "end_time": "11.900s",
+              "word": "ist",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.900s",
+              "end_time": "12.400s",
+              "word": "müssen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.600s",
+              "word": "verlegt",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12.600s",
+              "end_time": "13s",
+              "word": "haben",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "13s",
+              "end_time": "14.300s",
+              "word": "wie",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.300s",
+              "end_time": "14.500s",
+              "word": "heißt",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.500s",
+              "end_time": "14.900s",
+              "word": "dieser",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.900s",
+              "end_time": "19.300s",
+              "word": "Moment",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "19.300s",
+              "end_time": "25.400s",
+              "word": "so",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "25.400s",
+              "end_time": "26.600s",
+              "word": "Sendung",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "26.600s",
+              "end_time": "26.800s",
+              "word": "wenn",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "26.800s",
+              "end_time": "27s",
+              "word": "ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "27s",
+              "end_time": "27.200s",
+              "word": "versuch",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "27.200s",
+              "end_time": "27.400s",
+              "word": "sie",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "27.400s",
+              "end_time": "27.700s",
+              "word": "durch",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "27.700s",
+              "end_time": "27.800s",
+              "word": "zu",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            }
+          ],
+          "transcript": "",
+          "confidence": 0.0
+        }
+      ],
+      "channel_tag": 0,
+      "language_code": ""
+    }
+  ],
+  "total_billed_time": "28s",
+  "request_id": "4011805117894928890"
+}

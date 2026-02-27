@@ -1,0 +1,153 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 1.0000000000000002,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Ich grüße euch und guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 8.200000000000001,
+      "speaker": "B",
+      "start": 1.1500000000000001,
+      "text": " Ja, hier ist Gerl. Guten Tag. Ich hätte gern Herrn Bürgle gesprochen oder ich habe prinzipiell die Frage zum Ganzhorn fest. Wer kann mir da Auskunft geben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 10.8,
+      "speaker": "A",
+      "start": 8.9,
+      "text": " Ja, das ist der Herr Bürgle.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 11.05,
+      "speaker": "B",
+      "start": 10.8,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 12.950000000000001,
+      "speaker": "A",
+      "start": 11.05,
+      "text": " Einen kleinen Moment mal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 13.9,
+      "speaker": "B",
+      "start": 12.950000000000001,
+      "text": " Ja, bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 21.750000000000004,
+      "speaker": "A",
+      "start": 16.150000000000002,
+      "text": " Ich gucke noch einmal, weil gestern habe ich was mitgekriegt vom Ganzhorn fest.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 44.378,
+      "speaker": "A",
+      "start": 39.028,
+      "text": " Ah, and Soundfisch habe ich mir davon gemerkt, das ist sportamt atnegersullen.de,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 47.428,
+      "speaker": "A",
+      "start": 44.577999999999996,
+      "text": " wo man ihn wenden soll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 48.628,
+      "speaker": "B",
+      "start": 48.178,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 51.477999999999994,
+      "speaker": "B",
+      "start": 48.727999999999994,
+      "text": " ich habe noch eine spezielle Frage wegen Flohmarkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 52.528,
+      "speaker": "A",
+      "start": 52.128,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 55.528,
+      "speaker": "B",
+      "start": 52.528,
+      "text": " Da müsste ich schon mal mit Herrn Bürgle sprechen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 56.428,
+      "speaker": "B",
+      "start": 55.628,
+      "text": " Ist der zu sprechen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 56.778,
+      "speaker": "B",
+      "start": 56.578,
+      "text": " Oder?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 60.828,
+      "speaker": "A",
+      "start": 57.028,
+      "text": " ja, kleinen Moment, ich gucke gerade schnell nach der Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 66.72800000000001,
+      "speaker": "A",
+      "start": 64.678,
+      "text": " So, sagen Sie mir nochmal kurz Ihren Namen.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Ich grüße euch und guten Tag. Ja, hier ist Gerl. Guten Tag. Ich hätte gern Herrn Bürgle gesprochen oder ich habe prinzipiell die Frage zum Ganzhorn fest. Wer kann mir da Auskunft geben? Ja, das ist der Herr Bürgle. Ja. Einen kleinen Moment mal. Ja, bitte. Ich gucke noch einmal, weil gestern habe ich was mitgekriegt vom Ganzhorn fest.\nAh, and Soundfisch habe ich mir davon gemerkt, das ist sportamt atnegersullen .de, wo man ihn wenden soll. Ja, ich habe noch eine spezielle Frage wegen Flohmarkt. Ja, Da müsste ich schon mal mit Herrn Bürgle sprechen. Ist der zu sprechen? Oder? ja, kleinen Moment, ich gucke gerade schnell nach der Telefonnummer. So, sagen Sie mir nochmal kurz Ihren Namen.",
+  "usage": {
+    "input_tokens": 849,
+    "output_tokens": 1575,
+    "total_tokens": 2424,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 799,
+      "text_tokens": 50
+    }
+  }
+}

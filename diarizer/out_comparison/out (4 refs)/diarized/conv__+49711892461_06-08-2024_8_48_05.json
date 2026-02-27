@@ -1,0 +1,545 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Ich wollte mal guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 4.499999999999999,
+      "speaker": "agent",
+      "start": 2.3499999999999996,
+      "text": " Okay, guten Morgen Frau Schmalt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 12.9,
+      "speaker": "agent",
+      "start": 4.549999999999999,
+      "text": " Ich habe eine Frage und zwar habe ich gestern mit Entsetzen festgestellt, dass der Park & Move Parkplatz an der A6 gesperrt ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 17.9,
+      "speaker": "agent",
+      "start": 12.950000000000001,
+      "text": " Aber das ist so klein geschrieben, dass man nicht lesen kann, wie lange der gesperrt ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 20.799999999999997,
+      "speaker": "agent",
+      "start": 19.349999999999998,
+      "text": " Beim Vorbeifahren quasi.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 25.849999999999994,
+      "speaker": "agent",
+      "start": 21.699999999999996,
+      "text": " Deswegen wollte ich jetzt nachfragen, wo ich diese Information denn herbekommen kann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 28.903999999999996,
+      "speaker": "agent",
+      "start": 26.804,
+      "text": " Das ist so ein Park and Ride Parkplatz.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 31.804,
+      "speaker": "agent",
+      "start": 29.753999999999998,
+      "text": " Das ist genau nicht Park and Ride,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 32.803999999999995,
+      "speaker": "agent",
+      "start": 31.903999999999996,
+      "text": " aber Park and Move,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 34.303999999999995,
+      "speaker": "agent",
+      "start": 32.903999999999996,
+      "text": " also an der Autobahn eben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 35.954,
+      "speaker": "agent",
+      "start": 34.803999999999995,
+      "text": " Nicht an den,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 40.554,
+      "speaker": "agent",
+      "start": 36.054,
+      "text": " Park and Ride ist ja oft an den Bahnhaltestellen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 46.104,
+      "speaker": "agent",
+      "start": 41.304,
+      "text": " Ja, nee, es gibt auch jetzt da, wo es Neckarsulm an die Autobahn hochgeht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 53.403999999999996,
+      "speaker": "agent",
+      "start": 46.304,
+      "text": " die eine Spur führt links weg Richtung Autobahn und die rechte geht Richtung Heilbronn.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 54.42,
+      "speaker": "agent",
+      "start": 54.42,
+      "text": " Meine",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 54.870000000000005,
+      "speaker": "agent",
+      "start": 54.42,
+      "text": " Genau,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 55.07,
+      "speaker": "agent",
+      "start": 54.870000000000005,
+      "text": " Damen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 55.42,
+      "speaker": "agent",
+      "start": 55.07,
+      "text": " genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 62.52,
+      "speaker": "agent",
+      "start": 55.57,
+      "text": " Und der Parkplatz ist gesperrt, da steht ein Sperrdatum dran, also seit gestern, also sind wir eben vorbeigefahren.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 66.82000000000001,
+      "speaker": "agent",
+      "start": 63.27,
+      "text": " Aber ich konnte nicht lesen, wie lange der gesperrt ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 68.67,
+      "speaker": "agent",
+      "start": 66.92,
+      "text": " Und das ist ja doch entscheidend.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 72.382,
+      "speaker": "agent",
+      "start": 70.132,
+      "text": " Wie, wann man den wieder benutzen kann dann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 79.182,
+      "speaker": "agent",
+      "start": 72.58200000000001,
+      "text": " Ja, da müssen Sie mich aber selber mal informieren. Ich weiß jetzt gerade spontan nicht, ob wir da zuständig sind,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 79.682,
+      "speaker": "agent",
+      "start": 79.28200000000001,
+      "text": " ob",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 79.932,
+      "speaker": "agent",
+      "start": 79.682,
+      "text": " Ja, alles",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 80.482,
+      "speaker": "agent",
+      "start": 79.932,
+      "text": " der Personalbrunnen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 80.78200000000001,
+      "speaker": "agent",
+      "start": 80.482,
+      "text": " klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 81.78200000000001,
+      "speaker": "agent",
+      "start": 80.78200000000001,
+      "text": " hört.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 84.732,
+      "speaker": "agent",
+      "start": 82.682,
+      "text": " Soll ich mich nochmal melden oder?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 86.58200000000001,
+      "speaker": "agent",
+      "start": 84.732,
+      "text": " Ich kann Ihnen auch zurückrufen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 88.43200000000002,
+      "speaker": "agent",
+      "start": 86.68200000000002,
+      "text": " Sagen Sie mir nochmal Ihren Namen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 90.33200000000001,
+      "speaker": "agent",
+      "start": 89.23200000000001,
+      "text": " Vogel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 92.30799999999999,
+      "speaker": "agent",
+      "start": 90.708,
+      "text": " Für Frau Vogelmann ist es okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 96.158,
+      "speaker": "agent",
+      "start": 92.858,
+      "text": " Frau Vogel, ich mache mich kundig und werde mich einfach nur bei Ihnen melden.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 98.408,
+      "speaker": "agent",
+      "start": 96.508,
+      "text": " Ich gebe Ihnen kurz eine andere Nummer,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 99.008,
+      "speaker": "agent",
+      "start": 98.508,
+      "text": " wenn ich darf.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 99.608,
+      "speaker": "agent",
+      "start": 99.05799999999999,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 100.658,
+      "speaker": "agent",
+      "start": 99.758,
+      "text": " 07151.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 104.30799999999999,
+      "speaker": "agent",
+      "start": 100.658,
+      "text": " Das ist die 07151 1",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 105.158,
+      "speaker": "agent",
+      "start": 104.30799999999999,
+      "text": " 07151.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 108.80799999999999,
+      "speaker": "agent",
+      "start": 106.858,
+      "text": "-3-5-0",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 111.05799999999999,
+      "speaker": "agent",
+      "start": 110.208,
+      "text": "-3-0-1.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 115.018,
+      "speaker": "agent",
+      "start": 114.068,
+      "text": " Jawohl, super.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 115.41799999999999,
+      "speaker": "agent",
+      "start": 115.018,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 117.368,
+      "speaker": "agent",
+      "start": 115.618,
+      "text": " Kannst du mir sonst eine E-Mail-Adresse?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 118.568,
+      "speaker": "agent",
+      "start": 117.468,
+      "text": " Das geht auch vielleicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 121.218,
+      "speaker": "agent",
+      "start": 119.318,
+      "text": " kann ich Ihnen auch schreiben, wenn Sie möchten, gerne.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 125.468,
+      "speaker": "agent",
+      "start": 121.618,
+      "text": " Ja, das ist doch, dann haben Sie da mehrere Möglichkeiten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 127.318,
+      "speaker": "agent",
+      "start": 125.868,
+      "text": " Muss kurz gucken.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 132.618,
+      "speaker": "agent",
+      "start": 127.468,
+      "text": " Also Nicole.Vogel, ohne E.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 135.768,
+      "speaker": "agent",
+      "start": 134.618,
+      "text": " Also nur Vogel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 139.668,
+      "speaker": "agent",
+      "start": 138.768,
+      "text": " IBBW.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 151.53199999999998,
+      "speaker": "agent",
+      "start": 141.332,
+      "text": " Also Ida, Bertha, Bertha, Wilhelm.kv wie Kultusverwaltung.kv dann BW.L. wie Baden-Württemberg-Land.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 153.732,
+      "speaker": "agent",
+      "start": 152.28199999999998,
+      "text": " Nach KV, bitte um Punkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 155.482,
+      "speaker": "agent",
+      "start": 154.53199999999998,
+      "text": " Ja, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 157.982,
+      "speaker": "agent",
+      "start": 155.882,
+      "text": " Und dann B ganz.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 163.982,
+      "speaker": "agent",
+      "start": 157.982,
+      "text": " BW.L. für Baden-Württemberg-Land.kv.de.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 165.28199999999998,
+      "speaker": "agent",
+      "start": 164.832,
+      "text": " Jawohl.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 168.682,
+      "speaker": "agent",
+      "start": 165.28199999999998,
+      "text": " Ah ja, also Nicole.Vogel ohne E.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 169.716,
+      "speaker": "agent",
+      "start": 169.716,
+      "text": " Ja?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_60",
+      "end": 177.51600000000002,
+      "speaker": "agent",
+      "start": 169.716,
+      "text": " Jetzt www.kv.bwl.de.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_61",
+      "end": 179.066,
+      "speaker": "agent",
+      "start": 178.26600000000002,
+      "text": " Ja, super.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_62",
+      "end": 180.366,
+      "speaker": "agent",
+      "start": 179.26600000000002,
+      "text": " Herzlichen Dank Ihnen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_63",
+      "end": 181.116,
+      "speaker": "agent",
+      "start": 180.616,
+      "text": " Vielen Dank.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_64",
+      "end": 183.01600000000002,
+      "speaker": "agent",
+      "start": 181.116,
+      "text": " Dann haben Sie mehrere Möglichkeiten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_65",
+      "end": 187.26600000000002,
+      "speaker": "agent",
+      "start": 183.316,
+      "text": " Danke Ihnen für die Infos. Tschüss, schönen Tag.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Ich wollte mal guten Tag. Okay, guten Morgen Frau Schmalt. Ich habe eine Frage und zwar habe ich gestern mit Entsetzen festgestellt, dass der Park & Move Parkplatz an der A6 gesperrt ist. Aber das ist so klein geschrieben, dass man nicht lesen kann, wie lange der gesperrt ist. Beim Vorbeifahren quasi. Deswegen wollte ich jetzt nachfragen, wo ich diese Information denn herbekommen kann.\nDas ist so ein Park and Ride Parkplatz. Das ist genau nicht Park and Ride, aber Park and Move, also an der Autobahn eben. Nicht an den, Park and Ride ist ja oft an den Bahnhaltestellen. Ja, nee, es gibt auch jetzt da, wo es Neckarsulm an die Autobahn hochgeht, die eine Spur führt links weg Richtung Autobahn und die rechte geht Richtung Heilbronn.\nMeine Genau, Damen. genau. Und der Parkplatz ist gesperrt, da steht ein Sperrdatum dran, also seit gestern, also sind wir eben vorbeigefahren. Aber ich konnte nicht lesen, wie lange der gesperrt ist. Und das ist ja doch entscheidend.\nWie, wann man den wieder benutzen kann dann. Ja, da müssen Sie mich aber selber mal informieren. Ich weiß jetzt gerade spontan nicht, ob wir da zuständig sind, ob Ja, alles der Personalbrunnen klar. hört. Soll ich mich nochmal melden oder? Ich kann Ihnen auch zurückrufen. Sagen Sie mir nochmal Ihren Namen. Vogel.\nFür Frau Vogelmann ist es okay. Frau Vogel, ich mache mich kundig und werde mich einfach nur bei Ihnen melden. Ich gebe Ihnen kurz eine andere Nummer, wenn ich darf. Ja, 07151. Das ist die 07151 1 07151. -3-5-0 -3-0-1.\nJawohl, super. Ja, Kannst du mir sonst eine E-Mail-Adresse? Das geht auch vielleicht. kann ich Ihnen auch schreiben, wenn Sie möchten, gerne. Ja, das ist doch, dann haben Sie da mehrere Möglichkeiten. Muss kurz gucken. Also Nicole.Vogel, ohne E. Also nur Vogel. IBBW.\nAlso Ida, Bertha, Bertha, Wilhelm .kv wie Kultusverwaltung .kv dann BW .L. wie Baden-Württemberg-Land. Nach KV, bitte um Punkt. Ja, genau. Und dann B ganz. BW.L. für Baden-Württemberg-Land.kv .de. Jawohl. Ah ja, also Nicole.Vogel ohne E.\nJa? Jetzt www .kv.bwl .de. Ja, super. Herzlichen Dank Ihnen. Vielen Dank. Dann haben Sie mehrere Möglichkeiten. Danke Ihnen für die Infos. Tschüss, schönen Tag.",
+  "usage": {
+    "input_tokens": 4327,
+    "output_tokens": 5582,
+    "total_tokens": 9909,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 3919,
+      "text_tokens": 408
+    }
+  }
+}

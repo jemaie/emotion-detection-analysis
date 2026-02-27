@@ -1,0 +1,185 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 1.05,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Ich habe euch einen guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 6.8500000000000005,
+      "speaker": "agent",
+      "start": 1.0999999999999999,
+      "text": " Ja, hier ist Geld. Guten Tag. Ich hätte gerne Herrn Bürkle gesprochen oder ich habe prinzipielle Fragen zum Ganzhornfest.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 8.200000000000001,
+      "speaker": "agent",
+      "start": 7.000000000000001,
+      "text": " Wer kann mir da Auskunft geben?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 10.750000000000002,
+      "speaker": "agent",
+      "start": 8.850000000000001,
+      "text": " Ja, das ist der Herr Bürkle.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 11.000000000000002,
+      "speaker": "agent",
+      "start": 10.750000000000002,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 13.05,
+      "speaker": "agent",
+      "start": 11.000000000000002,
+      "text": " Einen kleinen Moment einmal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 13.950000000000001,
+      "speaker": "agent",
+      "start": 13.05,
+      "text": " Ja, bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 15.3,
+      "speaker": "agent",
+      "start": 13.950000000000001,
+      "text": " Ich",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 21.7,
+      "speaker": "agent",
+      "start": 16.75,
+      "text": " gucke noch einmal, weil gestern habe ich etwas mitgekriegt vom Ganzhornfest.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 44.327999999999996,
+      "speaker": "agent",
+      "start": 39.028,
+      "text": " Herren Sandfisch habe ich mir davon gemerkt, das ist sportamt atneckersohlen.de,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 47.428,
+      "speaker": "agent",
+      "start": 44.528,
+      "text": " wo man sich hin wenden soll.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 48.978,
+      "speaker": "agent",
+      "start": 48.328,
+      "text": " Ja, nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 51.478,
+      "speaker": "agent",
+      "start": 49.028,
+      "text": " ich habe noch einen speziellen Frage wie der Flohmarkt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 52.278,
+      "speaker": "agent",
+      "start": 52.128,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 55.528000000000006,
+      "speaker": "agent",
+      "start": 52.278,
+      "text": " Warte, darf ich schon mal mit Herrn Burg sprechen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 56.72800000000001,
+      "speaker": "agent",
+      "start": 55.628,
+      "text": " Ist der zu sprechen oder?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 57.928000000000004,
+      "speaker": "agent",
+      "start": 56.72800000000001,
+      "text": " ja klar, Moment,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 59.028000000000006,
+      "speaker": "agent",
+      "start": 58.078,
+      "text": " ich gucke gerade schön nach",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 59.378,
+      "speaker": "agent",
+      "start": 59.028000000000006,
+      "text": " Ja, bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 60.878,
+      "speaker": "agent",
+      "start": 59.378,
+      "text": " der Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 66.778,
+      "speaker": "agent",
+      "start": 64.778,
+      "text": " So, sagen Sie mir nochmal kurz Ihren Namen.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Ich habe euch einen guten Tag. Ja, hier ist Geld. Guten Tag. Ich hätte gerne Herrn Bürkle gesprochen oder ich habe prinzipielle Fragen zum Ganzhornfest. Wer kann mir da Auskunft geben? Ja, das ist der Herr Bürkle. Ja. Einen kleinen Moment einmal. Ja, bitte. Ich gucke noch einmal, weil gestern habe ich etwas mitgekriegt vom Ganzhornfest.\nHerren Sandfisch habe ich mir davon gemerkt, das ist sportamt atneckersohlen.de, wo man sich hin wenden soll. Ja, nee, ich habe noch einen speziellen Frage wie der Flohmarkt. Ja, Warte, darf ich schon mal mit Herrn Burg sprechen? Ist der zu sprechen oder? ja klar, Moment, ich gucke gerade schön nach Ja, bitte. der Telefonnummer. So, sagen Sie mir nochmal kurz Ihren Namen.",
+  "usage": {
+    "input_tokens": 1153,
+    "output_tokens": 1604,
+    "total_tokens": 2757,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1049,
+      "text_tokens": 104
+    }
+  }
+}

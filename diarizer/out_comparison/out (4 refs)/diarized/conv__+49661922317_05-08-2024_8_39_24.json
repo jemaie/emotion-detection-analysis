@@ -1,0 +1,281 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Wollen wir guten Morgen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.6500000000000004,
+      "speaker": "agent",
+      "start": 1.5000000000000002,
+      "text": " Die Firma MOP,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 4.5,
+      "speaker": "agent",
+      "start": 2.75,
+      "text": " Rebecca Haschnan, schönen guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 14.899999999999999,
+      "speaker": "agent",
+      "start": 6.0,
+      "text": " Ich bin auf der Suche nach der Beschaffungsabteilung für den Bereich Tinte und Toner. Und ich hatte mal eine Frau Sonnenwald bei mir hier im...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 16.096,
+      "speaker": "agent",
+      "start": 15.796,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 16.496,
+      "speaker": "agent",
+      "start": 16.096,
+      "text": " Ist",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 16.695999999999998,
+      "speaker": "agent",
+      "start": 16.496,
+      "text": " ob",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 18.346,
+      "speaker": "agent",
+      "start": 16.695999999999998,
+      "text": " sie noch da bzw.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 19.746,
+      "speaker": "agent",
+      "start": 18.445999999999998,
+      "text": " ist sie dafür noch zuständig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 23.646,
+      "speaker": "agent",
+      "start": 21.546,
+      "text": " sie zuständig ist, weiß ich jetzt gerade nicht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 27.196,
+      "speaker": "agent",
+      "start": 23.946,
+      "text": " aber da ist sie noch kurz einen kleinen Moment.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 27.396,
+      "speaker": "agent",
+      "start": 27.296,
+      "text": " Ich",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 27.646,
+      "speaker": "agent",
+      "start": 27.396,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 29.046,
+      "speaker": "agent",
+      "start": 27.646,
+      "text": " schiebe gerne. die schnell.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 36.146,
+      "speaker": "agent",
+      "start": 32.396,
+      "text": " Sie haben bestimmt auch nur noch die alte Telefonnummer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 39.146,
+      "speaker": "agent",
+      "start": 36.79600000000001,
+      "text": " Das kann gut sein, die 110 hinten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 40.196,
+      "speaker": "agent",
+      "start": 39.54600000000001,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 42.146,
+      "speaker": "agent",
+      "start": 40.29600000000001,
+      "text": " das ist bestimmt verkehrt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 43.058,
+      "speaker": "A",
+      "start": 42.708,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 44.257999999999996,
+      "speaker": "agent",
+      "start": 43.058,
+      "text": " Wie haben wir gespannt?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 45.708,
+      "speaker": "agent",
+      "start": 44.708,
+      "text": " So, dann weiß.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 49.308,
+      "speaker": "agent",
+      "start": 47.558,
+      "text": " Doch, 1102 hat es ja noch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 50.108,
+      "speaker": "agent",
+      "start": 49.658,
+      "text": " Das",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 50.308,
+      "speaker": "A",
+      "start": 50.108,
+      "text": " Super.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 50.757999999999996,
+      "speaker": "agent",
+      "start": 50.308,
+      "text": " steht hier.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 54.007999999999996,
+      "speaker": "agent",
+      "start": 51.757999999999996,
+      "text": " Haben Sie nicht erreicht telefonisch?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 55.507999999999996,
+      "speaker": "A",
+      "start": 54.408,
+      "text": " Ich habe tatsächlich,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 58.108,
+      "speaker": "A",
+      "start": 55.608,
+      "text": " um ehrlich zu sein, gar nicht durchgewählt, weil ich mir nicht sicher war,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 61.408,
+      "speaker": "A",
+      "start": 58.208,
+      "text": " wie da die Lage so ist jetzt bei Ihnen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 63.007999999999996,
+      "speaker": "A",
+      "start": 61.458,
+      "text": " Aber ich kann auch gerne direkt versuchen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 63.658,
+      "speaker": "A",
+      "start": 63.058,
+      "text": " Ist kein Problem.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 65.108,
+      "speaker": "agent",
+      "start": 63.658,
+      "text": " Ja, nee, kann es ja durchstellen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 65.608,
+      "speaker": "A",
+      "start": 65.158,
+      "text": " Okay.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Wollen wir guten Morgen? Die Firma MOP, Rebecca Haschnan, schönen guten Morgen. Ich bin auf der Suche nach der Beschaffungsabteilung für den Bereich Tinte und Toner. Und ich hatte mal eine Frau Sonnenwald bei mir hier im...\nJa, Ist ob sie noch da bzw. ist sie dafür noch zuständig? sie zuständig ist, weiß ich jetzt gerade nicht, aber da ist sie noch kurz einen kleinen Moment. Ich Ja, schiebe gerne. die schnell. Sie haben bestimmt auch nur noch die alte Telefonnummer. Das kann gut sein, die 110 hinten. Ja, das ist bestimmt verkehrt.\nOkay. Wie haben wir gespannt? So, dann weiß. Doch, 1102 hat es ja noch. Das Super. steht hier. Haben Sie nicht erreicht telefonisch? Ich habe tatsächlich, um ehrlich zu sein, gar nicht durchgewählt, weil ich mir nicht sicher war, wie da die Lage so ist jetzt bei Ihnen. Aber ich kann auch gerne direkt versuchen. Ist kein Problem. Ja, nee, kann es ja durchstellen. Okay.",
+  "usage": {
+    "input_tokens": 1585,
+    "output_tokens": 2041,
+    "total_tokens": 3626,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1432,
+      "text_tokens": 153
+    }
+  }
+}

@@ -1,0 +1,585 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.25,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Sag,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 1.7000000000000004,
+      "speaker": "agent",
+      "start": 0.3500000000000001,
+      "text": " Heidi Beil, guten Morgen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 5.55,
+      "speaker": "agent",
+      "start": 1.9000000000000006,
+      "text": " Ich weiß ganz bestimmt, ob ich bei Ihnen richtig bin. Ich wollte eigentlich nur eine Auskunft.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 5.8999999999999995,
+      "speaker": "agent",
+      "start": 5.8,
+      "text": " ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 6.35,
+      "speaker": "agent",
+      "start": 5.8999999999999995,
+      "text": " Und zwar,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 6.8500000000000005,
+      "speaker": "agent",
+      "start": 6.35,
+      "text": " einen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 10.250000000000002,
+      "speaker": "agent",
+      "start": 6.8500000000000005,
+      "text": " ich möchte gerne wissen, ob die Verwaltungsstelle in Darnfeld auf hat.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 13.300000000000002,
+      "speaker": "agent",
+      "start": 11.500000000000002,
+      "text": " kleinen Moment muss ich mich...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 17.25,
+      "speaker": "agent",
+      "start": 13.300000000000002,
+      "text": " Also in unserem Ortssplatz steht drin, dass heute von 8 bis 12 Uhr geöffnet ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 20.5,
+      "speaker": "agent",
+      "start": 17.4,
+      "text": " Ich versuche da schon den ganzen Morgen telefonisch zu erreichen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 21.5,
+      "speaker": "agent",
+      "start": 20.6,
+      "text": " Da geht niemand dran.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 27.849999999999998,
+      "speaker": "agent",
+      "start": 22.4,
+      "text": " Es ist echt ein Dramat. Und zwar die Dame, die da auf dem Büro sitzt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 39.254,
+      "speaker": "A",
+      "start": 28.404,
+      "text": " Da kann man E-Mails schreiben, wie man will und ich habe eine Geschäft in Dahnfeld und jedes Mal druckt sie der Urlaub oder irgendwas, ich weiß nicht, der E-Mail schickt verkehrt. Jetzt reicht es mir irgendwo.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 42.254,
+      "speaker": "A",
+      "start": 39.754,
+      "text": " Tut mir leid, dass ich Ihnen das jetzt sagen muss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 47.204,
+      "speaker": "A",
+      "start": 42.403999999999996,
+      "text": " Aber es ist so, wenn ich reinschreibe 19. August, jetzt steht heute 9. August drin.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 48.903999999999996,
+      "speaker": "A",
+      "start": 47.604,
+      "text": " Und ich habe extra,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 57.054,
+      "speaker": "A",
+      "start": 48.954,
+      "text": " ich mache in letzter Zeit per E-Mail, weil es schon so, es ist das dritte oder vierte Mal, wo sie das verkehrt ins Ortsblatt druckt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 58.004,
+      "speaker": "agent",
+      "start": 58.004,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 60.954,
+      "speaker": "A",
+      "start": 58.004,
+      "text": " Sie tun den ganzen Lauf auf, seit ich meinen Geschäft habe.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 64.904,
+      "speaker": "A",
+      "start": 61.303999999999995,
+      "text": " Noch lieber Sie haben weder bei der Frau Bauer noch bei der Frau Erlewein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 67.00399999999999,
+      "speaker": "A",
+      "start": 65.00399999999999,
+      "text": " Und jetzt kann das irgendwo nicht sein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 68.654,
+      "speaker": "A",
+      "start": 67.104,
+      "text": " Ich bin stinksauer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 70.554,
+      "speaker": "A",
+      "start": 68.704,
+      "text": " Jedes Mal zahle ich fünf Euro.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 72.354,
+      "speaker": "A",
+      "start": 71.604,
+      "text": " Und ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 75.102,
+      "speaker": "agent",
+      "start": 73.652,
+      "text": " Ja, ich kann Ihnen",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 83.402,
+      "speaker": "A",
+      "start": 75.102,
+      "text": " Ja, irgendwie jetzt verstehen. Tut mir leid, dass ich Ihnen jetzt so gesagt habe, aber ich weiß es wirklich nicht mehr, was machen wir, dass ich am Mittag auf meinen Kunden anrufe und sage,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 86.202,
+      "speaker": "A",
+      "start": 83.652,
+      "text": " du hast mir doch versprochen, du bist bis um 17.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 86.802,
+      "speaker": "A",
+      "start": 86.302,
+      "text": " noch da,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 88.25200000000001,
+      "speaker": "A",
+      "start": 86.902,
+      "text": " jetzt steht am 9. drin,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 89.802,
+      "speaker": "A",
+      "start": 88.302,
+      "text": " da habe ich es glatt noch gar nicht gehabt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 97.552,
+      "speaker": "agent",
+      "start": 91.652,
+      "text": " Ihnen vorschlagen, dass unsere Büroschefin Ihnen zurückruft, die Frau Wagenlast.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 100.79400000000001,
+      "speaker": "A",
+      "start": 98.644,
+      "text": " Ja, wenn man sich weit nicht gern.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 105.79400000000001,
+      "speaker": "agent",
+      "start": 101.29400000000001,
+      "text": " Sie ist bloß gerade, hat sie selber Kundschaft, weil wir auch gerade ein bisschen unterbesetzt",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 105.994,
+      "speaker": "A",
+      "start": 105.79400000000001,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 106.244,
+      "speaker": "agent",
+      "start": 105.994,
+      "text": " sind.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 107.59400000000001,
+      "speaker": "A",
+      "start": 106.244,
+      "text": " die denken wir schon an Urlaubzeit.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 108.09400000000001,
+      "speaker": "A",
+      "start": 107.694,
+      "text": " Ich bin nochmal,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 109.444,
+      "speaker": "A",
+      "start": 108.194,
+      "text": " ich sage Ihnen ganz ehrlich,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 111.144,
+      "speaker": "A",
+      "start": 109.54400000000001,
+      "text": " das ist das erste Mal, dass ich mich beschwere.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 117.944,
+      "speaker": "A",
+      "start": 111.29400000000001,
+      "text": " Ich habe es jetzt so lange erduldet und jedes Mal, aber das kann doch nicht sein.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 120.494,
+      "speaker": "A",
+      "start": 117.994,
+      "text": " So blöd kann man doch nicht sein, wenn man eine E-Mail kriegt.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 127.394,
+      "speaker": "A",
+      "start": 121.444,
+      "text": " Also sind Sie wohl böse, wenn ich eine E-Mail kriege und da sind Fakten und Daten drin. Dann muss ich das genau übernehmen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 129.16600000000003,
+      "speaker": "agent",
+      "start": 128.116,
+      "text": " Ja, normalerweise,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 130.116,
+      "speaker": "A",
+      "start": 129.16600000000003,
+      "text": " Also ist normal,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 132.066,
+      "speaker": "A",
+      "start": 130.366,
+      "text": " das ist für mich normal, oder nicht?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 132.616,
+      "speaker": "agent",
+      "start": 132.066,
+      "text": " ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 135.66600000000003,
+      "speaker": "A",
+      "start": 133.16600000000003,
+      "text": " Und deswegen hat meine Tochter gesagt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 137.116,
+      "speaker": "A",
+      "start": 135.76600000000002,
+      "text": " Mutti, mach es per E-Mail,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 138.41600000000003,
+      "speaker": "A",
+      "start": 137.16600000000003,
+      "text": " dann bist du auf dem sicheren Weg,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 141.76600000000002,
+      "speaker": "A",
+      "start": 138.566,
+      "text": " weil es wirklich dreimal jetzt schon passiert ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 142.72,
+      "speaker": "agent",
+      "start": 142.42,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 149.72,
+      "speaker": "A",
+      "start": 142.72,
+      "text": " Und einmal hat mein Mann persönlich in der Briefkasche reingeschmissen unten mit dem Geld,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 152.61999999999998,
+      "speaker": "A",
+      "start": 149.86999999999998,
+      "text": " dann kam das Plättchen, stand nichts drin,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 154.36999999999998,
+      "speaker": "A",
+      "start": 152.82,
+      "text": " dann hat er angerufen, hat gesagt,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 159.51999999999998,
+      "speaker": "A",
+      "start": 154.42,
+      "text": " sie hat es nicht gekriegt, dann habe ich gesagt, ja und wo ist das bitte und wo ist das Geld? Ja, das weiß sie nicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 161.62,
+      "speaker": "A",
+      "start": 159.62,
+      "text": " Gut, hat man wieder geduldet.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 166.51999999999998,
+      "speaker": "A",
+      "start": 161.72,
+      "text": " Und das dreimal, also beim vierten Mal, jetzt bin ich also echt sauer. Das müssen Sie irgendwo auch verstehen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 170.72,
+      "speaker": "agent",
+      "start": 166.51999999999998,
+      "text": " Ihr Telefonnummer ist eigentlich auf dem Display, aber können Sie mir nochmal schön Ihren Namen...",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 170.998,
+      "speaker": "agent",
+      "start": 170.548,
+      "text": " Haben wir einen Sager?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 175.948,
+      "speaker": "A",
+      "start": 170.998,
+      "text": " Dies Pfeiler, Heide Pfeiler, Pfeiler wie die AXP, EL.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_60",
+      "end": 177.148,
+      "speaker": "agent",
+      "start": 176.548,
+      "text": " Frau Weil,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_61",
+      "end": 180.698,
+      "speaker": "agent",
+      "start": 177.298,
+      "text": " ich gebe es weiter an Frau Wagenblas, wie gesagt, wenn die zwischendrin einmal Luft hat,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_62",
+      "end": 181.148,
+      "speaker": "agent",
+      "start": 180.848,
+      "text": " melde",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_63",
+      "end": 181.298,
+      "speaker": "A",
+      "start": 181.148,
+      "text": " Ist",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_64",
+      "end": 181.448,
+      "speaker": "agent",
+      "start": 181.298,
+      "text": " ich so mich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_65",
+      "end": 182.998,
+      "speaker": "A",
+      "start": 181.448,
+      "text": " möglich, wenn Sie mal auch rufen könnten?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_66",
+      "end": 183.798,
+      "speaker": "A",
+      "start": 183.298,
+      "text": " Gell?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_67",
+      "end": 184.348,
+      "speaker": "agent",
+      "start": 183.798,
+      "text": " Alles klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_68",
+      "end": 185.098,
+      "speaker": "A",
+      "start": 184.348,
+      "text": " Vielen Dank.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_69",
+      "end": 186.148,
+      "speaker": "agent",
+      "start": 185.098,
+      "text": " Ich danke Ihnen auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_70",
+      "end": 186.798,
+      "speaker": "agent",
+      "start": 186.24800000000002,
+      "text": " Gell, tschüss.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Sag, Heidi Beil, guten Morgen. Ich weiß ganz bestimmt, ob ich bei Ihnen richtig bin. Ich wollte eigentlich nur eine Auskunft. ja, Und zwar, einen ich möchte gerne wissen, ob die Verwaltungsstelle in Darnfeld auf hat. kleinen Moment muss ich mich... Also in unserem Ortssplatz steht drin, dass heute von 8 bis 12 Uhr geöffnet ist. Ich versuche da schon den ganzen Morgen telefonisch zu erreichen. Da geht niemand dran. Es ist echt ein Dramat. Und zwar die Dame, die da auf dem Büro sitzt.\nDa kann man E-Mails schreiben, wie man will und ich habe eine Geschäft in Dahnfeld und jedes Mal druckt sie der Urlaub oder irgendwas, ich weiß nicht, der E-Mail schickt verkehrt. Jetzt reicht es mir irgendwo. Tut mir leid, dass ich Ihnen das jetzt sagen muss. Aber es ist so, wenn ich reinschreibe 19. August, jetzt steht heute 9. August drin. Und ich habe extra, ich mache in letzter Zeit per E-Mail, weil es schon so, es ist das dritte oder vierte Mal, wo sie das verkehrt ins Ortsblatt druckt.\nJa. Sie tun den ganzen Lauf auf, seit ich meinen Geschäft habe. Noch lieber Sie haben weder bei der Frau Bauer noch bei der Frau Erlewein. Und jetzt kann das irgendwo nicht sein. Ich bin stinksauer. Jedes Mal zahle ich fünf Euro. Und ja.\nJa, ich kann Ihnen Ja, irgendwie jetzt verstehen. Tut mir leid, dass ich Ihnen jetzt so gesagt habe, aber ich weiß es wirklich nicht mehr, was machen wir, dass ich am Mittag auf meinen Kunden anrufe und sage, du hast mir doch versprochen, du bist bis um 17. noch da, jetzt steht am 9. drin, da habe ich es glatt noch gar nicht gehabt. Ihnen vorschlagen, dass unsere Büroschefin Ihnen zurückruft, die Frau Wagenlast.\nJa, wenn man sich weit nicht gern. Sie ist bloß gerade, hat sie selber Kundschaft, weil wir auch gerade ein bisschen unterbesetzt Ja, sind. die denken wir schon an Urlaubzeit. Ich bin nochmal, ich sage Ihnen ganz ehrlich, das ist das erste Mal, dass ich mich beschwere. Ich habe es jetzt so lange erduldet und jedes Mal, aber das kann doch nicht sein. So blöd kann man doch nicht sein, wenn man eine E-Mail kriegt. Also sind Sie wohl böse, wenn ich eine E-Mail kriege und da sind Fakten und Daten drin. Dann muss ich das genau übernehmen.\nJa, normalerweise, Also ist normal, das ist für mich normal, oder nicht? ja. Und deswegen hat meine Tochter gesagt, Mutti, mach es per E-Mail, dann bist du auf dem sicheren Weg, weil es wirklich dreimal jetzt schon passiert ist.\nJa, Und einmal hat mein Mann persönlich in der Briefkasche reingeschmissen unten mit dem Geld, dann kam das Plättchen, stand nichts drin, dann hat er angerufen, hat gesagt, sie hat es nicht gekriegt, dann habe ich gesagt, ja und wo ist das bitte und wo ist das Geld? Ja, das weiß sie nicht. Gut, hat man wieder geduldet. Und das dreimal, also beim vierten Mal, jetzt bin ich also echt sauer. Das müssen Sie irgendwo auch verstehen. Ihr Telefonnummer ist eigentlich auf dem Display, aber können Sie mir nochmal schön Ihren Namen...\nHaben wir einen Sager? Dies Pfeiler, Heide Pfeiler, Pfeiler wie die AXP, EL. Frau Weil, ich gebe es weiter an Frau Wagenblas, wie gesagt, wenn die zwischendrin einmal Luft hat, melde Ist ich so mich. möglich, wenn Sie mal auch rufen könnten? Gell? Alles klar. Vielen Dank. Ich danke Ihnen auch. Gell, tschüss.",
+  "usage": {
+    "input_tokens": 4980,
+    "output_tokens": 6001,
+    "total_tokens": 10981,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 4480,
+      "text_tokens": 500
+    }
+  }
+}

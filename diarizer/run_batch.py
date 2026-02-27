@@ -5,7 +5,8 @@ from typing import List
 from tqdm import tqdm
 
 from audio_io import normalize_to_wav16k_mono
-from diarize_openai import diarize_transcribe
+from diarize_openai import diarize_transcribe as diarize_transcribe_openai
+from diarize_google import diarize_transcribe as diarize_transcribe_google
 from role_assign import assign_roles
 from segment_postprocess import postprocess_caller_segments
 from extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
@@ -13,11 +14,6 @@ from extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
 RAW_DIR = Path("../aufnahmen20")
 NORM_DIR = Path("data/normalized")
 REFS_DIR = Path("data/refs")
-
-OUT_DIAR = Path("out/diarized")
-OUT_CALLER_SEGS = Path("out/caller_segments")
-OUT_CALLER_CONCAT = Path("out/caller_concat")
-OUT_INDEX = Path("out/index")
 
 # Segmenting params (tune later if needed)
 TRIM_MS = 250
@@ -37,12 +33,29 @@ def list_input_files() -> List[Path]:
     return sorted(files)
 
 def main() -> None:
-    OUT_DIAR.mkdir(parents=True, exist_ok=True)
-    OUT_CALLER_SEGS.mkdir(parents=True, exist_ok=True)
-    OUT_CALLER_CONCAT.mkdir(parents=True, exist_ok=True)
-    OUT_INDEX.mkdir(parents=True, exist_ok=True)
-
     agent_refs = load_agent_refs()
+    num_refs = len(agent_refs)
+
+    # Output bases
+    # e.g., out_openai/4_refs
+    openai_base = Path(f"out_openai/{num_refs}_refs")
+    # e.g., out_google
+    google_base = Path(f"out_google")
+
+    def create_dirs(base: Path) -> dict:
+        dirs = {
+            "diar": base / "diarized",
+            "caller_segs": base / "caller_segments",
+            "caller_concat": base / "caller_concat",
+            "index": base / "index"
+        }
+        for d in dirs.values():
+            d.mkdir(parents=True, exist_ok=True)
+        return dirs
+
+    dirs_openai = create_dirs(openai_base)
+    dirs_google = create_dirs(google_base)
+
     # if not agent_refs:
     #     raise RuntimeError("No agent reference WAVs found in data/refs. Add agent_01.wav ...")
 
@@ -54,63 +67,84 @@ def main() -> None:
         call_id = src.stem
 
         norm_path = NORM_DIR / f"{call_id}.wav"
-        diar_path = OUT_DIAR / f"{call_id}.json"
-        summary_path = OUT_INDEX / f"{call_id}.summary.json"
 
         # 1) Normalize
         if not norm_path.exists():
             normalize_to_wav16k_mono(src, norm_path)
 
-        # 2) Diarize+transcribe (cache)
-        if diar_path.exists():
-            diarized = json.loads(diar_path.read_text(encoding="utf-8"))
-        else:
-            diarized = diarize_transcribe(norm_path, agent_ref_paths=agent_refs)
-            diar_path.write_text(json.dumps(diarized, ensure_ascii=False, indent=2), encoding="utf-8")
+        def process_diarizer(provider: str, dirs: dict, diarize_fn: callable) -> None:
+            if not diarize_fn:
+                print(f"Skipping {provider} (not available).")
+                return
 
-        segments = diarized.get("segments", []) or []
+            diar_path = dirs["diar"] / f"{call_id}.json"
+            summary_path = dirs["index"] / f"{call_id}.summary.json"
 
-        # 3) Role assignment
-        speaker_to_role, speaker_durations, flags = assign_roles(diarized)
+            # 2) Diarize+transcribe (cache)
+            if diar_path.exists():
+                diarized = json.loads(diar_path.read_text(encoding="utf-8"))
+            else:
+                try:
+                    if provider == "openai":
+                        diarized = diarize_fn(norm_path, agent_ref_paths=agent_refs)
+                    else:
+                        diarized = diarize_fn(norm_path) # Google doesn't use refs
+                    diar_path.write_text(json.dumps(diarized, ensure_ascii=False, indent=2), encoding="utf-8")
+                except Exception as e:
+                    print(f"Error running {provider} on {call_id}: {e}")
+                    return
 
-        # 4) Post-process caller segments (trim/merge/drop)
-        caller_segments = postprocess_caller_segments(
-            diarized_segments=segments,
-            speaker_to_role=speaker_to_role,
-            trim_ms=TRIM_MS,
-            merge_gap_ms=MERGE_GAP_MS,
-            min_seg_dur_s=MIN_SEG_DUR_S,
-        )
+            segments = diarized.get("segments", []) or []
 
-        # 5) Extract per-segment + concat
-        seg_dir = OUT_CALLER_SEGS / call_id
-        seg_paths = extract_segments_ffmpeg(norm_path, caller_segments, seg_dir)
+            # 3) Role assignment
+            speaker_to_role, speaker_durations, flags = assign_roles(diarized)
 
-        concat_path = OUT_CALLER_CONCAT / f"{call_id}.wav"
-        if seg_paths:
-            concat_wavs_ffmpeg(seg_paths, concat_path)
+            # 4) Post-process caller segments (trim/merge/drop)
+            caller_segments = postprocess_caller_segments(
+                diarized_segments=segments,
+                speaker_to_role=speaker_to_role,
+                trim_ms=TRIM_MS,
+                merge_gap_ms=MERGE_GAP_MS,
+                min_seg_dur_s=MIN_SEG_DUR_S,
+            )
 
-        # Summaries / audit info
-        summary = {
-            "call_id": call_id,
-            "source_file": str(src),
-            "normalized_file": str(norm_path),
-            "diarized_file": str(diar_path),
-            "speaker_to_role": speaker_to_role,
-            "speaker_durations_sec": speaker_durations,
-            "flags": flags,
-            "num_segments_total": len(segments),
-            "num_segments_caller_raw": sum(1 for s in segments if speaker_to_role.get(s.get("speaker", "unknown")) == "caller"),
-            "num_segments_caller_final": len(caller_segments),
-            "caller_segments_dir": str(seg_dir),
-            "caller_concat_file": str(concat_path) if seg_paths else None,
-            "segment_params": {
-                "trim_ms": TRIM_MS,
-                "merge_gap_ms": MERGE_GAP_MS,
-                "min_seg_dur_s": MIN_SEG_DUR_S,
-            },
-        }
-        summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+            # 5) Extract per-segment + concat
+            seg_dir = dirs["caller_segs"] / call_id
+            seg_paths = extract_segments_ffmpeg(norm_path, caller_segments, seg_dir)
+
+            concat_path = dirs["caller_concat"] / f"{call_id}.wav"
+            if seg_paths:
+                concat_wavs_ffmpeg(seg_paths, concat_path)
+
+            # Summaries / audit info
+            summary = {
+                "call_id": call_id,
+                "provider": provider,
+                "source_file": str(src),
+                "normalized_file": str(norm_path),
+                "diarized_file": str(diar_path),
+                "speaker_to_role": speaker_to_role,
+                "speaker_durations_sec": speaker_durations,
+                "flags": flags,
+                "num_segments_total": len(segments),
+                "num_segments_caller_raw": sum(1 for s in segments if speaker_to_role.get(s.get("speaker", "unknown")) == "caller"),
+                "num_segments_caller_final": len(caller_segments),
+                "caller_segments_dir": str(seg_dir),
+                "caller_concat_file": str(concat_path) if seg_paths else None,
+                "segment_params": {
+                    "trim_ms": TRIM_MS,
+                    "merge_gap_ms": MERGE_GAP_MS,
+                    "min_seg_dur_s": MIN_SEG_DUR_S,
+                },
+            }
+            summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        # Run for OpenAI
+        # process_diarizer("openai", dirs_openai, diarize_transcribe_openai)
+        
+        # Run for Google
+        # not good to use due to various reasons
+        process_diarizer("google", dirs_google, diarize_transcribe_google)
 
 if __name__ == "__main__":
     main()

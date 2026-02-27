@@ -1,0 +1,1103 @@
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "guten Tag Frau Susanne Ehrenfried ich weiß nicht mit wem sie nicht vielleicht verbinden könnten da Buchhaltung ich kümmer mich zusammen mit meiner Schwester und das Konto meiner Mutter und da gab's einen Lastschrifteinzug am 15. August nicht viel 10 € wegen einer Grundsteuer und wir hätten gern gewusst welches Objekt das betrifft ja aber das ist passe Abteilung oder ich weiß nicht warum Steuern Kämmerei steuern",
+          "confidence": 0.89578086,
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "2.900s",
+              "word": "guten",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "2.900s",
+              "end_time": "3.100s",
+              "word": "Tag",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "3.100s",
+              "end_time": "3.600s",
+              "word": "Frau",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "3.600s",
+              "end_time": "4.100s",
+              "word": "Susanne",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "4.100s",
+              "end_time": "4.400s",
+              "word": "Ehrenfried",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "4.400s",
+              "end_time": "5.500s",
+              "word": "ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "5.500s",
+              "end_time": "5.700s",
+              "word": "weiß",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "5.700s",
+              "end_time": "5.900s",
+              "word": "nicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "5.900s",
+              "end_time": "6s",
+              "word": "mit",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6s",
+              "end_time": "6.200s",
+              "word": "wem",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.200s",
+              "end_time": "6.300s",
+              "word": "sie",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.300s",
+              "end_time": "6.500s",
+              "word": "nicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.500s",
+              "end_time": "6.700s",
+              "word": "vielleicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "6.700s",
+              "end_time": "7.400s",
+              "word": "verbinden",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "8.100s",
+              "word": "könnten",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "8.100s",
+              "end_time": "8.700s",
+              "word": "da",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "8.700s",
+              "end_time": "9.400s",
+              "word": "Buchhaltung",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "9.400s",
+              "end_time": "11s",
+              "word": "ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11s",
+              "end_time": "11.300s",
+              "word": "kümmer",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "11.300s",
+              "word": "mich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "12s",
+              "word": "zusammen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12s",
+              "end_time": "12s",
+              "word": "mit",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12s",
+              "end_time": "12.400s",
+              "word": "meiner",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.400s",
+              "word": "Schwester",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.900s",
+              "word": "und",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "12.900s",
+              "end_time": "13.100s",
+              "word": "das",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "13.100s",
+              "end_time": "13.400s",
+              "word": "Konto",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "13.400s",
+              "end_time": "13.700s",
+              "word": "meiner",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "13.700s",
+              "end_time": "13.700s",
+              "word": "Mutter",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "13.700s",
+              "end_time": "14.400s",
+              "word": "und",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.400s",
+              "end_time": "14.500s",
+              "word": "da",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.500s",
+              "end_time": "14.900s",
+              "word": "gab's",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "14.900s",
+              "end_time": "15.200s",
+              "word": "einen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "15.200s",
+              "end_time": "15.700s",
+              "word": "Lastschrifteinzug",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "15.700s",
+              "end_time": "17.200s",
+              "word": "am",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "17.200s",
+              "end_time": "18.200s",
+              "word": "15.",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "18.200s",
+              "end_time": "18.800s",
+              "word": "August",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "18.800s",
+              "end_time": "19.700s",
+              "word": "nicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "19.700s",
+              "end_time": "19.900s",
+              "word": "viel",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "19.900s",
+              "end_time": "20.200s",
+              "word": "10",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "20.200s",
+              "end_time": "20.300s",
+              "word": "€",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "20.700s",
+              "end_time": "22.200s",
+              "word": "wegen",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "22.200s",
+              "end_time": "22.600s",
+              "word": "einer",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "22.600s",
+              "end_time": "23.400s",
+              "word": "Grundsteuer",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "23.400s",
+              "end_time": "24.100s",
+              "word": "und",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "24.100s",
+              "end_time": "24.200s",
+              "word": "wir",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "24.200s",
+              "end_time": "24.400s",
+              "word": "hätten",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "24.400s",
+              "end_time": "24.700s",
+              "word": "gern",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "24.700s",
+              "end_time": "25s",
+              "word": "gewusst",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "25s",
+              "end_time": "25.700s",
+              "word": "welches",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "25.700s",
+              "end_time": "26.300s",
+              "word": "Objekt",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "26.300s",
+              "end_time": "26.400s",
+              "word": "das",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "26.400s",
+              "end_time": "26.900s",
+              "word": "betrifft",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "26.900s",
+              "end_time": "32.800s",
+              "word": "ja",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "32.800s",
+              "end_time": "33s",
+              "word": "aber",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "33s",
+              "end_time": "33.200s",
+              "word": "das",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "33.200s",
+              "end_time": "33.300s",
+              "word": "ist",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "33.300s",
+              "end_time": "33.800s",
+              "word": "passe",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "33.800s",
+              "end_time": "34.100s",
+              "word": "Abteilung",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "34.100s",
+              "end_time": "34.700s",
+              "word": "oder",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "34.700s",
+              "end_time": "35s",
+              "word": "ich",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "35s",
+              "end_time": "35.100s",
+              "word": "weiß",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "35.100s",
+              "end_time": "35.200s",
+              "word": "nicht",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "35.200s",
+              "end_time": "35.500s",
+              "word": "warum",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "35.500s",
+              "end_time": "36.400s",
+              "word": "Steuern",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "36.400s",
+              "end_time": "36.900s",
+              "word": "Kämmerei",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            },
+            {
+              "start_time": "36.900s",
+              "end_time": "37.500s",
+              "word": "steuern",
+              "confidence": 0.0,
+              "speaker_tag": 0,
+              "speaker_label": ""
+            }
+          ]
+        }
+      ],
+      "result_end_time": "38.010s",
+      "language_code": "de-de",
+      "channel_tag": 0
+    },
+    {
+      "alternatives": [
+        {
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "2.900s",
+              "word": "guten",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "2.900s",
+              "end_time": "3.100s",
+              "word": "Tag",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "3.100s",
+              "end_time": "3.600s",
+              "word": "Frau",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "3.600s",
+              "end_time": "4.100s",
+              "word": "Susanne",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "4.100s",
+              "end_time": "4.400s",
+              "word": "Ehrenfried",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "4.400s",
+              "end_time": "5.500s",
+              "word": "ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "5.500s",
+              "end_time": "5.700s",
+              "word": "weiß",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "5.700s",
+              "end_time": "5.900s",
+              "word": "nicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "5.900s",
+              "end_time": "6s",
+              "word": "mit",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6s",
+              "end_time": "6.200s",
+              "word": "wem",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.200s",
+              "end_time": "6.300s",
+              "word": "sie",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.300s",
+              "end_time": "6.500s",
+              "word": "nicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.500s",
+              "end_time": "6.700s",
+              "word": "vielleicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "6.700s",
+              "end_time": "7.400s",
+              "word": "verbinden",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "8.100s",
+              "word": "könnten",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "8.100s",
+              "end_time": "8.700s",
+              "word": "da",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "8.700s",
+              "end_time": "9.400s",
+              "word": "Buchhaltung",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "9.400s",
+              "end_time": "11s",
+              "word": "ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11s",
+              "end_time": "11.300s",
+              "word": "kümmer",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "11.300s",
+              "word": "mich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "11.300s",
+              "end_time": "12s",
+              "word": "zusammen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12s",
+              "end_time": "12s",
+              "word": "mit",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12s",
+              "end_time": "12.400s",
+              "word": "meiner",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.400s",
+              "word": "Schwester",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.900s",
+              "word": "und",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "12.900s",
+              "end_time": "13.100s",
+              "word": "das",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "13.100s",
+              "end_time": "13.400s",
+              "word": "Konto",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "13.400s",
+              "end_time": "13.700s",
+              "word": "meiner",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "13.700s",
+              "end_time": "13.700s",
+              "word": "Mutter",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "13.700s",
+              "end_time": "14.400s",
+              "word": "und",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.400s",
+              "end_time": "14.500s",
+              "word": "da",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.500s",
+              "end_time": "14.900s",
+              "word": "gab's",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "14.900s",
+              "end_time": "15.200s",
+              "word": "einen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "15.200s",
+              "end_time": "15.700s",
+              "word": "Lastschrifteinzug",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "15.700s",
+              "end_time": "17.200s",
+              "word": "am",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "17.200s",
+              "end_time": "18.200s",
+              "word": "15.",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "18.200s",
+              "end_time": "18.800s",
+              "word": "August",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "18.800s",
+              "end_time": "19.700s",
+              "word": "nicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "19.700s",
+              "end_time": "19.900s",
+              "word": "viel",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "19.900s",
+              "end_time": "20.200s",
+              "word": "10",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "20.200s",
+              "end_time": "20.300s",
+              "word": "€",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "20.700s",
+              "end_time": "22.200s",
+              "word": "wegen",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "22.200s",
+              "end_time": "22.600s",
+              "word": "einer",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "22.600s",
+              "end_time": "23.400s",
+              "word": "Grundsteuer",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "23.400s",
+              "end_time": "24.100s",
+              "word": "und",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "24.100s",
+              "end_time": "24.200s",
+              "word": "wir",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "24.200s",
+              "end_time": "24.400s",
+              "word": "hätten",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "24.400s",
+              "end_time": "24.700s",
+              "word": "gern",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "24.700s",
+              "end_time": "25s",
+              "word": "gewusst",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "25s",
+              "end_time": "25.700s",
+              "word": "welches",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "25.700s",
+              "end_time": "26.300s",
+              "word": "Objekt",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "26.300s",
+              "end_time": "26.400s",
+              "word": "das",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "26.400s",
+              "end_time": "26.900s",
+              "word": "betrifft",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "26.900s",
+              "end_time": "32.800s",
+              "word": "ja",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "32.800s",
+              "end_time": "33s",
+              "word": "aber",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "33s",
+              "end_time": "33.200s",
+              "word": "das",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "33.200s",
+              "end_time": "33.300s",
+              "word": "ist",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "33.300s",
+              "end_time": "33.800s",
+              "word": "passe",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "33.800s",
+              "end_time": "34.100s",
+              "word": "Abteilung",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "34.100s",
+              "end_time": "34.700s",
+              "word": "oder",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "34.700s",
+              "end_time": "35s",
+              "word": "ich",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "35s",
+              "end_time": "35.100s",
+              "word": "weiß",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "35.100s",
+              "end_time": "35.200s",
+              "word": "nicht",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "35.200s",
+              "end_time": "35.500s",
+              "word": "warum",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "35.500s",
+              "end_time": "36.400s",
+              "word": "Steuern",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "36.400s",
+              "end_time": "36.900s",
+              "word": "Kämmerei",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            },
+            {
+              "start_time": "36.900s",
+              "end_time": "37.500s",
+              "word": "steuern",
+              "speaker_tag": 1,
+              "speaker_label": "1",
+              "confidence": 0.0
+            }
+          ],
+          "transcript": "",
+          "confidence": 0.0
+        }
+      ],
+      "channel_tag": 0,
+      "language_code": ""
+    }
+  ],
+  "total_billed_time": "39s",
+  "request_id": "53419351842325408"
+}

@@ -1,0 +1,321 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8500000000000003,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Grüß mein Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.45,
+      "speaker": "B",
+      "start": 1.3000000000000005,
+      "text": " Ja, Otto nochmal.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 4.6499999999999995,
+      "speaker": "B",
+      "start": 2.6000000000000005,
+      "text": " Ich hatte vorhin schon probiert bei Ihnen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 6.8999999999999995,
+      "speaker": "B",
+      "start": 4.8,
+      "text": " Und zwar wollte ich ja den Herrn Knapp sprechen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 9.950000000000001,
+      "speaker": "B",
+      "start": 7.05,
+      "text": " Ich hatte jetzt schon ein paar Mal probiert. Ist der sicher heute im Haus?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 12.3,
+      "speaker": "A",
+      "start": 10.8,
+      "text": " Der ist da wahrscheinlich.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 14.3,
+      "speaker": "A",
+      "start": 12.600000000000001,
+      "text": " Ja, gesehen habe ich ihn noch nicht,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 16.3,
+      "speaker": "A",
+      "start": 14.4,
+      "text": " aber die sind halt viel draußen unterwegs.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 20.8,
+      "speaker": "A",
+      "start": 17.150000000000002,
+      "text": " Herr Knapp gehört ja zum Ordnungsamt und der Herr guckt ja draußen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 23.25,
+      "speaker": "B",
+      "start": 21.2,
+      "text": " Ja, hat der dann eine Handynummer,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 24.2,
+      "speaker": "B",
+      "start": 23.3,
+      "text": " wo ich ihn erreichen kann?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 25.646,
+      "speaker": "A",
+      "start": 25.396,
+      "text": " Ich",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 25.946,
+      "speaker": "B",
+      "start": 25.646,
+      "text": " Ist",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 26.146,
+      "speaker": "A",
+      "start": 25.946,
+      "text": " hätte",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 26.496000000000002,
+      "speaker": "B",
+      "start": 26.146,
+      "text": " du noch?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 30.146,
+      "speaker": "A",
+      "start": 26.496000000000002,
+      "text": " jetzt keine, weil das ja weggenommen ist, geschwind,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 33.396,
+      "speaker": "A",
+      "start": 30.196,
+      "text": " ob er noch eine abgespeichert hat.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 38.046,
+      "speaker": "A",
+      "start": 37.146,
+      "text": " Ja, nee,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 38.946,
+      "speaker": "A",
+      "start": 38.096000000000004,
+      "text": " ich habe nur die.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 45.996,
+      "speaker": "B",
+      "start": 44.146,
+      "text": " Oder dass ich ihm eine E-Mail schreibe.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 47.29600000000001,
+      "speaker": "A",
+      "start": 46.54600000000001,
+      "text": " Ja gut,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 48.896,
+      "speaker": "A",
+      "start": 47.396,
+      "text": " das könntest du natürlich auch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 50.946,
+      "speaker": "B",
+      "start": 49.54600000000001,
+      "text": " Das wäre vielleicht noch gut.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 53.354,
+      "speaker": "B",
+      "start": 51.604,
+      "text": " Würden Sie mir die E-Mail-Adresse sagen?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 56.903999999999996,
+      "speaker": "A",
+      "start": 53.354,
+      "text": " Ja, jetzt habe ich, sorry,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 58.704,
+      "speaker": "A",
+      "start": 56.954,
+      "text": " jetzt habe ich die falsche Person hier oben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 61.454,
+      "speaker": "B",
+      "start": 60.554,
+      "text": " Kein Problem.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 64.054,
+      "speaker": "A",
+      "start": 61.804,
+      "text": " Katharina heißt sie, da bin ich vorher hier.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 65.654,
+      "speaker": "A",
+      "start": 65.054,
+      "text": " Okay,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 71.654,
+      "speaker": "A",
+      "start": 65.804,
+      "text": " steffen, mit zwei f, punkt knapp,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 75.104,
+      "speaker": "A",
+      "start": 73.404,
+      "text": " at nekersöll.de.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 82.688,
+      "speaker": "B",
+      "start": 80.788,
+      "text": " Perfekt, okay, dann schreibe ich ihm lieber eine E-Mail,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 83.488,
+      "speaker": "B",
+      "start": 82.738,
+      "text": " das ist vielleicht einfacher.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 84.938,
+      "speaker": "A",
+      "start": 83.488,
+      "text": " Ja, alles klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 85.338,
+      "speaker": "A",
+      "start": 85.038,
+      "text": " Bitte.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 86.038,
+      "speaker": "B",
+      "start": 85.338,
+      "text": " Dankeschön.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 87.43799999999999,
+      "speaker": "A",
+      "start": 86.88799999999999,
+      "text": " Tschüss.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 87.838,
+      "speaker": "B",
+      "start": 87.43799999999999,
+      "text": " Tschüss.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Grüß mein Guten Tag. Ja, Otto nochmal. Ich hatte vorhin schon probiert bei Ihnen. Und zwar wollte ich ja den Herrn Knapp sprechen. Ich hatte jetzt schon ein paar Mal probiert. Ist der sicher heute im Haus? Der ist da wahrscheinlich. Ja, gesehen habe ich ihn noch nicht, aber die sind halt viel draußen unterwegs. Herr Knapp gehört ja zum Ordnungsamt und der Herr guckt ja draußen. Ja, hat der dann eine Handynummer, wo ich ihn erreichen kann?\nIch Ist hätte du noch? jetzt keine, weil das ja weggenommen ist, geschwind, ob er noch eine abgespeichert hat. Ja, nee, ich habe nur die. Oder dass ich ihm eine E-Mail schreibe. Ja gut, das könntest du natürlich auch. Das wäre vielleicht noch gut.\nWürden Sie mir die E-Mail-Adresse sagen? Ja, jetzt habe ich, sorry, jetzt habe ich die falsche Person hier oben. Kein Problem. Katharina heißt sie, da bin ich vorher hier. Okay, steffen, mit zwei f, punkt knapp, at nekersöll.de.\nPerfekt, okay, dann schreibe ich ihm lieber eine E-Mail, das ist vielleicht einfacher. Ja, alles klar. Bitte. Dankeschön. Tschüss. Tschüss.",
+  "usage": {
+    "input_tokens": 1328,
+    "output_tokens": 2526,
+    "total_tokens": 3854,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 1259,
+      "text_tokens": 69
+    }
+  }
+}

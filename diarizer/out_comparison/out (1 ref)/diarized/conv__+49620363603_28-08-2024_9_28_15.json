@@ -1,0 +1,97 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.5,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 3.45,
+      "speaker": "A",
+      "start": 1.3,
+      "text": " Karin Elbelweiser, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 7.3999999999999995,
+      "speaker": "A",
+      "start": 3.55,
+      "text": " Ich habe eine Frage zur Bezahlung der Grundsteuer.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 10.05,
+      "speaker": "agent",
+      "start": 9.65,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 13.536000000000001,
+      "speaker": "agent",
+      "start": 10.836,
+      "text": " Das gebe ich Ihnen einfach einmal geschwind.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 22.286,
+      "speaker": "A",
+      "start": 14.036000000000001,
+      "text": " Von der Stadtgärnerei bräuchte ich jemand. Ich habe eigentlich hier meine Ansprechpartnerin Ramona Bayer, aber die Telefonnummer funktioniert nicht mehr.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 26.736000000000004,
+      "speaker": "agent",
+      "start": 22.286,
+      "text": " Wir haben ja, haben Sie seit circa fünf Monaten neue, die wurde auch veröffentlicht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 35.93600000000001,
+      "speaker": "agent",
+      "start": 26.836000000000006,
+      "text": " Aber ich sage Sie Ihnen jetzt gleich einmal geschwind, dann können Sie es vielleicht gleich auf Ihre letzte Grundschau Bescheid drauf schreiben, dann haben Sie gleich die neue.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 37.546,
+      "speaker": "A",
+      "start": 36.596,
+      "text": " Wunderbar, ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 42.645999999999994,
+      "speaker": "agent",
+      "start": 37.546,
+      "text": " Ja, das wäre also auch die 35 Versandverwaltung und dann die 1224.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag. Karin Elbelweiser, guten Tag. Ich habe eine Frage zur Bezahlung der Grundsteuer. Ja.\nDas gebe ich Ihnen einfach einmal geschwind. Von der Stadtgärnerei bräuchte ich jemand. Ich habe eigentlich hier meine Ansprechpartnerin Ramona Bayer, aber die Telefonnummer funktioniert nicht mehr. Wir haben ja, haben Sie seit circa fünf Monaten neue, die wurde auch veröffentlicht. Aber ich sage Sie Ihnen jetzt gleich einmal geschwind, dann können Sie es vielleicht gleich auf Ihre letzte Grundschau Bescheid drauf schreiben, dann haben Sie gleich die neue.\nWunderbar, ja. Ja, das wäre also auch die 35 Versandverwaltung und dann die 1224.",
+  "usage": {
+    "input_tokens": 819,
+    "output_tokens": 1345,
+    "total_tokens": 2164,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 762,
+      "text_tokens": 57
+    }
+  }
+}

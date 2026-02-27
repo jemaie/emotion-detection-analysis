@@ -1,0 +1,57 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.6000000000000001,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.55,
+      "speaker": "B",
+      "start": 1.1500000000000001,
+      "text": " Dietler, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 9.15,
+      "speaker": "B",
+      "start": 3.1499999999999995,
+      "text": " Hier frage ich Suchsortungsamt und bin zu Ihnen verwiesen worden. Bin ich doch richtig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 12.65,
+      "speaker": "A",
+      "start": 9.9,
+      "text": " Neues sind jetzt in der Telefonzentrale.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 13.6,
+      "speaker": "B",
+      "start": 12.65,
+      "text": " Ja, weil...",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag. Dietler, guten Tag. Hier frage ich Suchsortungsamt und bin zu Ihnen verwiesen worden. Bin ich doch richtig? Neues sind jetzt in der Telefonzentrale. Ja, weil...",
+  "usage": {
+    "input_tokens": 214,
+    "output_tokens": 412,
+    "total_tokens": 626,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 203,
+      "text_tokens": 11
+    }
+  }
+}

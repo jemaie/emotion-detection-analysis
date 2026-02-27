@@ -31,6 +31,7 @@ def diarize_transcribe(wav_path: Path, agent_ref_paths: Optional[List[Path]] = N
             file=f,
             response_format="diarized_json",
             chunking_strategy="auto",
+            language="de",
             extra_body=extra_body,
         )
 

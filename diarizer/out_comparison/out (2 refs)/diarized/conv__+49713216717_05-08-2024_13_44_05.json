@@ -1,0 +1,57 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 1.1500000000000001,
+      "speaker": "agent",
+      "start": 0.0,
+      "text": " Guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 2.4000000000000004,
+      "speaker": "agent",
+      "start": 1.1500000000000001,
+      "text": " Dietler, guten Tag.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 9.15,
+      "speaker": "agent",
+      "start": 2.8,
+      "text": " Hier frage ich, suchst Ordnungsamt und bin zu Ihnen verwiesen worden. Bin ich doch richtig?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 12.700000000000001,
+      "speaker": "agent",
+      "start": 10.200000000000001,
+      "text": " Nein, Sie sind jetzt in der Telefonzentrale.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 13.600000000000001,
+      "speaker": "agent",
+      "start": 12.8,
+      "text": " Ja, weil...",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Guten Tag. Dietler, guten Tag. Hier frage ich, suchst Ordnungsamt und bin zu Ihnen verwiesen worden. Bin ich doch richtig? Nein, Sie sind jetzt in der Telefonzentrale. Ja, weil...",
+  "usage": {
+    "input_tokens": 306,
+    "output_tokens": 445,
+    "total_tokens": 751,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 282,
+      "text_tokens": 24
+    }
+  }
+}

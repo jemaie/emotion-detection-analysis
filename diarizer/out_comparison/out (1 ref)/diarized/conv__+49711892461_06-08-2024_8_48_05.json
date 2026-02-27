@@ -1,0 +1,545 @@
+{
+  "duration": null,
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " Wo ist mein Hund halt?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 12.9,
+      "speaker": "B",
+      "start": 2.45,
+      "text": " Frau Gries, guten Morgen Frau Schmalt. Ich habe eine Frage und zwar habe ich gestern mit den Sätzen festgestellt, dass der Park and Move Parkplatz an der A6 gesperrt ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 14.4,
+      "speaker": "B",
+      "start": 12.950000000000001,
+      "text": " Aber das ist so klein geschrieben,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 20.799999999999997,
+      "speaker": "B",
+      "start": 14.6,
+      "text": " dass man nicht lesen kann, wie lange der gesperrt ist beim Vorbeifahren quasi.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 25.849999999999998,
+      "speaker": "B",
+      "start": 21.749999999999996,
+      "text": " Deswegen wollte ich jetzt nachfragen, wo ich diese Information denn herbekommen kann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 28.954,
+      "speaker": "A",
+      "start": 26.804,
+      "text": " Das ist so ein Park and Ride Parkplatz.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 30.804,
+      "speaker": "B",
+      "start": 29.703999999999997,
+      "text": " Das ist genau,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 34.354,
+      "speaker": "B",
+      "start": 30.953999999999997,
+      "text": " nicht Park and Ride, aber Park and Move, also an der Autobahn eben.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 40.954,
+      "speaker": "B",
+      "start": 34.903999999999996,
+      "text": " Nicht an den, Park and Ride ist ja oft an den Bahnhaltestellen praktisch.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 42.354,
+      "speaker": "A",
+      "start": 41.554,
+      "text": " Ja, ne,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 43.604,
+      "speaker": "A",
+      "start": 42.454,
+      "text": " es gibt auch jetzt da,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 46.153999999999996,
+      "speaker": "A",
+      "start": 43.653999999999996,
+      "text": " wo es nicht so schlimm an die Autobahn hochgeht.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 53.454,
+      "speaker": "A",
+      "start": 46.854,
+      "text": " Die eine Spur führt links weg Richtung Autobahn und die rechte geht Richtung Heilbronn.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 54.42,
+      "speaker": "A",
+      "start": 54.42,
+      "text": " Meine",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_14",
+      "end": 55.47,
+      "speaker": "B",
+      "start": 54.42,
+      "text": " Genau, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_15",
+      "end": 60.02,
+      "speaker": "B",
+      "start": 55.52,
+      "text": " Und der Parkplatz ist gesperrt. Da steht ein Sperrdatum dran,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_16",
+      "end": 62.52,
+      "speaker": "B",
+      "start": 60.120000000000005,
+      "text": " seit gestern. Also sind wir eben vorbeigefahren.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_17",
+      "end": 66.82,
+      "speaker": "B",
+      "start": 63.370000000000005,
+      "text": " Aber ich konnte nicht lesen, wie lange der gesperrt ist.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_18",
+      "end": 68.72,
+      "speaker": "B",
+      "start": 66.92,
+      "text": " Und das ist ja doch entscheidend.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_19",
+      "end": 72.382,
+      "speaker": "B",
+      "start": 70.132,
+      "text": " Wie, wann man den wieder benutzen kann dann.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_20",
+      "end": 79.132,
+      "speaker": "A",
+      "start": 72.58200000000001,
+      "text": " Ja, da müsste mich aber selber mal informieren. Ich weiß jetzt gerade spontan nicht, ob wir dort zuständig sind,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_21",
+      "end": 79.882,
+      "speaker": "A",
+      "start": 79.28200000000001,
+      "text": " ob",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_22",
+      "end": 80.33200000000001,
+      "speaker": "B",
+      "start": 79.882,
+      "text": " Ja, alles",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_23",
+      "end": 80.482,
+      "speaker": "A",
+      "start": 80.33200000000001,
+      "text": " der",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_24",
+      "end": 80.53200000000001,
+      "speaker": "B",
+      "start": 80.482,
+      "text": " klar.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_25",
+      "end": 81.732,
+      "speaker": "A",
+      "start": 80.53200000000001,
+      "text": " Gesundheitsamt gehört.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_26",
+      "end": 84.682,
+      "speaker": "B",
+      "start": 82.78200000000001,
+      "text": " Soll ich mich nochmal melden oder?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_27",
+      "end": 86.53200000000001,
+      "speaker": "A",
+      "start": 84.682,
+      "text": " Ich kann Ihnen auch zurückrufen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_28",
+      "end": 88.43200000000002,
+      "speaker": "A",
+      "start": 86.632,
+      "text": " Sagen Sie mir nochmal Ihren Namen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_29",
+      "end": 90.382,
+      "speaker": "B",
+      "start": 89.23200000000001,
+      "text": " Ja, Vogel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_30",
+      "end": 92.30799999999999,
+      "speaker": "A",
+      "start": 90.708,
+      "text": " Das war Vogelmanns, okay.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_31",
+      "end": 96.158,
+      "speaker": "A",
+      "start": 92.708,
+      "text": " Frau Vogel, ich mache mich kundig und würde mich einfach nur bei Ihnen melden.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_32",
+      "end": 98.408,
+      "speaker": "B",
+      "start": 96.508,
+      "text": " Ich gebe Ihnen die kurze andere Nummer,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_33",
+      "end": 99.05799999999999,
+      "speaker": "B",
+      "start": 98.508,
+      "text": " wenn ich darf.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_34",
+      "end": 99.658,
+      "speaker": "A",
+      "start": 99.05799999999999,
+      "text": " Ja.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_35",
+      "end": 103.858,
+      "speaker": "B",
+      "start": 100.708,
+      "text": " Das ist die 07151 135",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_36",
+      "end": 106.258,
+      "speaker": "A",
+      "start": 103.858,
+      "text": " 07151, 1",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_37",
+      "end": 109.258,
+      "speaker": "B",
+      "start": 106.708,
+      "text": " 035 0301",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_38",
+      "end": 115.018,
+      "speaker": "B",
+      "start": 114.068,
+      "text": " Jawohl, super.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_39",
+      "end": 115.268,
+      "speaker": "A",
+      "start": 115.018,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_40",
+      "end": 117.368,
+      "speaker": "B",
+      "start": 115.268,
+      "text": " Wollen Sie sonst eine E-Mail-Adresse?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_41",
+      "end": 118.568,
+      "speaker": "B",
+      "start": 117.41799999999999,
+      "text": " Das geht auch vielleicht?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_42",
+      "end": 120.318,
+      "speaker": "A",
+      "start": 119.268,
+      "text": " ich kann Ihnen auch schreiben,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_43",
+      "end": 121.16799999999999,
+      "speaker": "A",
+      "start": 120.41799999999999,
+      "text": " wenn Sie möchten, gerne.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_44",
+      "end": 125.518,
+      "speaker": "B",
+      "start": 121.618,
+      "text": " Ja, das ist doch, dann haben Sie da mehrere Möglichkeiten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_45",
+      "end": 127.318,
+      "speaker": "B",
+      "start": 125.96799999999999,
+      "text": " Ich muss kurz gucken.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_46",
+      "end": 132.56799999999998,
+      "speaker": "B",
+      "start": 127.46799999999999,
+      "text": " Also Nicole.Vogel, ohne E.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_47",
+      "end": 134.868,
+      "speaker": "A",
+      "start": 134.618,
+      "text": " Vogel?",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_48",
+      "end": 135.668,
+      "speaker": "B",
+      "start": 134.868,
+      "text": " Also nur Vogel.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_49",
+      "end": 148.432,
+      "speaker": "B",
+      "start": 141.332,
+      "text": " Also Ida, Bertha, Bertha Wilhelm.kv wie Kultusverwaltung .pw",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_50",
+      "end": 149.732,
+      "speaker": "A",
+      "start": 148.432,
+      "text": " nach",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_51",
+      "end": 151.482,
+      "speaker": "B",
+      "start": 149.732,
+      "text": ".w Baden-Württemberg Land.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_52",
+      "end": 154.382,
+      "speaker": "A",
+      "start": 152.53199999999998,
+      "text": " KV wieder ein Punkt und",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_53",
+      "end": 155.432,
+      "speaker": "B",
+      "start": 154.382,
+      "text": " Ja, genau.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_54",
+      "end": 157.032,
+      "speaker": "A",
+      "start": 156.432,
+      "text": " dann B",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_55",
+      "end": 162.332,
+      "speaker": "B",
+      "start": 157.832,
+      "text": " .pw.l für Baden-Württemberg Land .de.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_56",
+      "end": 165.68200000000002,
+      "speaker": "A",
+      "start": 163.93200000000002,
+      "text": " .de. Ah ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_57",
+      "end": 168.632,
+      "speaker": "A",
+      "start": 165.782,
+      "text": " also Nicole.Vogel ohne E",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_58",
+      "end": 169.716,
+      "speaker": "B",
+      "start": 169.716,
+      "text": " Ja,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_59",
+      "end": 170.166,
+      "speaker": "A",
+      "start": 169.716,
+      "text": " Jetzt iwb",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_60",
+      "end": 171.816,
+      "speaker": "B",
+      "start": 170.166,
+      "text": " super.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_61",
+      "end": 176.316,
+      "speaker": "A",
+      "start": 171.816,
+      "text": ".kv.bwl.de",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_62",
+      "end": 180.316,
+      "speaker": "B",
+      "start": 179.216,
+      "text": " Herzlichen Dank Ihnen.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_63",
+      "end": 181.316,
+      "speaker": "A",
+      "start": 180.566,
+      "text": " Bye-bye,",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_64",
+      "end": 182.916,
+      "speaker": "B",
+      "start": 181.316,
+      "text": " Dann haben sie mehrere Möglichkeiten.",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_65",
+      "end": 187.216,
+      "speaker": "B",
+      "start": 183.26600000000002,
+      "text": " Danke Ihnen für die Infos. Tschüss, schönen Tag.",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "task": null,
+  "text": "Wo ist mein Hund halt? Frau Gries, guten Morgen Frau Schmalt. Ich habe eine Frage und zwar habe ich gestern mit den Sätzen festgestellt, dass der Park and Move Parkplatz an der A6 gesperrt ist. Aber das ist so klein geschrieben, dass man nicht lesen kann, wie lange der gesperrt ist beim Vorbeifahren quasi. Deswegen wollte ich jetzt nachfragen, wo ich diese Information denn herbekommen kann.\nDas ist so ein Park and Ride Parkplatz. Das ist genau, nicht Park and Ride, aber Park and Move, also an der Autobahn eben. Nicht an den, Park and Ride ist ja oft an den Bahnhaltestellen praktisch. Ja, ne, es gibt auch jetzt da, wo es nicht so schlimm an die Autobahn hochgeht. Die eine Spur führt links weg Richtung Autobahn und die rechte geht Richtung Heilbronn.\nMeine Genau, genau. Und der Parkplatz ist gesperrt. Da steht ein Sperrdatum dran, seit gestern. Also sind wir eben vorbeigefahren. Aber ich konnte nicht lesen, wie lange der gesperrt ist. Und das ist ja doch entscheidend.\nWie, wann man den wieder benutzen kann dann. Ja, da müsste mich aber selber mal informieren. Ich weiß jetzt gerade spontan nicht, ob wir dort zuständig sind, ob Ja, alles der klar. Gesundheitsamt gehört. Soll ich mich nochmal melden oder? Ich kann Ihnen auch zurückrufen. Sagen Sie mir nochmal Ihren Namen. Ja, Vogel.\nDas war Vogelmanns, okay. Frau Vogel, ich mache mich kundig und würde mich einfach nur bei Ihnen melden. Ich gebe Ihnen die kurze andere Nummer, wenn ich darf. Ja. Das ist die 07151 135 07151, 1 035 0301\nJawohl, super. Ja, Wollen Sie sonst eine E-Mail-Adresse? Das geht auch vielleicht? ich kann Ihnen auch schreiben, wenn Sie möchten, gerne. Ja, das ist doch, dann haben Sie da mehrere Möglichkeiten. Ich muss kurz gucken. Also Nicole.Vogel, ohne E. Vogel? Also nur Vogel.\nAlso Ida, Bertha, Bertha Wilhelm .kv wie Kultusverwaltung .pw nach .w Baden-Württemberg Land. KV wieder ein Punkt und Ja, genau. dann B .pw.l für Baden-Württemberg Land .de. .de. Ah ja, also Nicole.Vogel ohne E\nJa, Jetzt iwb super. .kv.bwl .de Herzlichen Dank Ihnen. Bye-bye, Dann haben sie mehrere Möglichkeiten. Danke Ihnen für die Infos. Tschüss, schönen Tag.",
+  "usage": {
+    "input_tokens": 3939,
+    "output_tokens": 5572,
+    "total_tokens": 9511,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 3662,
+      "text_tokens": 277
+    }
+  }
+}
