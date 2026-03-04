@@ -5,13 +5,13 @@ from typing import List
 
 from tqdm import tqdm
 
-from audio_io import normalize_to_wav16k_mono
-from diarize_openai import diarize_transcribe as diarize_transcribe_openai
-#from diarize_google import diarize_transcribe as diarize_transcribe_google
-from diarize_pyannote import diarize_transcribe as diarize_transcribe_pyannote
-from role_assign import assign_roles
-from segment_postprocess import postprocess_caller_segments
-from extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
+from run_batch_scripts.audio_io import normalize_to_wav16k_mono
+from run_batch_scripts.diarize_openai import diarize_transcribe as diarize_transcribe_openai
+#from run_batch_scripts.diarize_google import diarize_transcribe as diarize_transcribe_google
+from run_batch_scripts.diarize_pyannote import diarize_transcribe as diarize_transcribe_pyannote
+from run_batch_scripts.role_assign import assign_roles
+from run_batch_scripts.segment_postprocess import postprocess_caller_segments
+from run_batch_scripts.extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
 
 RAW_DIR = Path("../aufnahmen25")
 NORM_DIR = Path("data/normalized")
