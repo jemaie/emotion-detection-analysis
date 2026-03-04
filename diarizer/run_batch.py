@@ -13,7 +13,7 @@ from role_assign import assign_roles
 from segment_postprocess import postprocess_caller_segments
 from extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
 
-RAW_DIR = Path("../aufnahmen20")
+RAW_DIR = Path("../aufnahmen25")
 NORM_DIR = Path("data/normalized")
 REFS_DIR = Path("data/refs")
 
