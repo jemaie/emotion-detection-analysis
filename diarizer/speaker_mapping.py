@@ -76,7 +76,7 @@ def map_speakers_to_roles(diarized_json: Dict[str, Any], wav_path: Path, ref_pat
             print(f"Failed to extract embedding for {spk}: {e}")
             spk_distances[spk] = 999.0 # Arbitrary high distance on failure
 
-    # 4. Map the closest speaker to "agent", ignore others
+    # 4. Record the closest speaker to the agent reference
     mapped_json = copy.deepcopy(diarized_json)
     if not spk_distances:
         return mapped_json
@@ -84,10 +84,7 @@ def map_speakers_to_roles(diarized_json: Dict[str, Any], wav_path: Path, ref_pat
     # The speaker with the minimum distance is the most similar to the reference
     best_match_spk = min(spk_distances, key=spk_distances.get)
 
-    for seg in mapped_json["segments"]:
-        if seg.get("speaker") == best_match_spk:
-            seg["speaker"] = "agent"
-        else:
-            seg["speaker"] = "unknown" # Leave others to be mapped by role_assign.py natively
+    mapped_json["agent_speaker_id"] = best_match_spk
+
 
     return mapped_json

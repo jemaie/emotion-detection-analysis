@@ -28,7 +28,7 @@ calls = sorted(list(calls))
 flags_config = {
     "num_speakers": {"target": 2},
     "agent_matched_by_reference": {"target": True},
-    "fallback_used": {"target": True} 
+    # "fallback_used": {"target": True}  # always inverse of agent_matched_by_reference
 }
 
 for flag, config in flags_config.items():

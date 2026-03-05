@@ -23,6 +23,18 @@ def assign_roles(diarized: Dict[str, Any]) -> Tuple[Dict[str, str], Dict[str, fl
         "num_speakers": len(durations),
     }
 
+    agent_speaker_id = diarized.get("agent_speaker_id")
+
+    # Match by explicitly provided agent_speaker_id (e.g., from offline mapping)
+    if agent_speaker_id and agent_speaker_id in durations:
+        flags["agent_matched_by_reference"] = True
+        speaker_to_role[agent_speaker_id] = "agent"
+        for s in durations.keys():
+            if s != agent_speaker_id:
+                speaker_to_role[s] = "caller"
+        return speaker_to_role, dict(durations), flags
+
+    # Fallback for online diarizers that rewrite the speaker directly to "agent"
     if "agent" in durations:
         flags["agent_matched_by_reference"] = True
         speaker_to_role["agent"] = "agent"

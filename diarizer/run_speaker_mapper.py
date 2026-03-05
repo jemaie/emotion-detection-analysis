@@ -8,9 +8,9 @@ from run_batch_scripts.segment_postprocess import postprocess_caller_segments
 from run_batch_scripts.extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
 from speaker_mapping import map_speakers_to_roles
 
-TRIM_MS = 250
+TRIM_MS = 200
 MERGE_GAP_MS = 300
-MIN_SEG_DUR_S = 0.7
+MIN_SEG_DUR_S = 0.6
 
 def main():
     norm_dir = Path("data/normalized")
@@ -91,6 +91,11 @@ def main():
                 "num_segments_caller_final": len(caller_segments),
                 "caller_segments_dir": str(seg_dir),
                 "caller_concat_file": str(concat_path) if seg_paths else None,
+                "segment_params": {
+                    "trim_ms": TRIM_MS,
+                    "merge_gap_ms": MERGE_GAP_MS,
+                    "min_seg_dur_s": MIN_SEG_DUR_S,
+                },
             }
             summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
 

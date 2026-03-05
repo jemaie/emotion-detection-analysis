@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 from pathlib import Path
 from typing import List, Dict, Any
@@ -11,6 +12,9 @@ def extract_segments_ffmpeg(
     Extract each segment as its own WAV file (copied, no re-encode).
     Assumes audio_wav is WAV PCM (ffmpeg will still handle correctly).
     """
+    # Clear previous segments to avoid duplicates from earlier runs
+    if out_dir.exists():
+        shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_paths: List[Path] = []
 
