@@ -47,12 +47,14 @@ def diarize_transcribe(wav_path: Path, agent_ref_paths: Optional[List[Path]] = N
         job_id = client.identify(
             media_url, 
             voiceprints=voiceprints, 
-            num_speakers=2
+            min_speakers=2,
+            max_speakers=3
         )
     else:
         job_id = client.diarize(
             media_url, 
-            num_speakers=2
+            min_speakers=2,
+            max_speakers=3
         )
 
     # 4. Wait for and retrieve results

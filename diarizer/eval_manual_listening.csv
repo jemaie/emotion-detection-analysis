@@ -1,0 +1,126 @@
+Call ID;Approach;Agent Identified Correctly;Agent Bleed-Through (1-5);Missing Caller Speech (1-5);Overall Quality (1-5);Preferred;Notes
+conv__+4971397924_02-08-2024_8_51_17;out_mapped/openai;TRUE;4;1;2;;
+conv__+4971397924_02-08-2024_8_51_17;out_mapped/pyannote;TRUE;3;4;4;TRUE;
+conv__+4971397924_02-08-2024_8_51_17;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+4971397924_02-08-2024_8_51_17;out_openai/2_refs;TRUE;4;2;3;;
+conv__+4971397924_02-08-2024_8_51_17;out_pyannote/1_refs;TRUE;3;4;4;TRUE;
+conv__+4971398762_26-08-2024_10_24_41;out_mapped/openai;TRUE;4;1;3;TRUE;
+conv__+4971398762_26-08-2024_10_24_41;out_mapped/pyannote;TRUE;2;5;3;;
+conv__+4971398762_26-08-2024_10_24_41;out_openai/1_refs;TRUE;4;1;3;;
+conv__+4971398762_26-08-2024_10_24_41;out_openai/2_refs;TRUE;4;1;3;;
+conv__+4971398762_26-08-2024_10_24_41;out_pyannote/1_refs;TRUE;2;5;3;;
+conv__+33327866663_20-08-2024_8_58_10;out_mapped/openai;FALSE;;;;;
+conv__+33327866663_20-08-2024_8_58_10;out_mapped/pyannote;FALSE;;;;;
+conv__+33327866663_20-08-2024_8_58_10;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+33327866663_20-08-2024_8_58_10;out_openai/2_refs;NSI;;;;;No speaker identified
+conv__+33327866663_20-08-2024_8_58_10;out_pyannote/1_refs;TRUE;5;1;5;TRUE;
+conv__+49620363603_28-08-2024_9_28_15;out_mapped/openai;TRUE;5;4;4;;
+conv__+49620363603_28-08-2024_9_28_15;out_mapped/pyannote;TRUE;5;5;5;TRUE;
+conv__+49620363603_28-08-2024_9_28_15;out_openai/1_refs;TRUE;5;4;4;;
+conv__+49620363603_28-08-2024_9_28_15;out_openai/2_refs;TRUE;5;3;3;;
+conv__+49620363603_28-08-2024_9_28_15;out_pyannote/1_refs;TRUE;5;5;5;TRUE;
+conv__+49626137904_10-07-2024_8_38_40;out_mapped/openai;TRUE;5;4;4;TRUE;
+conv__+49626137904_10-07-2024_8_38_40;out_mapped/pyannote;TRUE;3;5;3;;
+conv__+49626137904_10-07-2024_8_38_40;out_openai/1_refs;TRUE;4;4;4;;
+conv__+49626137904_10-07-2024_8_38_40;out_openai/2_refs;TRUE;4;5;3;;
+conv__+49626137904_10-07-2024_8_38_40;out_pyannote/1_refs;TRUE;3;5;3;;
+conv__+49661922317_05-08-2024_8_39_24;out_mapped/openai;TRUE;5;2;3;;
+conv__+49661922317_05-08-2024_8_39_24;out_mapped/pyannote;TRUE;4;4;4;TRUE;
+conv__+49661922317_05-08-2024_8_39_24;out_openai/1_refs;TRUE;4;2;3;;
+conv__+49661922317_05-08-2024_8_39_24;out_openai/2_refs;TRUE;5;3;4;;
+conv__+49661922317_05-08-2024_8_39_24;out_pyannote/1_refs;TRUE;4;5;4;TRUE;
+conv__+49706221952_07-08-2024_14_25_06;out_mapped/openai;TRUE;3;3;3;;
+conv__+49706221952_07-08-2024_14_25_06;out_mapped/pyannote;TRUE;3;4;4;TRUE;
+conv__+49706221952_07-08-2024_14_25_06;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49706221952_07-08-2024_14_25_06;out_openai/2_refs;NSI;;;;;No speaker identified
+conv__+49706221952_07-08-2024_14_25_06;out_pyannote/1_refs;TRUE;3;4;4;TRUE;
+conv__+49706262738_21-08-2024_10_58_04;out_mapped/openai;TRUE;5;;;;
+conv__+49706262738_21-08-2024_10_58_04;out_mapped/pyannote;;;;;;
+conv__+49706262738_21-08-2024_10_58_04;out_openai/1_refs;;;;;;
+conv__+49706262738_21-08-2024_10_58_04;out_openai/2_refs;;;;;;
+conv__+49706262738_21-08-2024_10_58_04;out_pyannote/1_refs;;;;;;
+conv__+49706353138_26-07-2024_9_13_32;out_mapped/openai;;;;;;
+conv__+49706353138_26-07-2024_9_13_32;out_mapped/pyannote;;;;;;
+conv__+49706353138_26-07-2024_9_13_32;out_openai/1_refs;;;;;;
+conv__+49706353138_26-07-2024_9_13_32;out_openai/2_refs;;;;;;
+conv__+49706353138_26-07-2024_9_13_32;out_pyannote/1_refs;;;;;;
+conv__+49711621826_06-08-2024_9_06_00;out_mapped/openai;;;;;;
+conv__+49711621826_06-08-2024_9_06_00;out_mapped/pyannote;;;;;;
+conv__+49711621826_06-08-2024_9_06_00;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49711621826_06-08-2024_9_06_00;out_openai/2_refs;;;;;;
+conv__+49711621826_06-08-2024_9_06_00;out_pyannote/1_refs;;;;;;
+conv__+49711892461_06-08-2024_8_48_05;out_mapped/openai;;;;;;
+conv__+49711892461_06-08-2024_8_48_05;out_mapped/pyannote;;;;;;
+conv__+49711892461_06-08-2024_8_48_05;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49711892461_06-08-2024_8_48_05;out_openai/2_refs;;;;;;
+conv__+49711892461_06-08-2024_8_48_05;out_pyannote/1_refs;;;;;;
+conv__+49713146656_20-08-2024_9_13_44;out_mapped/openai;;;;;;
+conv__+49713146656_20-08-2024_9_13_44;out_mapped/pyannote;;;;;;
+conv__+49713146656_20-08-2024_9_13_44;out_openai/1_refs;;;;;;
+conv__+49713146656_20-08-2024_9_13_44;out_openai/2_refs;NSI;;;;;No speaker identified
+conv__+49713146656_20-08-2024_9_13_44;out_pyannote/1_refs;;;;;;
+conv__+49713182652_09-09-2024_10_08_43;out_mapped/openai;;;;;;
+conv__+49713182652_09-09-2024_10_08_43;out_mapped/pyannote;;;;;;
+conv__+49713182652_09-09-2024_10_08_43;out_openai/1_refs;;;;;;
+conv__+49713182652_09-09-2024_10_08_43;out_openai/2_refs;;;;;;
+conv__+49713182652_09-09-2024_10_08_43;out_pyannote/1_refs;;;;;;
+conv__+49713215540_05-07-2024_10_34_47;out_mapped/openai;;;;;;
+conv__+49713215540_05-07-2024_10_34_47;out_mapped/pyannote;;;;;;
+conv__+49713215540_05-07-2024_10_34_47;out_openai/1_refs;;;;;;
+conv__+49713215540_05-07-2024_10_34_47;out_openai/2_refs;;;;;;
+conv__+49713215540_05-07-2024_10_34_47;out_pyannote/1_refs;;;;;;
+conv__+49713215540_06-08-2024_8_40_35;out_mapped/openai;;;;;;
+conv__+49713215540_06-08-2024_8_40_35;out_mapped/pyannote;;;;;;
+conv__+49713215540_06-08-2024_8_40_35;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49713215540_06-08-2024_8_40_35;out_openai/2_refs;NSI;;;;;No speaker identified
+conv__+49713215540_06-08-2024_8_40_35;out_pyannote/1_refs;;;;;;
+conv__+49713215540_06-08-2024_9_34_12;out_mapped/openai;;;;;;
+conv__+49713215540_06-08-2024_9_34_12;out_mapped/pyannote;;;;;;
+conv__+49713215540_06-08-2024_9_34_12;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49713215540_06-08-2024_9_34_12;out_openai/2_refs;NSI;;;;;No speaker identified
+conv__+49713215540_06-08-2024_9_34_12;out_pyannote/1_refs;;;;;;
+conv__+49713216347_28-08-2024_11_02_25;out_mapped/openai;;;;;;
+conv__+49713216347_28-08-2024_11_02_25;out_mapped/pyannote;;;;;;
+conv__+49713216347_28-08-2024_11_02_25;out_openai/1_refs;;;;;;
+conv__+49713216347_28-08-2024_11_02_25;out_openai/2_refs;;;;;;
+conv__+49713216347_28-08-2024_11_02_25;out_pyannote/1_refs;;;;;;
+conv__+49713216635_16-08-2024_9_32_23;out_mapped/openai;;;;;;
+conv__+49713216635_16-08-2024_9_32_23;out_mapped/pyannote;;;;;;
+conv__+49713216635_16-08-2024_9_32_23;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49713216635_16-08-2024_9_32_23;out_openai/2_refs;;;;;;
+conv__+49713216635_16-08-2024_9_32_23;out_pyannote/1_refs;;;;;;
+conv__+49713216717_05-08-2024_13_44_05;out_mapped/openai;;;;;;
+conv__+49713216717_05-08-2024_13_44_05;out_mapped/pyannote;;;;;;
+conv__+49713216717_05-08-2024_13_44_05;out_openai/1_refs;NSI;;;;;No speaker identified
+conv__+49713216717_05-08-2024_13_44_05;out_openai/2_refs;;;;;;
+conv__+49713216717_05-08-2024_13_44_05;out_pyannote/1_refs;;;;;;
+conv__+49713217388_06-09-2024_8_44_04;out_mapped/openai;;;;;;
+conv__+49713217388_06-09-2024_8_44_04;out_mapped/pyannote;;;;;;
+conv__+49713217388_06-09-2024_8_44_04;out_openai/1_refs;;;;;;
+conv__+49713217388_06-09-2024_8_44_04;out_openai/2_refs;;;;;;
+conv__+49713217388_06-09-2024_8_44_04;out_pyannote/1_refs;;;;;;
+conv__+491729920245_24-07-2024_10_15_48;out_mapped/openai;;;;;;
+conv__+491729920245_24-07-2024_10_15_48;out_mapped/pyannote;;;;;;
+conv__+491729920245_24-07-2024_10_15_48;out_openai/1_refs;;;;;;
+conv__+491729920245_24-07-2024_10_15_48;out_openai/2_refs;;;;;;
+conv__+491729920245_24-07-2024_10_15_48;out_pyannote/1_refs;;;;;;
+conv__+491732965552_22-08-2024_9_46_35;out_mapped/openai;;;;;;
+conv__+491732965552_22-08-2024_9_46_35;out_mapped/pyannote;;;;;;
+conv__+491732965552_22-08-2024_9_46_35;out_openai/1_refs;;;;;;
+conv__+491732965552_22-08-2024_9_46_35;out_openai/2_refs;;;;;;
+conv__+491732965552_22-08-2024_9_46_35;out_pyannote/1_refs;;;;;;
+conv__+491779108125_26-08-2024_10_23_16;out_mapped/openai;;;;;;
+conv__+491779108125_26-08-2024_10_23_16;out_mapped/pyannote;;;;;;
+conv__+491779108125_26-08-2024_10_23_16;out_openai/1_refs;;;;;;
+conv__+491779108125_26-08-2024_10_23_16;out_openai/2_refs;;;;;;
+conv__+491779108125_26-08-2024_10_23_16;out_pyannote/1_refs;;;;;;
+conv__+4915203230182_22-08-2024_8_06_41;out_mapped/openai;;;;;;
+conv__+4915203230182_22-08-2024_8_06_41;out_mapped/pyannote;;;;;;
+conv__+4915203230182_22-08-2024_8_06_41;out_openai/1_refs;;;;;;
+conv__+4915203230182_22-08-2024_8_06_41;out_openai/2_refs;;;;;;
+conv__+4915203230182_22-08-2024_8_06_41;out_pyannote/1_refs;;;;;;
+conv__+4916095913442_20-08-2024_11_45_32;out_mapped/openai;;;;;;
+conv__+4916095913442_20-08-2024_11_45_32;out_mapped/pyannote;;;;;;
+conv__+4916095913442_20-08-2024_11_45_32;out_openai/1_refs;;;;;;
+conv__+4916095913442_20-08-2024_11_45_32;out_openai/2_refs;;;;;;
+conv__+4916095913442_20-08-2024_11_45_32;out_pyannote/1_refs;;;;;;

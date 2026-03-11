@@ -10,7 +10,7 @@ from speaker_mapping import map_speakers_to_roles
 
 TRIM_MS = 200
 MERGE_GAP_MS = 300
-MIN_SEG_DUR_S = 0.6
+MIN_SEG_DUR_S = 0.8
 
 def main():
     norm_dir = Path("data/normalized")
@@ -61,11 +61,14 @@ def main():
             # 2. Role assignment
             speaker_to_role, speaker_durations, flags = assign_roles(mapped_json)
 
+            # Determine specific trim per provider
+            current_trim_ms = 0 if provider == "openai" else TRIM_MS
+
             # 3. Post-process 
             caller_segments = postprocess_caller_segments(
                 diarized_segments=segments,
                 speaker_to_role=speaker_to_role,
-                trim_ms=TRIM_MS,
+                trim_ms=current_trim_ms,
                 merge_gap_ms=MERGE_GAP_MS,
                 min_seg_dur_s=MIN_SEG_DUR_S,
             )
@@ -92,7 +95,7 @@ def main():
                 "caller_segments_dir": str(seg_dir),
                 "caller_concat_file": str(concat_path) if seg_paths else None,
                 "segment_params": {
-                    "trim_ms": TRIM_MS,
+                    "trim_ms": current_trim_ms,
                     "merge_gap_ms": MERGE_GAP_MS,
                     "min_seg_dur_s": MIN_SEG_DUR_S,
                 },

@@ -20,7 +20,7 @@ REFS_DIR = Path("data/refs")
 # Segmenting params (tune later if needed)
 TRIM_MS = 200
 MERGE_GAP_MS = 300
-MIN_SEG_DUR_S = 0.6
+MIN_SEG_DUR_S = 0.8
 
 def load_agent_refs() -> List[Path]:
     # Use up to 4 refs; ensure sorted order (e.g., ref_01, ref_02)

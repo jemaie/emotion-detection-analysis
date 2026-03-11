@@ -29,18 +29,26 @@ def assign_roles(diarized: Dict[str, Any]) -> Tuple[Dict[str, str], Dict[str, fl
     if agent_speaker_id and agent_speaker_id in durations:
         flags["agent_matched_by_reference"] = True
         speaker_to_role[agent_speaker_id] = "agent"
-        for s in durations.keys():
-            if s != agent_speaker_id:
-                speaker_to_role[s] = "caller"
+        other_speakers = [s for s in durations.keys() if s != agent_speaker_id]
+        if other_speakers:
+            caller_spk = max(other_speakers, key=lambda s: durations[s])
+            speaker_to_role[caller_spk] = "caller"
+            for s in other_speakers:
+                if s != caller_spk:
+                    speaker_to_role[s] = "other"
         return speaker_to_role, dict(durations), flags
 
     # Fallback for online diarizers that rewrite the speaker directly to "agent"
     if "agent" in durations:
         flags["agent_matched_by_reference"] = True
         speaker_to_role["agent"] = "agent"
-        for s in durations.keys():
-            if s != "agent":
-                speaker_to_role[s] = "caller"
+        other_speakers = [s for s in durations.keys() if s != "agent"]
+        if other_speakers:
+            caller_spk = max(other_speakers, key=lambda s: durations[s])
+            speaker_to_role[caller_spk] = "caller"
+            for s in other_speakers:
+                if s != caller_spk:
+                    speaker_to_role[s] = "other"
         return speaker_to_role, dict(durations), flags
 
     # Fallback: assume 2 speakers and agent tends to speak less

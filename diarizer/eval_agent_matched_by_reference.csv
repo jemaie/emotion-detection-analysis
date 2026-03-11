@@ -1,3 +1,4 @@
+sep=,
 Call ID,out_mapped/pyannote,out_pyannote/1_refs,out_mapped/openai,out_openai/1_refs,out_openai/2_refs,out_openai/3_refs,out_openai/4_refs
 conv__+33327866663_20-08-2024_8_58_10,True,True,True,False,False,True,True
 conv__+4915203230182_22-08-2024_8_06_41,True,True,True,True,True,True,True

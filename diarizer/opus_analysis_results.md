@@ -17,9 +17,12 @@
 > [!IMPORTANT]
 > **Critical caveat:** Pyannote receives `num_speakers=2` as a hard constraint (both in `client.identify()` and `client.diarize()`). OpenAI's API does not offer this parameter. This makes **cross-model comparison of speaker count unfair.** However, since all calls are known to be two-party conversations, the constraint is justified domain knowledge — not artificial bias.
 
+> [!NOTE]
+> **Why only Pyannote 0_refs and 1_ref?** Pyannote with ≥2 references is not evaluated because it is meaningless: with `num_speakers=2` and 2 references of the same speaker, the model trivially matches each of the 2 detected speakers to one of the 2 references — it becomes a forced 1:1 assignment rather than genuine identification. The `0_refs` variant diarizes blind (no references at all) and then maps the agent **offline** via embedding similarity using [run_speaker_mapper.py](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/run_speaker_mapper.py).
+
 ---
 
-## CSV 1: [eval_num_speakers.csv](file:///c:/Users/MaierJerome/projects-ma/emotion-detection-analysis/diarizer/eval_num_speakers.csv) — Speaker Count Accuracy
+## CSV 1: [eval_num_speakers.csv](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/eval_num_speakers.csv) — Speaker Count Accuracy
 
 | Approach | Correct (==2) | Percentage |
 |---|---|---|
@@ -41,7 +44,7 @@ This CSV can only *cautiously* support a cross-model argument — e.g., if manua
 
 ---
 
-## CSV 2: [eval_agent_matched_by_reference.csv](file:///c:/Users/MaierJerome/projects-ma/emotion-detection-analysis/diarizer/eval_agent_matched_by_reference.csv) — Agent Identification
+## CSV 2: [eval_agent_matched_by_reference.csv](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/eval_agent_matched_by_reference.csv) — Agent Identification
 
 | Approach | Agent matched | Percentage |
 |---|---|---|
@@ -67,13 +70,13 @@ This CSV can only *cautiously* support a cross-model argument — e.g., if manua
 | **4** | 100% | 64% | Clear overfitting — agent hogging labels, caller split into sub-speakers |
 
 > [!NOTE]
-> **Extra speakers ≠ lost caller audio.** The [assign_roles](file:///c:/Users/MaierJerome/projects-ma/emotion-detection-analysis/diarizer/run_batch_scripts/role_assign.py#4-60) logic maps the agent, then labels *all* remaining speakers as "caller" — regardless of how many there are. So when OpenAI (mapped) detects 3–4 speakers but correctly identifies the agent (which it does 100% of the time), the extra speakers simply get pooled into the caller bucket. **For downstream caller emotion detection, the over-segmentation is benign.** The only real risk is agent speech bleeding *into* the caller pool (a boundary-precision issue, not a speaker-count issue).
+> **Extra speakers ≠ lost caller audio.** The [assign_roles](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/run_batch_scripts/role_assign.py#4-60) logic maps the agent, then labels *all* remaining speakers as "caller" — regardless of how many there are. So when OpenAI (mapped) detects 3–4 speakers but correctly identifies the agent (which it does 100% of the time), the extra speakers simply get pooled into the caller bucket. **For downstream caller emotion detection, the over-segmentation is benign.** The only real risk is agent speech bleeding *into* the caller pool (a boundary-precision issue, not a speaker-count issue).
 
 **Both Pyannote approaches** (mapped and 1-ref) achieve genuine 100%/100%, though Pyannote's `num_speakers=2` constraint makes agent identification trivially easier (only 2 candidates). This is defensible domain knowledge but should be acknowledged.
 
 ---
 
-## Preliminary Verdict
+## Preliminary Verdict (CSVs 1 & 2)
 
 - **Pyannote** leads on both metrics, but the `num_speakers=2` constraint gives it an inherent structural advantage. This is justified (calls *are* 2-party), but the advantage should be disclosed.
 - **OpenAI (mapped)** is stronger than the 72% speaker-count score suggests — with 100% agent match and extra speakers harmlessly pooled as caller, it is a **genuine contender** alongside Pyannote. The offline mapping approach works well for both models.
@@ -82,13 +85,79 @@ This CSV can only *cautiously* support a cross-model argument — e.g., if manua
 
 ---
 
+## CSV 3: [eval_caller_duration.csv](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/eval_caller_duration.csv) — Caller Speaking Time
+
+Total caller audio captured per approach (seconds summed across all 25 calls):
+
+| Approach | Total (sec) | Avg/call (sec) | Zero-duration calls |
+|---|---|---|---|
+| **Pyannote (mapped)** | **1246** | 49.8 | 0 |
+| **Pyannote (1 ref)** | **1286** | 51.5 | 0 |
+| OpenAI (mapped) | 1102 | 44.1 | 0 |
+| OpenAI (1 ref) | 709 | 28.4 | **10** |
+| OpenAI (2 refs) | 966 | 38.7 | **5** |
+| OpenAI (3 refs) | 865 | 34.6 | **4** |
+| OpenAI (4 refs) | 646 | 25.8 | **9** |
+
+> [!CAUTION]
+> **OpenAI frequently loses the caller entirely.** A 0.00-second caller duration means the entire caller side was lost — no emotion detection possible for that call. OpenAI (1 ref) loses the caller in **10 out of 25 calls** (40%). Even OpenAI (2 refs) loses 5 calls. In contrast, **both Pyannote variants and OpenAI (mapped) never lose a single call.**
+
+**Key observations:**
+- **Pyannote (1 ref) captures the most caller audio** (1286s) — ~3% more than Pyannote (mapped), suggesting the reference helps slightly with boundary precision
+- **OpenAI (mapped)** captures 1102s — 12% less than Pyannote, but critically **zero calls lost**. The gap may be from tighter segment boundaries or from agent bleed-through being excluded
+- **OpenAI with online references** (1–4 refs) is unreliable — the zero-duration calls make these approaches unsuitable as the sole method for a full production run
+
+---
+
+## CSV 4: [eval_caller_segments.csv](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/eval_caller_segments.csv) — Caller Segment Counts
+
+| Approach | Avg raw | Avg final | Drop rate |
+|---|---|---|---|
+| Pyannote (mapped) | 18.7 | 12.4 | 34.0% |
+| Pyannote (1 ref) | 18.9 | 12.6 | 33.5% |
+| OpenAI (mapped) | 21.5 | 12.6 | 41.2% |
+| OpenAI (1 ref) | 13.8 | 8.2 | 40.8% |
+| OpenAI (2 refs) | 17.6 | 10.9 | 37.8% |
+| OpenAI (3 refs) | 15.8 | 9.9 | 37.5% |
+| OpenAI (4 refs) | 12.2 | 7.3 | 39.8% |
+
+**`raw`** = caller segments straight from the diarizer. **`final`** = after post-processing (trim 200ms edges, merge segments within 300ms, drop segments < 0.6s). **Drop rate** = percentage of raw segments that didn't survive filtering.
+
+- **OpenAI (mapped) produces the most raw segments** (21.5 avg) with the highest drop rate (41.2%) — it over-segments, producing many short fragments that get filtered
+- **Pyannote** has the lowest drop rate (~34%) — its segments are more naturally sized from the start
+- **OpenAI reference variants** have lower raw counts, partly because zero-duration calls contribute 0 segments and pull the average down
+
+---
+
+## Updated Verdict (All 4 Metrics)
+
+| Metric | Pyannote (mapped) | Pyannote (1 ref) | OpenAI (mapped) | OpenAI (1 ref) | OpenAI (2 refs) |
+|---|---|---|---|---|---|
+| Speaker count | ✅ 100% | ✅ 100% | ⚠️ 72% | ⚠️ 76% | ⚠️ 80% |
+| Agent identified | ✅ 100% | ✅ 100% | ✅ 100% | ❌ 64% | ⚠️ 80% |
+| Caller lost (0s) | ✅ 0 | ✅ 0 | ✅ 0 | ❌ 10 | ❌ 5 |
+| Total caller audio | 1246s | **1286s** | 1102s | 709s | 966s |
+| Segment drop rate | **34.0%** | **33.5%** | 41.2% | 40.8% | 37.8% |
+
+**Conclusions:**
+- **OpenAI (1 ref) and (2 refs) are eliminated** — losing the caller entirely in 10 and 5 calls respectively is disqualifying for a production pipeline
+- **OpenAI (3/4 refs) are eliminated** — overfitting + caller loss
+- **Three contenders remain:** Pyannote (mapped), Pyannote (1 ref), and OpenAI (mapped)
+- All three have 0 lost calls and 100% agent identification — the difference comes down to **caller audio completeness** and **segment quality**, which can only be assessed by manual listening
+
+---
+
 ## Manual Evaluation Guide
 
 ### 1. Listen to `caller_concat` files (compare side-by-side for the same call)
 
+Compare the **5 remaining contenders** for each call:
+
 ```
 out_mapped/pyannote/caller_concat/<call_id>.wav
+out_pyannote/1_refs/caller_concat/<call_id>.wav
 out_mapped/openai/caller_concat/<call_id>.wav
+out_openai/1_refs/caller_concat/<call_id>.wav
 out_openai/2_refs/caller_concat/<call_id>.wav
 ```
 
@@ -99,25 +168,19 @@ out_openai/2_refs/caller_concat/<call_id>.wav
 - ❌ **Short garbage segments** — noise or silence that shouldn't be there
 - ✅ **Clean caller-only audio** with natural sentence boundaries
 
-### 2. Review diarized JSON files
+### 2. Manual listening scorecard
 
-```
-out_mapped/pyannote/diarized/<call_id>.json
-out_openai/2_refs/diarized/<call_id>.json
-```
+Use [eval_manual_listening.csv](file:///c:/Users/jemai/projects/emotion-detection-analysis/diarizer/eval_manual_listening.csv) — pre-filled with all 25 calls × 5 approaches. Score each on:
 
-**Check:** Segment boundaries at natural turn-taking points, consistent speaker labeling, transcription quality.
+| Column | Scale | Meaning |
+|---|---|---|
+| Agent Bleed-Through | 0–3 | 0 = none, 3 = severe |
+| Missing Caller Speech | 0–3 | 0 = none, 3 = large chunks missing |
+| Overall Quality | 1–5 | Holistic assessment |
+| Preferred | text | Which approach is best for this call |
+| Notes | text | Free-text observations |
 
-### 3. Check summary JSONs (`index/<call_id>.summary.json`)
-
-| Field | What it tells you |
-|---|---|
-| `num_segments_total` | High counts may indicate over-segmentation |
-| `num_segments_caller_raw` → `_final` | Large drop = many segments too short or merged |
-| `speaker_durations_sec` | Does caller/agent ratio make sense? |
-| `speaker_to_role` | How many speakers detected and how assigned |
-
-### 4. Priority calls to review
+### 3. Priority calls to review first
 
 Start with calls where OpenAI struggled most:
 
@@ -130,3 +193,4 @@ Start with calls where OpenAI struggled most:
 | `conv__+49661922317` | OpenAI (1 ref): **4 speakers** detected |
 
 Listen to the original call alongside caller-concat to understand *why* these failed (background noise? hold music? tone shifts?).
+
