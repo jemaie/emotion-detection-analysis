@@ -65,7 +65,7 @@ def main():
             current_trim_ms = 0 if provider == "openai" else TRIM_MS
 
             # 3. Post-process 
-            caller_segments = postprocess_caller_segments(
+            caller_segments, stats = postprocess_caller_segments(
                 diarized_segments=segments,
                 speaker_to_role=speaker_to_role,
                 trim_ms=current_trim_ms,
@@ -90,7 +90,9 @@ def main():
                 "speaker_to_role": speaker_to_role,
                 "speaker_durations_sec": speaker_durations,
                 "flags": flags,
-                "num_segments_caller_raw": sum(1 for s in segments if speaker_to_role.get(s.get("speaker", "unknown")) == "caller"),
+                "num_segments_caller_raw": stats["num_raw_caller"],
+                "num_segments_caller_dropped": stats["num_dropped"],
+                "num_segments_caller_merged": stats["num_merged_into"],
                 "num_segments_caller_final": len(caller_segments),
                 "caller_segments_dir": str(seg_dir),
                 "caller_concat_file": str(concat_path) if seg_paths else None,

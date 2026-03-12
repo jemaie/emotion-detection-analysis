@@ -6,13 +6,21 @@ def postprocess_caller_segments(
     trim_ms: int = 250,
     merge_gap_ms: int = 300,
     min_seg_dur_s: float = 0.7,
-) -> List[Dict[str, Any]]:
+):
     """
     Filters to caller, trims boundaries, drops tiny segments, merges small gaps.
-    Returns new list of segments with updated start/end and merged text concatenation.
+    Returns `(merged, stats)` where `merged` is the new list of segments with
+    updated start/end and merged text concatenation, and `stats` is a dict with
+    counts of exactly how many were dropped vs merged.
     """
     trim = trim_ms / 1000.0
     merge_gap = merge_gap_ms / 1000.0
+
+    stats = {
+        "num_raw_caller": 0,
+        "num_dropped": 0,
+        "num_merged_into": 0,
+    }
 
     # 1) filter to caller
     caller = []
@@ -20,12 +28,18 @@ def postprocess_caller_segments(
         spk = seg.get("speaker", "unknown")
         if speaker_to_role.get(spk) != "caller":
             continue
+        
+        stats["num_raw_caller"] += 1
+        
         start = float(seg.get("start", 0.0)) + trim
         end = float(seg.get("end", 0.0)) - trim
         if end <= start:
+            stats["num_dropped"] += 1
             continue
         if (end - start) < min_seg_dur_s:
+            stats["num_dropped"] += 1
             continue
+            
         caller.append({
             "speaker": spk,
             "start": start,
@@ -34,7 +48,7 @@ def postprocess_caller_segments(
         })
 
     if not caller:
-        return []
+        return [], stats
 
     # 2) sort
     caller.sort(key=lambda s: s["start"])
@@ -52,9 +66,10 @@ def postprocess_caller_segments(
                     cur["text"] += " " + nxt["text"]
                 else:
                     cur["text"] = nxt["text"]
+            stats["num_merged_into"] += 1
         else:
             merged.append(cur)
             cur = nxt.copy()
     merged.append(cur)
 
-    return merged
+    return merged, stats

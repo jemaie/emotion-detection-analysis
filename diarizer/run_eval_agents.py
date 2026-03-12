@@ -46,13 +46,19 @@ for flag, config in flags_config.items():
         f.write("sep=,\n")
         writer = csv.writer(f)
         
-        header = ["Call ID"] + sources
+        header = ["Call ID"]
+        if flag == "num_speakers":
+            header.append("Expected")
+        header.extend(sources)
         writer.writerow(header)
         
         totals = {src: 0 for src in sources}
         
         for call in calls:
             row = [call]
+            if flag == "num_speakers":
+                row.append(expected_speakers_per_call.get(call, 2))
+                
             for src in sources:
                 json_path = os.path.join(base_dir, src.replace('/', os.sep), "index", f"{call}.summary.json")
                 val = "N/A"
@@ -77,11 +83,15 @@ for flag, config in flags_config.items():
         
         total_label = "Total (== Expected)" if flag == "num_speakers" else f"Total (== {config['target']})"
         total_row = [total_label]
+        if flag == "num_speakers":
+            total_row.append("") # skip expected column
         for src in sources:
             total_row.append(totals[src])
         writer.writerow(total_row)
         
         pct_row = ["Percentage"]
+        if flag == "num_speakers":
+            pct_row.append("") # skip expected column
         for src in sources:
             pct = (totals[src] / len(calls)) * 100 if len(calls) > 0 else 0
             pct_row.append(f"{pct:.1f}%")
@@ -185,6 +195,8 @@ with open(csv_file, "w", newline="") as f:
 
     sums_raw = {src: 0 for src in sources}
     sums_final = {src: 0 for src in sources}
+    sums_dropped = {src: 0 for src in sources}
+    sums_merged = {src: 0 for src in sources}
     counts = {src: 0 for src in sources}
 
     for call in calls:
@@ -194,10 +206,15 @@ with open(csv_file, "w", newline="") as f:
             if data:
                 raw = data.get("num_segments_caller_raw", "N/A")
                 final = data.get("num_segments_caller_final", "N/A")
-                if isinstance(raw, int):
+                dropped = data.get("num_segments_caller_dropped", 0)
+                merged = data.get("num_segments_caller_merged", 0)
+                
+                if isinstance(raw, int) and isinstance(final, int):
                     sums_raw[src] += raw
-                if isinstance(final, int):
                     sums_final[src] += final
+                    sums_dropped[src] += dropped
+                    sums_merged[src] += merged
+                
                 counts[src] += 1
                 row.append(raw)
                 row.append(final)
@@ -222,14 +239,34 @@ with open(csv_file, "w", newline="") as f:
         total_row.append(sums_final[src])
     writer.writerow(total_row)
 
-    drop_row = ["Drop rate"]
+    drop_row = ["Drop rate (filtered out)"]
     for src in sources:
         if sums_raw[src] > 0:
-            drop = (1 - sums_final[src] / sums_raw[src]) * 100
-            drop_row.append(f"{drop:.1f}%")
+            drop_pct = (sums_dropped[src] / sums_raw[src]) * 100
+            drop_row.append(f"{drop_pct:.1f}%")
         else:
             drop_row.append("N/A")
         drop_row.append("")
     writer.writerow(drop_row)
+
+    merge_row = ["Merge rate (combined)"]
+    for src in sources:
+        if sums_raw[src] > 0:
+            merge_pct = (sums_merged[src] / sums_raw[src]) * 100
+            merge_row.append(f"{merge_pct:.1f}%")
+        else:
+            merge_row.append("N/A")
+        merge_row.append("")
+    writer.writerow(merge_row)
+
+    old_calc_row = ["Total reduction rate (merged+dropped)"]
+    for src in sources:
+        if sums_raw[src] > 0:
+            red_pct = ((sums_raw[src] - sums_final[src]) / sums_raw[src]) * 100
+            old_calc_row.append(f"{red_pct:.1f}%")
+        else:
+            old_calc_row.append("N/A")
+        old_calc_row.append("")
+    writer.writerow(old_calc_row)
 
 print(f"Created {csv_file}")
