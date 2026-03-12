@@ -1,11 +1,11 @@
 from pathlib import Path
 import torchaudio
+import torch
 import gc
 from speechbrain.inference.separation import SepformerSeparation as separator
 from tqdm import tqdm
 
 from audio_io import normalize_to_wav16k_mono
-import subprocess
 
 RAW_DIR = Path("../aufnahmen25")
 NORM_DIR = Path("data/normalized")
@@ -66,7 +66,8 @@ def main():
             sample_rate = 16000
             
             # Load and separate the full file
-            est_sources = model.separate_file(path=str(norm_path))
+            with torch.no_grad():
+                est_sources = model.separate_file(path=str(norm_path))
             
             # Save separated tracks
             torchaudio.save(str(out_spk1), est_sources[:, :, 0].detach().cpu(), sample_rate)
