@@ -5,7 +5,7 @@ import gc
 from speechbrain.inference.separation import SepformerSeparation as separator
 from tqdm import tqdm
 
-from audio_io import normalize_to_wav16k_mono
+from audio_io import normalize_to_wav8k_mono
 
 RAW_DIR = Path("../aufnahmen25")
 NORM_DIR = Path("data/normalized")
@@ -38,14 +38,16 @@ def main():
 
     print(f"Found {len(audio_files)} files to process.")
 
-    for src_path in tqdm(audio_files, desc="Separating audio"):
+    pbar = tqdm(audio_files, desc="Separating audio")
+    for src_path in pbar:
         recording_id = src_path.stem
+        pbar.set_postfix(file=recording_id)
         norm_path = NORM_DIR / f"{recording_id}.wav"
         
         # 1. Normalize and resample to 16kHz mono
         if not norm_path.exists():
             try:
-                normalize_to_wav16k_mono(src_path, norm_path)
+                normalize_to_wav8k_mono(src_path, norm_path)
             except Exception as e:
                 print(f"\nError normalizing {src_path.name}: {e}")
                 continue
