@@ -31,7 +31,7 @@ OUT_BASE = Path("out_param_test")
 METHODS = {
     "pyannote_mapped": Path("out_mapped/pyannote/diarized"),
     "openai_mapped":   Path("out_mapped/openai/diarized"),
-    "openai_2refs":    Path("out_openai/2_refs/diarized"),
+    # "openai_2refs":    Path("out_openai/2_refs/diarized"),
 }
 
 # 3 representative test calls:
@@ -46,10 +46,22 @@ TEST_CALLS = [
 
 # Parameter sets to compare
 PARAM_SETS = {
-    "current": {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 0.6},
-    "var_1":   {"trim_ms": 100, "merge_gap_ms": 300, "min_seg_dur_s": 0.4},
-    "var_2":   {"trim_ms": 250, "merge_gap_ms": 450, "min_seg_dur_s": 0.8},
-    "mixed":   {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 0.8},
+    # "current": {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 0.6},
+    # "var_1":   {"trim_ms": 100, "merge_gap_ms": 300, "min_seg_dur_s": 0.4},
+    # "var_2":   {"trim_ms": 250, "merge_gap_ms": 450, "min_seg_dur_s": 0.8},
+    # "mixed":   {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 0.8},
+
+    # The new baseline we just implemented
+    "new_baseline": {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 1.5},
+    
+    # 1. Is trim still useful now that we remove overlaps anyway? (trim=0, min_seg=1.5)
+    "no_trim":      {"trim_ms": 0,   "merge_gap_ms": 300, "min_seg_dur_s": 1.5},
+    
+    # 2. Is 1.5s too high? Let's compare to 0.8s when trim is also 0
+    "no_trim_0.8s": {"trim_ms": 0,   "merge_gap_ms": 300, "min_seg_dur_s": 0.8},
+    
+    # The old baseline before any of these overlap changes
+    "old_baseline": {"trim_ms": 200, "merge_gap_ms": 300, "min_seg_dur_s": 0.8},
 }
 
 
@@ -72,7 +84,7 @@ def process(method_name: str, diar_dir: Path, call_id: str, param_name: str, par
     speaker_to_role, speaker_durations, flags = assign_roles(diarized)
 
     # Post-process with the given param set
-    caller_segments = postprocess_caller_segments(
+    caller_segments, stats = postprocess_caller_segments(
         diarized_segments=segments,
         speaker_to_role=speaker_to_role,
         **params,
@@ -125,8 +137,10 @@ def main():
     print(f"\n{'=' * 80}")
     print(f"Done. Results in: {OUT_BASE.resolve()}")
     print(f"\nTo compare, listen to:")
-    print(f"  out_param_test/<method>/current/caller_concat/<call_id>.wav")
-    print(f"  out_param_test/<method>/proposed/caller_concat/<call_id>.wav")
+    print(f"  out_param_test/<method>/new_baseline/caller_concat/<call_id>.wav")
+    print(f"  out_param_test/<method>/no_trim/caller_concat/<call_id>.wav")
+    print(f"  out_param_test/<method>/no_trim_0.8s/caller_concat/<call_id>.wav")
+    print(f"  out_param_test/<method>/old_baseline/caller_concat/<call_id>.wav")
     print(f"{'=' * 80}")
 
 

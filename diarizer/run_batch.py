@@ -137,6 +137,8 @@ def main() -> None:
                     "num_segments_total": len(segments),
                     "num_segments_caller_raw": stats["num_raw_caller"],
                     "num_segments_caller_dropped": stats["num_dropped"],
+                    "num_segments_caller_dropped_trim_dur": stats.get("num_dropped_trim_dur", 0),
+                    "num_segments_caller_dropped_overlap": stats.get("num_dropped_overlap", 0),
                     "num_segments_caller_merged": stats["num_merged_into"],
                     "num_segments_caller_final": len(caller_segments),
                     "caller_segments_dir": str(seg_dir),

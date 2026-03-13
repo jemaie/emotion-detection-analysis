@@ -91,18 +91,21 @@ def main():
         lines = f.readlines()
         
     start_idx = 0
+    delimiter = ";" if ";" in lines[0] else ","
     if lines and lines[0].startswith("sep="):
         start_idx = 1
+        delimiter = lines[0].strip().split("=")[1]
         
-    reader = csv.DictReader(lines[start_idx:])
+    reader = csv.DictReader(lines[start_idx:], delimiter=delimiter)
     for row in reader:
-        if row.get("Call ID"):
-            call_ids.add(row["Call ID"])
+        call_id = row.get("Call ID")
+        if call_id and call_id.strip():
+            call_ids.add(call_id.strip())
             
     call_ids = sorted(list(call_ids))
     
     with open(out_csv, "w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, delimiter=",")
         header = ["Call ID", "Start", "End", "Duration"] + METHODS
         writer.writerow(header)
         

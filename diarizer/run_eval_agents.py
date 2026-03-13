@@ -195,7 +195,9 @@ with open(csv_file, "w", newline="") as f:
 
     sums_raw = {src: 0 for src in sources}
     sums_final = {src: 0 for src in sources}
-    sums_dropped = {src: 0 for src in sources}
+    sums_dropped_total = {src: 0 for src in sources}
+    sums_dropped_trim_dur = {src: 0 for src in sources}
+    sums_dropped_overlap = {src: 0 for src in sources}
     sums_merged = {src: 0 for src in sources}
     counts = {src: 0 for src in sources}
 
@@ -206,13 +208,23 @@ with open(csv_file, "w", newline="") as f:
             if data:
                 raw = data.get("num_segments_caller_raw", "N/A")
                 final = data.get("num_segments_caller_final", "N/A")
-                dropped = data.get("num_segments_caller_dropped", 0)
+                dropped_total = data.get("num_segments_caller_dropped", 0)
+                dropped_trim_dur = data.get("num_segments_caller_dropped_trim_dur", 0)
+                dropped_overlap = data.get("num_segments_caller_dropped_overlap", 0)
                 merged = data.get("num_segments_caller_merged", 0)
+                
+                # If these new detailed metrics don't exist yet, try to default them
+                if "num_segments_caller_dropped_trim_dur" not in data:
+                     # Old format fallback
+                     dropped_trim_dur = dropped_total
+                     
                 
                 if isinstance(raw, int) and isinstance(final, int):
                     sums_raw[src] += raw
                     sums_final[src] += final
-                    sums_dropped[src] += dropped
+                    sums_dropped_total[src] += dropped_total
+                    sums_dropped_trim_dur[src] += dropped_trim_dur
+                    sums_dropped_overlap[src] += dropped_overlap
                     sums_merged[src] += merged
                 
                 counts[src] += 1
@@ -239,15 +251,35 @@ with open(csv_file, "w", newline="") as f:
         total_row.append(sums_final[src])
     writer.writerow(total_row)
 
-    drop_row = ["Drop rate (filtered out)"]
+    drop_row = ["Total Drop rate (filtered out)"]
     for src in sources:
         if sums_raw[src] > 0:
-            drop_pct = (sums_dropped[src] / sums_raw[src]) * 100
+            drop_pct = (sums_dropped_total[src] / sums_raw[src]) * 100
             drop_row.append(f"{drop_pct:.1f}%")
         else:
             drop_row.append("N/A")
         drop_row.append("")
     writer.writerow(drop_row)
+
+    drop_dur_row = [" - Trim / Duration Drop rate"]
+    for src in sources:
+        if sums_raw[src] > 0:
+            drop_pct = (sums_dropped_trim_dur[src] / sums_raw[src]) * 100
+            drop_dur_row.append(f"{drop_pct:.1f}%")
+        else:
+            drop_dur_row.append("N/A")
+        drop_dur_row.append("")
+    writer.writerow(drop_dur_row)
+
+    drop_overlap_row = [" - Overlap Drop rate"]
+    for src in sources:
+        if sums_raw[src] > 0:
+            drop_pct = (sums_dropped_overlap[src] / sums_raw[src]) * 100
+            drop_overlap_row.append(f"{drop_pct:.1f}%")
+        else:
+            drop_overlap_row.append("N/A")
+        drop_overlap_row.append("")
+    writer.writerow(drop_overlap_row)
 
     merge_row = ["Merge rate (combined)"]
     for src in sources:
