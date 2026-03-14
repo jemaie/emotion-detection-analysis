@@ -18,7 +18,7 @@ NORM_DIR = Path("data/normalized")
 REFS_DIR = Path("data/refs")
 
 # Segmenting params (tune later if needed)
-TRIM_MS = 200
+TRIM_MS = 0
 MERGE_GAP_MS = 300
 MIN_SEG_DUR_S = 0.8
 
@@ -106,12 +106,10 @@ def main() -> None:
                 speaker_to_role, speaker_durations, flags = assign_roles(diarized)
 
                 # 4) Post-process caller segments (trim/merge/drop)
-                current_trim_ms = 0 if provider == "openai" else TRIM_MS
-                
                 caller_segments, stats = postprocess_caller_segments(
                     diarized_segments=segments,
                     speaker_to_role=speaker_to_role,
-                    trim_ms=current_trim_ms,
+                    trim_ms=TRIM_MS,
                     merge_gap_ms=MERGE_GAP_MS,
                     min_seg_dur_s=MIN_SEG_DUR_S,
                 )

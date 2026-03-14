@@ -8,7 +8,7 @@ from run_batch_scripts.segment_postprocess import postprocess_caller_segments
 from run_batch_scripts.extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
 from speaker_mapping import map_speakers_to_roles
 
-TRIM_MS = 200
+TRIM_MS = 0
 MERGE_GAP_MS = 300
 MIN_SEG_DUR_S = 0.8
 
@@ -61,14 +61,11 @@ def main():
             # 2. Role assignment
             speaker_to_role, speaker_durations, flags = assign_roles(mapped_json)
 
-            # Determine specific trim per provider
-            current_trim_ms = 0 if provider == "openai" else TRIM_MS
-
             # 3. Post-process 
             caller_segments, stats = postprocess_caller_segments(
                 diarized_segments=segments,
                 speaker_to_role=speaker_to_role,
-                trim_ms=current_trim_ms,
+                trim_ms=TRIM_MS,
                 merge_gap_ms=MERGE_GAP_MS,
                 min_seg_dur_s=MIN_SEG_DUR_S,
             )
