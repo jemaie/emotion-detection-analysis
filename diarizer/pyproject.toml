@@ -1,0 +1,16 @@
+[project]
+name = "emotion-detection-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.12.10"
+dependencies = [
+    "numpy>=2.4.2",
+    "openai>=2.21.0",
+    "pyannote-audio==4.0.4",
+    "python-dotenv>=1.2.1",
+    "scipy>=1.17.0",
+    "torch==2.8.*",
+    "torchaudio==2.8.*",
+    "tqdm>=4.67.3",
+]

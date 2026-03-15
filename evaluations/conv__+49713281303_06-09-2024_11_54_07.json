@@ -1,0 +1,11 @@
+{
+    "filename": "conv__+49713281303_06-09-2024_11_54_07.wav",
+    "status": "unprocessed",
+    "predictions": {
+        "ehcalabres": {
+            "emotion": "happy",
+            "confidence": 0.13195601105690002
+        }
+    },
+    "user_rating": null
+}

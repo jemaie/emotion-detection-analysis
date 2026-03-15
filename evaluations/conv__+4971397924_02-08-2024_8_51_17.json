@@ -1,0 +1,11 @@
+{
+    "filename": "conv__+4971397924_02-08-2024_8_51_17.wav",
+    "status": "unprocessed",
+    "predictions": {
+        "ehcalabres": {
+            "emotion": "calm",
+            "confidence": 0.13229916989803314
+        }
+    },
+    "user_rating": null
+}

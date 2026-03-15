@@ -1,0 +1,15 @@
+{
+    "filename": "conv__+4915203230182_20-08-2024_9_49_36.wav",
+    "status": "unprocessed",
+    "predictions": {
+        "ehcalabres": {
+            "emotion": "sad",
+            "confidence": 0.13356733322143555
+        },
+        "openai_realtime": {
+            "emotion": "neutral",
+            "confidence": 0.75
+        }
+    },
+    "user_rating": null
+}

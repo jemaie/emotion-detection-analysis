@@ -1,0 +1,15 @@
+{
+    "filename": "conv_S_Dapouyeh_24-07-2024_9_10_14.wav",
+    "status": "processed",
+    "predictions": {
+        "ehcalabres": {
+            "emotion": "angry",
+            "confidence": 0.9532353782833826
+        },
+        "openai_realtime": {
+            "emotion": "sad",
+            "confidence": 0.8054916767071973
+        }
+    },
+    "user_rating": null
+}

@@ -1,0 +1,16 @@
+[project]
+name = "separator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.12.10"
+dependencies = [
+    "huggingface-hub<1.0.0",
+    "ipywidgets>=8.1.8",
+    "notebook>=7.5.3",
+    "soundfile>=0.13.1",
+    "speechbrain==1.0.3",
+    "torch==2.8.*",
+    "torchaudio==2.8.*",
+    "tqdm>=4.67.3",
+]
