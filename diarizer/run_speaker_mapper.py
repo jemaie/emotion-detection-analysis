@@ -6,7 +6,7 @@ from run_batch_scripts.diarize_pyannote import diarize_transcribe
 from run_batch_scripts.role_assign import assign_roles
 from run_batch_scripts.segment_postprocess import postprocess_caller_segments
 from run_batch_scripts.extract_audio import extract_segments_ffmpeg, concat_wavs_ffmpeg
-from speaker_mapping import map_speakers_to_roles
+from scripts_core.speaker_mapping_core import map_speakers_to_roles
 
 TRIM_MS = 0
 MERGE_GAP_MS = 300
