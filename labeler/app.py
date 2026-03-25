@@ -43,7 +43,7 @@ def main():
     evals_concat = evaluations.get("concat", [])
     evals_segments = evaluations.get("segments", [])
     
-    model_names = ["openai_realtime", "openai_realtime_2", "openai_realtime_rp", "openai_realtime_rp_2",
+    model_names = ["openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
                     "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
                     "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"]
     
@@ -240,22 +240,23 @@ def main():
                     scores.sort(key=lambda x: x[1], reverse=True)
                     if scores:
                         row["1st Em"] = scores[0][0] if len(scores) > 0 else None
-                        row["1st Conf"] = round(scores[0][1], 2) if len(scores) > 0 else None
+                        row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
                         row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
-                        row["2nd Conf"] = round(scores[1][1], 2) if len(scores) > 1 else None
+                        row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
                         row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
-                        row["3rd Conf"] = round(scores[2][1], 2) if len(scores) > 2 else None
+                        row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
                     else:
                         row["1st Em"] = data.get("emotion")
                         conf = data.get("confidence")
-                        row["1st Conf"] = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                        conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                        row["1st Conf"] = str(conf_val) if conf_val is not None else None
                         row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
                         
                     df_rows.append(row)
                 _pred_col_cfg = {
                     "1st Conf": st.column_config.TextColumn(width=300),
                 }
-                st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, use_container_width=True)
+                st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
             else:
                 st.warning("No predictions found for this file.")
                 
@@ -364,22 +365,23 @@ def main():
                         scores.sort(key=lambda x: x[1], reverse=True)
                         if scores:
                             row["1st Em"] = scores[0][0] if len(scores) > 0 else None
-                            row["1st Conf"] = round(scores[0][1], 2) if len(scores) > 0 else None
+                            row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
                             row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
-                            row["2nd Conf"] = round(scores[1][1], 2) if len(scores) > 1 else None
+                            row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
                             row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
-                            row["3rd Conf"] = round(scores[2][1], 2) if len(scores) > 2 else None
+                            row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
                         else:
                             row["1st Em"] = data.get("emotion")
                             conf = data.get("confidence")
-                            row["1st Conf"] = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                            conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                            row["1st Conf"] = str(conf_val) if conf_val is not None else None
                             row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
                             
                         df_rows.append(row)
                     _pred_col_cfg = {
                         "1st Conf": st.column_config.TextColumn(width=300),
                     }
-                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, use_container_width=True)
+                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
                 else:
                     st.warning("No predictions found.")
                     

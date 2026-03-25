@@ -54,7 +54,8 @@ def write_evaluation(audio_filename: Path, data: dict):
     
     if "predictions" in data:
         model_order = [
-            "openai_realtime", "openai_realtime_2", "openai_realtime_rp", "openai_realtime_rp_2",
+            "openai_realtime", "openai_realtime_2", "openai_realtime_rp", "openai_realtime_rp_2", "openai_realtime_ft", "openai_realtime_ft_2",
+            "openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
             "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
             "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"
         ]
