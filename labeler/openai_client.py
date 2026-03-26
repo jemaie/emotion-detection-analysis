@@ -22,16 +22,15 @@ class OpenAIRealtimeClient:
         self.use_open_emotion = use_open_emotion
         self.instructions = instructions or (
             'Du bist ein System zur Emotionserkennung.\n'
-            'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n'
-            'Benenne die primäre Emotion des Sprechers mit EINEM besonders treffenden, präzisen englischen Begriff.\n'
-            'Wähle einen gebräuchlichen, klar interpretierbaren Emotionsbegriff (z.B. frustrated, angry, anxious, calm, neutral).\n'
+            'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+            'Gib genau EINE präzise, gebräuchliche englische Emotion zurück (z.B. neutral, frustrated, anxious, calm).\n\n'
 
             'Regeln:\n'
-            '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
-            '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
-            '- Bestimme die Emotion basierend auf dem tatsächlichen emotionalen Zustand des Sprechers, nicht nur anhand des Themas.\n'
+            '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+            '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
             '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
-            '- Sei konsistent und eher konservativ in deiner Einschätzung.\n\n'
+            '- Sei konsistent und eher konservativ.\n\n'
+
             'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
         )
 
@@ -86,18 +85,14 @@ class OpenAIRealtimeClient:
             "turn_detection": None
         }
         if self.model_name is not None:
-            # User mentioned 'model' property, but the original code used 'model_name'.
-            # I will set both to be safe, or just use what works with the runner.
             model_settings["model_name"] = self.model_name
 
-        # Disable VAD to force manual turn completion
         runner = RealtimeRunner(
             starting_agent=agent,
             config={
                 "model_settings": model_settings
             }
         )
-        
         # --- OLD CONFIGURATION (kept for reference) ---
         # runner = RealtimeRunner(
         #     starting_agent=agent,

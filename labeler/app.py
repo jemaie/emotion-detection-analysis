@@ -11,7 +11,8 @@ try:
 except ImportError:
     print("Failed to import runner_state.py")
 
-AUDIO_DIR = Path("../diarizer/output/caller_concat")
+CONCAT_DIR = Path("data/caller_concat_mixed")
+SEGMENTS_DIR = Path("data/caller_segments_24kHz")
 
 st.set_page_config(page_title="Emotion Labeler", layout="wide")
 st.markdown(
@@ -43,7 +44,7 @@ def main():
     evals_concat = evaluations.get("concat", [])
     evals_segments = evaluations.get("segments", [])
     
-    model_names = ["openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
+    model_names = ["openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2", "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2",
                     "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
                     "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"]
     
@@ -223,7 +224,7 @@ def main():
                 else:
                     st.success(f"{ur_conv.get('true_emotion').title()}", icon="✅")
             c_filename = c_eval["filename"]
-            c_audio_path = AUDIO_DIR / c_filename
+            c_audio_path = CONCAT_DIR / c_filename
             
             if c_audio_path.exists():
                 st.audio(str(c_audio_path))
@@ -231,40 +232,43 @@ def main():
                 st.error("Audio file missing.")
                 
             # st.markdown("#### Model Predictions")
-            c_preds = c_eval.get("predictions", {})
-            if c_preds:
-                df_rows = []
-                for model_n, data in c_preds.items():
-                    row = {"Model": model_n}
-                    scores = list(data.get("scores", {}).items())
-                    scores.sort(key=lambda x: x[1], reverse=True)
-                    if scores:
-                        row["1st Em"] = scores[0][0] if len(scores) > 0 else None
-                        row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
-                        row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
-                        row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
-                        row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
-                        row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
-                    else:
-                        row["1st Em"] = data.get("emotion")
-                        conf = data.get("confidence")
-                        conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
-                        row["1st Conf"] = str(conf_val) if conf_val is not None else None
-                        row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
-                        
-                    df_rows.append(row)
-                _pred_col_cfg = {
-                    "1st Conf": st.column_config.TextColumn(width=300),
-                }
-                st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
+            if not c_eval.get("user_rating"):
+                st.info("💡 Please submit your rating first before viewing the models' predictions.")
             else:
-                st.warning("No predictions found for this file.")
+                c_preds = c_eval.get("predictions", {})
+                if c_preds:
+                    df_rows = []
+                    for model_n, data in c_preds.items():
+                        row = {"Model": model_n}
+                        scores = list(data.get("scores", {}).items())
+                        scores.sort(key=lambda x: x[1], reverse=True)
+                        if scores:
+                            row["1st Em"] = scores[0][0] if len(scores) > 0 else None
+                            row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
+                            row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
+                            row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
+                            row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
+                            row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
+                        else:
+                            row["1st Em"] = data.get("emotion")
+                            conf = data.get("confidence")
+                            conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                            row["1st Conf"] = str(conf_val) if conf_val is not None else None
+                            row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
+                            
+                        df_rows.append(row)
+                    _pred_col_cfg = {
+                        "1st Conf": st.column_config.TextColumn(width=300),
+                    }
+                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
+                else:
+                    st.warning("No predictions found for this file.")
                 
             # st.markdown("#### User Rating")
             with st.form(key="concat_rating_form"):
                 ur = c_eval.get("user_rating") or {}
-                emotions = ["angry", "sad", "happy", "fear", "neutral", "surprise", "disgust", "other"]
-                def_idx = emotions.index(ur.get("true_emotion")) if ur.get("true_emotion") in emotions else 4
+                emotions = ["neutral", "frustrated", "angry", "sad", "happy", "fear", "surprise", "disgust", "other"]
+                def_idx = emotions.index(ur.get("true_emotion")) if ur.get("true_emotion") in emotions else 0
                 
                 fc1, fc2, fc3, fc4 = st.columns([2, 8, 2, 2])
                 with fc1: submit = st.form_submit_button("Save Rating", width='stretch')
@@ -347,7 +351,6 @@ def main():
                         p_str = f" ({s_ur.get('phase')})" if s_ur.get("phase") else ""
                         st.success(f"{s_ur.get('true_emotion').title()}{p_str}", icon="✅")
                 
-                SEGMENTS_DIR = Path("../diarizer/output/caller_segments")
                 s_audio_path = SEGMENTS_DIR / st.session_state.selected_conv_id / st.session_state.selected_seg_filename
                 
                 if s_audio_path.exists():
@@ -356,40 +359,43 @@ def main():
                     st.error("Audio file missing.")
                     
                 # st.markdown("#### Model Predictions")
-                s_preds = s_eval.get("predictions", {})
-                if s_preds:
-                    df_rows = []
-                    for model_n, data in s_preds.items():
-                        row = {"Model": model_n}
-                        scores = list(data.get("scores", {}).items())
-                        scores.sort(key=lambda x: x[1], reverse=True)
-                        if scores:
-                            row["1st Em"] = scores[0][0] if len(scores) > 0 else None
-                            row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
-                            row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
-                            row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
-                            row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
-                            row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
-                        else:
-                            row["1st Em"] = data.get("emotion")
-                            conf = data.get("confidence")
-                            conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
-                            row["1st Conf"] = str(conf_val) if conf_val is not None else None
-                            row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
-                            
-                        df_rows.append(row)
-                    _pred_col_cfg = {
-                        "1st Conf": st.column_config.TextColumn(width=300),
-                    }
-                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
+                if not s_eval.get("user_rating"):
+                    st.info("💡 Please submit your rating first before viewing the models' predictions.")
                 else:
-                    st.warning("No predictions found.")
+                    s_preds = s_eval.get("predictions", {})
+                    if s_preds:
+                        df_rows = []
+                        for model_n, data in s_preds.items():
+                            row = {"Model": model_n}
+                            scores = list(data.get("scores", {}).items())
+                            scores.sort(key=lambda x: x[1], reverse=True)
+                            if scores:
+                                row["1st Em"] = scores[0][0] if len(scores) > 0 else None
+                                row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
+                                row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
+                                row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
+                                row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
+                                row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
+                            else:
+                                row["1st Em"] = data.get("emotion")
+                                conf = data.get("confidence")
+                                conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                                row["1st Conf"] = str(conf_val) if conf_val is not None else None
+                                row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
+                                
+                            df_rows.append(row)
+                        _pred_col_cfg = {
+                            "1st Conf": st.column_config.TextColumn(width=300),
+                        }
+                        st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_pred_col_cfg, width="stretch")
+                    else:
+                        st.warning("No predictions found.")
                     
                 # st.markdown("#### User Rating")
                 with st.form(key="segment_rating_form"):
                     s_ur = s_eval.get("user_rating") or {}
-                    emotions = ["angry", "sad", "happy", "fear", "neutral", "surprise", "disgust", "other"]
-                    def_idx = emotions.index(s_ur.get("true_emotion")) if s_ur.get("true_emotion") in emotions else 4
+                    emotions = ["neutral", "frustrated", "angry", "sad", "happy", "fear", "surprise", "disgust", "other"]
+                    def_idx = emotions.index(s_ur.get("true_emotion")) if s_ur.get("true_emotion") in emotions else 0
                     phases = ["Phase 1", "Phase 2", "Phase 3", "N/A"]
                     p_idx = phases.index(s_ur.get("phase")) if s_ur.get("phase") in phases else 3
                     
@@ -449,27 +455,31 @@ def main():
                 
                 u_rating = s.get("user_rating") or {}
                 row["[Phase]"] = u_rating.get("phase", "-")
+                row["[Notes]"] = u_rating.get("notes", "-")
                 row["[User]"] = u_rating.get("true_emotion", "-")
                 
                 s_preds = s.get("predictions", {})
                 
                 for model_name in model_names:
-                    pred_data = s_preds.get(model_name, {})
-                    scores = list(pred_data.get("scores", {}).items())
-                    scores.sort(key=lambda x: x[1], reverse=True)
-                    
-                    if scores:
-                        row[model_name] = f"{scores[0][0]} ({scores[0][1]:.2f})" if len(scores) > 0 else "-"
+                    if not u_rating:
+                        row[model_name] = "Waiting for rating..."
                     else:
-                        if pred_data.get('emotion'):
-                            conf = pred_data.get('confidence')
-                            if conf is not None:
-                                base_pred = f"{pred_data.get('emotion')} ({conf:.2f})"
-                            else:
-                                base_pred = f"{pred_data.get('emotion')} | {pred_data.get('reason', '-')}"
+                        pred_data = s_preds.get(model_name, {})
+                        scores = list(pred_data.get("scores", {}).items())
+                        scores.sort(key=lambda x: x[1], reverse=True)
+                        
+                        if scores:
+                            row[model_name] = f"{scores[0][0]} ({scores[0][1]:.2f})" if len(scores) > 0 else "-"
                         else:
-                            base_pred = "-"
-                        row[model_name] = base_pred
+                            if pred_data.get('emotion'):
+                                conf = pred_data.get('confidence')
+                                if conf is not None:
+                                    base_pred = f"{pred_data.get('emotion')} ({conf:.2f})"
+                                else:
+                                    base_pred = f"{pred_data.get('emotion')} | {pred_data.get('reason', '-')}"
+                            else:
+                                base_pred = "-"
+                            row[model_name] = base_pred
                         
                 agg_rows.append(row)
                 

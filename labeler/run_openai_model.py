@@ -15,7 +15,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.propagate = False
 
-AUDIO_DIR_CONCAT = Path("data/caller_concat_24kHz")
+AUDIO_DIR_CONCAT = Path("data/caller_concat_mixed")
 AUDIO_DIR_SEGMENTS = Path("data/caller_segments_24kHz")
 
 CONCAT_FILES_TO_PROCESS = sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10]
@@ -31,19 +31,19 @@ SPECIFIC_CONVERSATIONS = [
     "conv__+4971397924_02-08-2024_8_51_17",
     "conv__+49713243352_09-09-2024_14_50_42",
 
-    # "conv__+4917642730353_12-08-2024_13_49_48",
-    # "conv__+4917630400675_11-09-2024_10_31_24",
-    # "conv__+4971324883446_01-08-2024_10_10_41",
-    # "conv__+49713244025_05-08-2024_8_53_03",
-    # "conv__+491727691557_19-08-2024_8_10_48",
-    # "conv__+491784952510_12-08-2024_11_22_35",
-    # "conv__+491624159130_04-07-2024_10_44_58",
-    # "conv__+4971325954_06-08-2024_10_25_05",
-    # "conv__+4915224862835_28-08-2024_11_22_27",
-    # "conv__+497132350_19-08-2024_14_33_01",
-    # "conv__+4971323406762_12-07-2024_9_20_45",
-    # "conv__+49713288866_28-08-2024_10_12_59",
-    # "conv__+4915158884523_01-08-2024_11_25_19"
+    "conv__+4917642730353_12-08-2024_13_49_48",
+    "conv__+4917630400675_11-09-2024_10_31_24",
+    "conv__+4971324883446_01-08-2024_10_10_41",
+    "conv__+49713244025_05-08-2024_8_53_03",
+    "conv__+491727691557_19-08-2024_8_10_48",
+    "conv__+491784952510_12-08-2024_11_22_35",
+    "conv__+491624159130_04-07-2024_10_44_58",
+    "conv__+4971325954_06-08-2024_10_25_05",
+    "conv__+4915224862835_28-08-2024_11_22_27",
+    "conv__+497132350_19-08-2024_14_33_01",
+    "conv__+4971323406762_12-07-2024_9_20_45",
+    "conv__+49713288866_28-08-2024_10_12_59",
+    "conv__+4915158884523_01-08-2024_11_25_19"
 ]
 
 for conv in SPECIFIC_CONVERSATIONS:
@@ -64,9 +64,77 @@ TOTAL_SEGMENT_FOLDERS = len(SEGMENT_FOLDERS_TO_PROCESS)
 TOTAL_SEGMENTS = sum(len(list(f.rglob("*.wav"))) for f in SEGMENT_FOLDERS_TO_PROCESS)
 
 WORKER_NAME = "openai"
-MODEL_KEY = "openai_realtime_1_5_ft_e_2"
-DELAY_SECONDS_CONCAT = 15
-DELAY_SECONDS_SEGMENTS = 60
+DELAY_SECONDS_CONCAT = 0
+DELAY_SECONDS_SEGMENTS = 1
+
+INSTRUCTIONS = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n\n'
+    
+    'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
+    '[neutral, happy, sad, angry, fearful, disgust, surprised, other, unknown]\n\n'
+    'Regeln:\n'
+    '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
+    '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
+    '- Bestimme die Emotion basierend auf dem tatsächlichen emotionalen Zustand des Sprechers, nicht nur anhand des Themas.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ in deiner Einschätzung.\n\n'
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+INSTRUCTIONS_OPEN_EMOTION = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n'
+    'Benenne die primäre Emotion des Sprechers mit EINEM besonders treffenden, präzisen englischen Begriff.\n'
+    'Wähle einen gebräuchlichen, klar interpretierbaren Emotionsbegriff (z.B. frustrated, angry, anxious, calm, neutral).\n'
+
+    'Regeln:\n'
+    '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
+    '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
+    '- Bestimme die Emotion basierend auf dem tatsächlichen emotionalen Zustand des Sprechers, nicht nur anhand des Themas.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ in deiner Einschätzung.\n\n'
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+VERSIONS = {
+    "openai_realtime_ft": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS
+    },
+    "openai_realtime_ft_2": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS
+    },
+    "openai_realtime_1_5_ft": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS
+    },
+    "openai_realtime_1_5_ft_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS
+    },
+    "openai_realtime_1_5_ft_e": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_OPEN_EMOTION,
+        "use_open_emotion": True
+    },
+    "openai_realtime_1_5_ft_e_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_OPEN_EMOTION,
+        "use_open_emotion": True
+    },
+    "openai_realtime_1_5_ft_erp": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": None,
+        "use_open_emotion": True
+    },
+    "openai_realtime_1_5_ft_erp_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": None,
+        "use_open_emotion": True
+    }
+}
 
 def cleanup_stale_states(status="stopped"):
     """Resets the state of any previously interrupted processing."""
@@ -104,11 +172,11 @@ async def analyze_file(client: OpenAIRealtimeClient, audio_path: Path) -> dict:
         logger.error(f"Error analyzing {audio_path}: {e}")
         return {"error": str(e)}
 
-async def process_model():
+async def process_model(model_key: str, config: dict):
     pending_concat = []
     for audio_path in CONCAT_FILES_TO_PROCESS:
         evaluation = read_evaluation(audio_path)
-        pred = evaluation.get("predictions", {}).get(MODEL_KEY)
+        pred = evaluation.get("predictions", {}).get(model_key)
         if not pred or "error" in pred:
             pending_concat.append(audio_path)
             
@@ -117,7 +185,7 @@ async def process_model():
         missing = False
         for wav_path in folder.rglob("*.wav"):
             evaluation = read_evaluation(wav_path)
-            pred = evaluation.get("predictions", {}).get(MODEL_KEY)
+            pred = evaluation.get("predictions", {}).get(model_key)
             if not pred or "error" in pred:
                 missing = True
                 break
@@ -125,15 +193,19 @@ async def process_model():
             pending_segments.append(folder)
 
     if not pending_concat and not pending_segments:
-        logger.info(f"No pending files found for {MODEL_KEY}. All done!")
+        logger.info(f"No pending files found for {model_key}. All done!")
         return
 
-    logger.info(f"[{MODEL_KEY}] Found {len(pending_concat)} pending concat files and {len(pending_segments)} pending segment folders. Initializing client...")
-    client = OpenAIRealtimeClient()
+    logger.info(f"[{model_key}] Found {len(pending_concat)} pending concat files and {len(pending_segments)} pending segment folders. Initializing client...")
+    client = OpenAIRealtimeClient(
+        model_name=config.get("model_name"), 
+        instructions=config.get("instructions"), 
+        use_open_emotion=config.get("use_open_emotion", False)
+    )
     
     # 1. Process Concat Files
     if pending_concat:
-        pbar_concat = tqdm(pending_concat, desc=f"Running {MODEL_KEY} (Concat)", total=TOTAL_CONCAT_FILES, initial=TOTAL_CONCAT_FILES - len(pending_concat))
+        pbar_concat = tqdm(pending_concat, desc=f"Running {model_key} (Concat)", total=TOTAL_CONCAT_FILES, initial=TOTAL_CONCAT_FILES - len(pending_concat))
         for audio_path in pbar_concat:
             if DELAY_SECONDS_CONCAT > 0:
                 await asyncio.sleep(DELAY_SECONDS_CONCAT)
@@ -148,7 +220,7 @@ async def process_model():
                 {
                     "file": file_val,
                     "is_segment": False,
-                    "model": MODEL_KEY,
+                    "model": model_key,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
@@ -162,13 +234,13 @@ async def process_model():
                 evaluation = read_evaluation(audio_path)
                 if "predictions" not in evaluation:
                     evaluation["predictions"] = {}
-                evaluation["predictions"][MODEL_KEY] = result_obj
+                evaluation["predictions"][model_key] = result_obj
                 write_evaluation(audio_path, evaluation)
 
     # 2. Process Segment Folders
     if pending_segments:
         # We align the tqdm bar with the number of folders here for cleaner rendering
-        pbar_segments = tqdm(pending_segments, desc=f"Running {MODEL_KEY} (Segments)", total=TOTAL_SEGMENT_FOLDERS, initial=TOTAL_SEGMENT_FOLDERS - len(pending_segments))
+        pbar_segments = tqdm(pending_segments, desc=f"Running {model_key} (Segments)", total=TOTAL_SEGMENT_FOLDERS, initial=TOTAL_SEGMENT_FOLDERS - len(pending_segments))
         for folder in pbar_segments:
             if DELAY_SECONDS_SEGMENTS > 0:
                 await asyncio.sleep(DELAY_SECONDS_SEGMENTS)
@@ -183,7 +255,7 @@ async def process_model():
                 {
                     "file": file_val,
                     "is_segment": True,
-                    "model": MODEL_KEY,
+                    "model": model_key,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
@@ -193,7 +265,7 @@ async def process_model():
             
             for wav_path in folder.rglob("*.wav"):
                 evaluation = read_evaluation(wav_path)
-                pred = evaluation.get("predictions", {}).get(MODEL_KEY)
+                pred = evaluation.get("predictions", {}).get(model_key)
                 if pred and "error" not in pred:
                     continue
                 
@@ -203,7 +275,7 @@ async def process_model():
                     evaluation = read_evaluation(wav_path)
                     if "predictions" not in evaluation:
                         evaluation["predictions"] = {}
-                    evaluation["predictions"][MODEL_KEY] = result_obj
+                    evaluation["predictions"][model_key] = result_obj
                     write_evaluation(wav_path, evaluation)
 
     # Force one last update at the end
@@ -212,7 +284,7 @@ async def process_model():
         {
             "file": None,
             "is_segment": False,
-            "model": MODEL_KEY,
+            "model": model_key,
             "status": "idle",
             "tqdm_dict": {},
         }, 
@@ -221,7 +293,7 @@ async def process_model():
     )
 
 
-def main():
+async def main():
     logger.info("Starting up OpenAI Realtime labeler runner process...")
     cleanup_stale_states(status="idle")
     try:
@@ -229,15 +301,16 @@ def main():
             logger.info(f"Applying artificial delay of {DELAY_SECONDS_CONCAT} seconds between concat requests...")
         if DELAY_SECONDS_SEGMENTS > 0:
             logger.info(f"Applying artificial delay of {DELAY_SECONDS_SEGMENTS} seconds between segment requests...")
-        asyncio.run(process_model())
-    except KeyboardInterrupt:
-        logger.info("Received KeyboardInterrupt, stopping runner...")
+        for version_key, config in VERSIONS.items():
+            await process_model(version_key, config)
     except Exception as e:
         logger.error(f"Pipeline error for {WORKER_NAME}: {e}")
     finally:
         cleanup_stale_states(status="stopped")
         logger.info("Processing complete!")
 
-
 if __name__ == "__main__":
-    main()
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("Received KeyboardInterrupt, stopping runner...")
