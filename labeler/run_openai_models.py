@@ -15,7 +15,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.propagate = False
 
-AUDIO_DIR_CONCAT = Path("data/caller_concat_mixed")
+AUDIO_DIR_CONCAT = Path("data/caller_concat_24kHz")
 AUDIO_DIR_SEGMENTS = Path("data/caller_segments_24kHz")
 
 CONCAT_FILES_TO_PROCESS = sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10]

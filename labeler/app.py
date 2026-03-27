@@ -11,7 +11,7 @@ try:
 except ImportError:
     print("Failed to import runner_state.py")
 
-CONCAT_DIR = Path("data/caller_concat_mixed")
+CONCAT_DIR = Path("data/caller_concat_24kHz")
 SEGMENTS_DIR = Path("data/caller_segments_24kHz")
 
 st.set_page_config(page_title="Emotion Labeler", layout="wide")
