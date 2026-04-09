@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import streamlit as st
+import json
 import streamlit.components.v1 as components
 from tqdm import tqdm
 from storage import get_all_evaluations, write_evaluation, read_runner_state, read_evaluation, get_evaluation_lock
@@ -186,6 +187,19 @@ def main():
             [data-testid="stAlertContainer"] p {
                 margin: 0px !important;
                 line-height: normal !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                font-size: clamp(0.55rem, 0.9vw, 0.875rem) !important;
+            }
+            /* Prevent line breaks in form buttons and scale font dynamically */
+            [data-testid="stFormSubmitButton"] button {
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                font-size: clamp(0.55rem, 0.9vw, 0.875rem) !important;
+                padding-left: 0.25rem !important;
+                padding-right: 0.25rem !important;
             }
             </style>""", 
             unsafe_allow_html=True
@@ -267,10 +281,11 @@ def main():
             # st.markdown("#### User Rating")
             with st.form(key="concat_rating_form"):
                 ur = c_eval.get("user_rating") or {}
-                emotions = ["neutral", "frustrated", "angry", "sad", "happy", "fear", "surprise", "disgust", "other"]
+                emotions = ["neutral", "frustrated", "calm", "anxious", "curious", "confused", "sad", "angry", "happy", "fearful", "surprised", "disgusted", "other"]
+
                 def_idx = emotions.index(ur.get("true_emotion")) if ur.get("true_emotion") in emotions else 0
                 
-                fc1, fc2, fc3, fc4 = st.columns([2, 8, 2, 2])
+                fc1, fc2, fc3, fc4 = st.columns([2, 4, 2, 2])
                 with fc1: submit = st.form_submit_button("Save Rating", width='stretch')
                 with fc2: true_emotion = st.selectbox("True Emotion", emotions, index=def_idx, label_visibility="collapsed")
                 with fc3: btn_uncertain_conv = st.form_submit_button("Uncertain", width='stretch')
@@ -394,12 +409,12 @@ def main():
                 # st.markdown("#### User Rating")
                 with st.form(key="segment_rating_form"):
                     s_ur = s_eval.get("user_rating") or {}
-                    emotions = ["neutral", "frustrated", "angry", "sad", "happy", "fear", "surprise", "disgust", "other"]
+                    emotions = ["neutral", "frustrated", "calm", "anxious", "curious", "confused", "sad", "angry", "happy", "fearful", "surprised", "disgusted", "other"]
                     def_idx = emotions.index(s_ur.get("true_emotion")) if s_ur.get("true_emotion") in emotions else 0
                     phases = ["Phase 1", "Phase 2", "Phase 3", "N/A"]
                     p_idx = phases.index(s_ur.get("phase")) if s_ur.get("phase") in phases else 3
                     
-                    fc1, fc2, fc3, fc4, fc5 = st.columns([2, 4, 4, 2, 2])
+                    fc1, fc2, fc3, fc4, fc5 = st.columns([2, 3, 3, 2, 2])
                     with fc1: submit_seg = st.form_submit_button("Save Rating", width='stretch')
                     with fc2: s_emotion = st.selectbox("True Emotion", emotions, index=def_idx, label_visibility="collapsed")
                     with fc3: s_phase = st.selectbox("Conversation Phase", phases, index=p_idx, label_visibility="collapsed")
@@ -496,6 +511,140 @@ def main():
             styled_df = agg_df.style.apply(highlight_selected, axis=0)
             st.dataframe(styled_df, width='stretch', height=(len(agg_df) + 1) * 35 + 3)
             
+        # --- PHASE SEGMENTATION SECTION ---
+        st.markdown("---")
+        st.markdown("### Conversation Phase Tracking")
+        
+        phase_conv_options = list(conv_dict.keys())
+        phase_conv_options.sort() # Sorted alphabetically
+        
+        if "selected_phase_conv_id" not in st.session_state or st.session_state.selected_phase_conv_id not in phase_conv_options:
+            st.session_state.selected_phase_conv_id = phase_conv_options[0]
+            
+        curr_phase_idx = phase_conv_options.index(st.session_state.selected_phase_conv_id)
+        
+        def prev_phase_conv():
+            idx = phase_conv_options.index(st.session_state.selected_phase_conv_id)
+            if idx > 0: st.session_state.selected_phase_conv_id = phase_conv_options[idx - 1]
+                
+        def next_phase_conv():
+            idx = phase_conv_options.index(st.session_state.selected_phase_conv_id)
+            if idx < len(phase_conv_options) - 1: st.session_state.selected_phase_conv_id = phase_conv_options[idx + 1]
+
+        pcc1, pcc2, pcc3 = st.columns([1, 1, 8])
+        with pcc1: st.button("⏪", key="btn_p_phase_conv", on_click=prev_phase_conv, disabled=curr_phase_idx == 0, use_container_width=True)
+        with pcc2: st.button("⏩", key="btn_n_phase_conv", on_click=next_phase_conv, disabled=curr_phase_idx == len(phase_conv_options) - 1, use_container_width=True)
+        with pcc3:
+            st.selectbox(
+                "Select Full Record for Phasing", 
+                phase_conv_options, 
+                key="selected_phase_conv_id",
+                label_visibility="collapsed"
+            )
+            
+        phase_c_eval = conv_dict[st.session_state.selected_phase_conv_id]
+        phase_c_filename = phase_c_eval["filename"]
+        # Use data/normalized_24kHz directly as requested for the full calls
+        phase_c_audio_path = Path("data/normalized_24kHz") / phase_c_filename
+        
+        COMPLETE_CALL_DIR = Path("output/complete_call")
+        COMPLETE_CALL_DIR.mkdir(parents=True, exist_ok=True)
+        
+        phase_json_path = COMPLETE_CALL_DIR / f"{Path(phase_c_filename).stem}.json"
+        
+        user_phases = {}
+        if phase_json_path.exists():
+            try:
+                with open(phase_json_path, "r", encoding="utf-8") as f:
+                    user_phases = json.load(f)
+            except Exception:
+                pass
+                
+        ai_phases = {}
+        phases_analysis_path = Path("output/phases_analysis_iterative.json")
+        if phases_analysis_path.exists():
+            try:
+                with open(phases_analysis_path, "r", encoding="utf-8") as f:
+                    all_ai_phases = json.load(f)
+                    ai_phases = all_ai_phases.get(phase_c_filename, {})
+            except Exception:
+                pass
+                
+        st.info("Listen to the full recording and add/edit chronological phases. You can have multiple segments for Clarify & Solve!")
+        
+        if phase_c_audio_path.exists():
+            st.audio(str(phase_c_audio_path))
+        else:
+            st.error(f"Audio file missing: {phase_c_audio_path}")
+            
+        ai_phase_list = ai_phases.get("phases", []) if isinstance(ai_phases, dict) else []
+        u_p = user_phases.get("phases", []) if isinstance(user_phases, dict) else []
+        
+        current_data = u_p if u_p else ai_phase_list
+        
+        if not current_data:
+            current_data = [
+                {"phase_name": "1. Begrüßen", "start_time": "00:00", "end_time": "00:00", "summary": ""},
+            ]
+            
+        df = pd.DataFrame(current_data)
+        
+        for col in ["phase_name", "start_time", "end_time", "summary"]:
+            if col not in df.columns:
+                df[col] = ""
+                
+        df = df[["phase_name", "start_time", "end_time", "summary"]]
+        
+        edited_df = st.data_editor(
+            df,
+            num_rows="dynamic",
+            use_container_width=True,
+            column_config={
+                "phase_name": st.column_config.SelectboxColumn(
+                    "Phase Name",
+                    help="The theoretical phase category",
+                    width="medium",
+                    options=[
+                        "1. Begrüßen",
+                        "2. Das Anliegen klären",
+                        "3. Lösen",
+                        "4. Verabschieden"
+                    ],
+                    required=True,
+                ),
+                "start_time": st.column_config.TextColumn(
+                    "Start (MM:SS)",
+                    width="small",
+                    required=True,
+                ),
+                "end_time": st.column_config.TextColumn(
+                    "End (MM:SS)",
+                    width="small",
+                    required=True,
+                ),
+                "summary": st.column_config.TextColumn(
+                    "Summary",
+                    width="large",
+                )
+            },
+            hide_index=True,
+            key="dynamic_phase_editor"
+        )
+        
+        submit_phases = st.button("Save Phases", use_container_width=True)
+        
+        if submit_phases:
+            final_data = edited_df.to_dict(orient="records")
+            save_data = {"phases": final_data}
+            with open(phase_json_path, "w", encoding="utf-8") as f:
+                json.dump(save_data, f, ensure_ascii=False, indent=4)
+            st.session_state["_phases_flash"] = "Phases saved to output/complete_call!"
+            st.rerun()
+                
+        if flash := st.session_state.pop("_phases_flash", None):
+            st.success(flash)
+        # --- END PHASE SEGMENTATION SECTION ---
+
     all_evaluations_list = evals_concat + evals_segments
 
     if rated_concat + rated_segments > 0:
