@@ -15,9 +15,11 @@ logger.propagate = False
 
 AUDIO_DIR_CONCAT = Path("data/caller_concat_16kHz")
 AUDIO_DIR_SEGMENTS = Path("data/caller_segments_16kHz")
+AUDIO_DIR_PHASES = Path("data/caller_phases_16kHz")
 
 CONCAT_FILES_TO_PROCESS = sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10]
 SEGMENT_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_SEGMENTS.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
+PHASE_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_PHASES.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
 
 SPECIFIC_CONVERSATIONS = [
     "conv__+4915203230182_22-08-2024_8_06_41",
@@ -53,13 +55,20 @@ for conv in SPECIFIC_CONVERSATIONS:
     if f_seg.exists() and f_seg.is_dir() and f_seg not in SEGMENT_FOLDERS_TO_PROCESS:
         SEGMENT_FOLDERS_TO_PROCESS.append(f_seg)
 
+    f_phase = AUDIO_DIR_PHASES / conv
+    if f_phase.exists() and f_phase.is_dir() and f_phase not in PHASE_FOLDERS_TO_PROCESS:
+        PHASE_FOLDERS_TO_PROCESS.append(f_phase)
+
 # Re-sort
 CONCAT_FILES_TO_PROCESS = sorted(CONCAT_FILES_TO_PROCESS, key=lambda x: x.name)
 SEGMENT_FOLDERS_TO_PROCESS = sorted(SEGMENT_FOLDERS_TO_PROCESS, key=lambda x: x.name)
+PHASE_FOLDERS_TO_PROCESS = sorted(PHASE_FOLDERS_TO_PROCESS, key=lambda x: x.name)
 
 TOTAL_CONCAT_FILES = len(CONCAT_FILES_TO_PROCESS)
 TOTAL_SEGMENT_FOLDERS = len(SEGMENT_FOLDERS_TO_PROCESS)
+TOTAL_PHASE_FOLDERS = len(PHASE_FOLDERS_TO_PROCESS)
 TOTAL_SEGMENTS = sum(len(list(f.rglob("*.wav"))) for f in SEGMENT_FOLDERS_TO_PROCESS)
+TOTAL_PHASES = sum(len(list(f.rglob("*.wav"))) for f in PHASE_FOLDERS_TO_PROCESS)
 
 WORKER_NAME = "local"
 
@@ -96,11 +105,22 @@ def process_model(model_name: str, config: dict):
         if missing:
             pending_segments.append(folder)
 
-    if not pending_concat and not pending_segments:
+    pending_phases = []
+    for folder in PHASE_FOLDERS_TO_PROCESS:
+        missing = False
+        for wav_path in folder.rglob("*.wav"):
+            evaluation = read_evaluation(wav_path)
+            if model_name not in evaluation.get("predictions", {}):
+                missing = True
+                break
+        if missing:
+            pending_phases.append(folder)
+
+    if not pending_concat and not pending_segments and not pending_phases:
         logger.info(f"No pending files found for {model_name}. All done!")
         return
         
-    logger.info(f"[{model_name}] Found {len(pending_concat)} pending concat files and {len(pending_segments)} pending segment folders. Instantiating model...")
+    logger.info(f"[{model_name}] Found {len(pending_concat)} pending concat, {len(pending_segments)} pending segments, {len(pending_phases)} pending phases. Instantiating model...")
     model_instance = config["factory"]()
     
     # 1. Process Concat Files
@@ -168,6 +188,48 @@ def process_model(model_name: str, config: dict):
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
                 total_segments=TOTAL_SEGMENTS,
+                vram_mb=vram_mb, 
+                vram_reserved_mb=vram_reserved_mb
+            )
+            
+            for wav_path in folder.rglob("*.wav"):
+                evaluation = read_evaluation(wav_path)
+                if model_name in evaluation.get("predictions", {}):
+                    continue
+                result = model_instance.predict(wav_path)
+                with get_evaluation_lock(wav_path):
+                    evaluation = read_evaluation(wav_path)
+                    if "predictions" not in evaluation:
+                        evaluation["predictions"] = {}
+                    evaluation["predictions"][model_name] = result
+                    write_evaluation(wav_path, evaluation)
+            
+    # 3. Process Phase Folders
+    if pending_phases:
+        pbar_phases = tqdm(pending_phases, desc=f"Running {model_name} (Phases)", total=TOTAL_PHASE_FOLDERS, initial=TOTAL_PHASE_FOLDERS - len(pending_phases))    
+        for folder in pbar_phases:
+            file_val = folder.name
+            
+            vram_mb = 0
+            vram_reserved_mb = 0
+            if torch.cuda.is_available():
+                vram_mb = int(torch.cuda.memory_allocated() / (1024 ** 2))
+                vram_reserved_mb = int(torch.cuda.memory_reserved() / (1024 ** 2))
+                
+            pbar_phases.set_postfix_str(f"{file_val}")
+            tqdm_dict = pbar_phases.format_dict if hasattr(pbar_phases, "format_dict") else {}
+            
+            update_runner_state(
+                WORKER_NAME, 
+                {
+                    "file": file_val,
+                    "is_segment": True,
+                    "model": model_name,
+                    "status": "processing",
+                    "tqdm_dict": tqdm_dict,
+                }, 
+                total_concat_files=TOTAL_CONCAT_FILES,
+                total_segments=TOTAL_SEGMENTS + TOTAL_PHASES,
                 vram_mb=vram_mb, 
                 vram_reserved_mb=vram_reserved_mb
             )

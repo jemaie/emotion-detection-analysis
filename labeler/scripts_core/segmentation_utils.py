@@ -247,3 +247,28 @@ def concat_wavs_ffmpeg(segment_paths: List[Path], out_path: Path) -> None:
         list_file.unlink()
     except OSError:
         pass
+
+
+def parse_time(t_str):
+    """Parses MM:SS string or float nan to seconds."""
+    if t_str == "-" or t_str is None: return None
+    import math
+    if isinstance(t_str, float) and math.isnan(t_str): return None
+    t_str = str(t_str)
+    parts = t_str.split(':')
+    if len(parts) == 2:
+        return int(parts[0]) * 60 + int(parts[1])
+    return None
+
+def parse_segment_midpoint(segment_name):
+    """Extracts midpoint from segment filename (e.g. seg_0000_10.5_15.5.wav or phase_1_2_10.5_15.5.wav)."""
+    parts = str(segment_name).split('_')
+    if len(parts) >= 4:
+        try:
+            start = float(parts[-2])
+            end_part = parts[-1].replace('.wav', '').replace('.json', '')
+            end = float(end_part)
+            return (start + end) / 2.0
+        except ValueError:
+            pass
+    return 0.0

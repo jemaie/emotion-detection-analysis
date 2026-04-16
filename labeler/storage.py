@@ -20,6 +20,9 @@ def get_json_path(audio_filename: Path) -> Path:
     if "caller_segments" in parent_name or "caller_segments" in grandparent_name:
         conv_id = parent_name
         out_path = EVALUATIONS_DIR / "caller_segments" / conv_id / f"{audio_filename.stem}.json"
+    elif "caller_phases" in parent_name or "caller_phases" in grandparent_name:
+        conv_id = parent_name
+        out_path = EVALUATIONS_DIR / "caller_phases" / conv_id / f"{audio_filename.stem}.json"
     else:
         out_path = EVALUATIONS_DIR / "caller_concat" / f"{audio_filename.stem}.json"
         
@@ -88,7 +91,7 @@ def write_evaluation(audio_filename: Path, data: dict):
 
 def get_all_evaluations() -> dict[str, list[dict]]:
     """Retrieves all currently stored evaluation JSONs (ignoring system state files)."""
-    evals = {"concat": [], "segments": []}
+    evals = {"concat": [], "segments": [], "phases": []}
     if not EVALUATIONS_DIR.exists():
         return evals
         
@@ -100,6 +103,9 @@ def get_all_evaluations() -> dict[str, list[dict]]:
                     if "caller_segments" in file.parts:
                         data["conv_id"] = file.parent.name
                         evals["segments"].append(data)
+                    elif "caller_phases" in file.parts:
+                        data["conv_id"] = file.parent.name
+                        evals["phases"].append(data)
                     else:
                         data["conv_id"] = file.stem
                         evals["concat"].append(data)
