@@ -12,7 +12,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-OUTPUT_DIR = Path(__file__).parent / "output"
+OUTPUT_DIR = Path("../output")
 
 TARGET_MODELS = [
     "openai_realtime_1_5_ft_e",

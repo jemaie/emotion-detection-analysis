@@ -2,9 +2,10 @@ import json
 from pathlib import Path
 
 def main():
-    audio_dir_concat = Path("data/caller_concat_24kHz")
-    audio_dir_segments = Path("data/caller_segments_24kHz")
-    eval_dir = Path("output")
+    base_dir = Path("..")
+    audio_dir_concat = base_dir / "data" / "caller_concat_24kHz"
+    audio_dir_segments = base_dir / "data" / "caller_segments_24kHz"
+    eval_dir = base_dir / "output"
     
     missing_concat = 0
     incomplete_concat = 0

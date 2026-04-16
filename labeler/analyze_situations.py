@@ -151,7 +151,7 @@ class SituationRealtimeClient:
 
 async def main():
     AUDIO_DIR = Path("data/normalized_24kHz")
-    OUTPUT_JSON = Path("output/situation_with_resolution.json")
+    OUTPUT_JSON = Path("output/situation_analysis.json")
     
     # We will use the 31 specific files we analyzed earlier
     # Extracted from our previous listing of caller_concat

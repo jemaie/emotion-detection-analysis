@@ -2,7 +2,7 @@ from pathlib import Path
 import logging
 import torch
 from tqdm import tqdm
-from local_model_factory import get_model_factories
+from scripts_core.local_model_factory import get_model_factories
 from storage import read_evaluation, write_evaluation, update_runner_state, get_evaluation_lock
 
 logger = logging.getLogger(__name__)

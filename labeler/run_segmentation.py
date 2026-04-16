@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from tqdm import tqdm
 
-from segmentation_utils import (
+from scripts_core.segmentation_utils import (
     assign_roles, 
     postprocess_caller_segments, 
     extract_segments_ffmpeg, 

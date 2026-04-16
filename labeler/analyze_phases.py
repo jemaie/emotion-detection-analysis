@@ -157,7 +157,7 @@ class PhasesRealtimeClient:
 
 async def main():
     AUDIO_DIR = Path("data/normalized_24kHz")
-    OUTPUT_JSON = Path("output/phases_analysis_iterative.json")
+    OUTPUT_JSON = Path("output/phases_analysis.json")
     
     CONCAT_DIR = Path("output/caller_concat")
     if not CONCAT_DIR.exists():

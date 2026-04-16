@@ -246,7 +246,9 @@ def main():
                 st.error("Audio file missing.")
                 
             # st.markdown("#### Model Predictions")
-            if not c_eval.get("user_rating"):
+            # if not c_eval.get("user_rating"):
+            #     st.info("💡 Please submit your rating first before viewing the models' predictions.")
+            if False:
                 st.info("💡 Please submit your rating first before viewing the models' predictions.")
             else:
                 c_preds = c_eval.get("predictions", {})
@@ -374,7 +376,9 @@ def main():
                     st.error("Audio file missing.")
                     
                 # st.markdown("#### Model Predictions")
-                if not s_eval.get("user_rating"):
+                # if not s_eval.get("user_rating"):
+                #     st.info("💡 Please submit your rating first before viewing the models' predictions.")
+                if False:
                     st.info("💡 Please submit your rating first before viewing the models' predictions.")
                 else:
                     s_preds = s_eval.get("predictions", {})
@@ -532,8 +536,8 @@ def main():
             if idx < len(phase_conv_options) - 1: st.session_state.selected_phase_conv_id = phase_conv_options[idx + 1]
 
         pcc1, pcc2, pcc3 = st.columns([1, 1, 8])
-        with pcc1: st.button("⏪", key="btn_p_phase_conv", on_click=prev_phase_conv, disabled=curr_phase_idx == 0, use_container_width=True)
-        with pcc2: st.button("⏩", key="btn_n_phase_conv", on_click=next_phase_conv, disabled=curr_phase_idx == len(phase_conv_options) - 1, use_container_width=True)
+        with pcc1: st.button("⏪", key="btn_p_phase_conv", on_click=prev_phase_conv, disabled=curr_phase_idx == 0, width="stretch")
+        with pcc2: st.button("⏩", key="btn_n_phase_conv", on_click=next_phase_conv, disabled=curr_phase_idx == len(phase_conv_options) - 1, width="stretch")
         with pcc3:
             st.selectbox(
                 "Select Full Record for Phasing", 
@@ -547,21 +551,9 @@ def main():
         # Use data/normalized_24kHz directly as requested for the full calls
         phase_c_audio_path = Path("data/normalized_24kHz") / phase_c_filename
         
-        COMPLETE_CALL_DIR = Path("output/complete_call")
-        COMPLETE_CALL_DIR.mkdir(parents=True, exist_ok=True)
-        
-        phase_json_path = COMPLETE_CALL_DIR / f"{Path(phase_c_filename).stem}.json"
-        
-        user_phases = {}
-        if phase_json_path.exists():
-            try:
-                with open(phase_json_path, "r", encoding="utf-8") as f:
-                    user_phases = json.load(f)
-            except Exception:
-                pass
-                
         ai_phases = {}
-        phases_analysis_path = Path("output/phases_analysis_iterative.json")
+        all_ai_phases = {}
+        phases_analysis_path = Path("output/phases_analysis.json")
         if phases_analysis_path.exists():
             try:
                 with open(phases_analysis_path, "r", encoding="utf-8") as f:
@@ -570,7 +562,25 @@ def main():
             except Exception:
                 pass
                 
-        st.info("Listen to the full recording and add/edit chronological phases. You can have multiple segments for Clarify & Solve!")
+        situation_data = {}
+        situation_analysis_path = Path("output/situation_analysis.json")
+        if situation_analysis_path.exists():
+            try:
+                with open(situation_analysis_path, "r", encoding="utf-8") as f:
+                    all_situation_data = json.load(f)
+                    situation_data = all_situation_data.get(phase_c_filename, {})
+            except Exception:
+                pass
+                
+        if situation_data:
+            with st.container(border=True):
+                st.markdown(
+                    f"**Category:** {situation_data.get('category', 'N/A')}  \n"
+                    f"**Summary:** {situation_data.get('summary', 'N/A')}  \n"
+                    f"**Resolution:** {situation_data.get('resolution', 'N/A')}"
+                )
+        else:
+            st.markdown("*Listen to the full recording and add/edit chronological phases. You can have multiple segments for Clarify & Solve!*")
         
         if phase_c_audio_path.exists():
             st.audio(str(phase_c_audio_path))
@@ -578,9 +588,7 @@ def main():
             st.error(f"Audio file missing: {phase_c_audio_path}")
             
         ai_phase_list = ai_phases.get("phases", []) if isinstance(ai_phases, dict) else []
-        u_p = user_phases.get("phases", []) if isinstance(user_phases, dict) else []
-        
-        current_data = u_p if u_p else ai_phase_list
+        current_data = ai_phase_list
         
         if not current_data:
             current_data = [
@@ -598,7 +606,7 @@ def main():
         edited_df = st.data_editor(
             df,
             num_rows="dynamic",
-            use_container_width=True,
+            width="stretch",
             column_config={
                 "phase_name": st.column_config.SelectboxColumn(
                     "Phase Name",
@@ -631,14 +639,14 @@ def main():
             key="dynamic_phase_editor"
         )
         
-        submit_phases = st.button("Save Phases", use_container_width=True)
+        submit_phases = st.button("Save Phases", width="stretch")
         
         if submit_phases:
             final_data = edited_df.to_dict(orient="records")
-            save_data = {"phases": final_data}
-            with open(phase_json_path, "w", encoding="utf-8") as f:
-                json.dump(save_data, f, ensure_ascii=False, indent=4)
-            st.session_state["_phases_flash"] = "Phases saved to output/complete_call!"
+            all_ai_phases[phase_c_filename] = {"phases": final_data}
+            with open(phases_analysis_path, "w", encoding="utf-8") as f:
+                json.dump(all_ai_phases, f, ensure_ascii=False, indent=4)
+            st.session_state["_phases_flash"] = "Phases saved directly to phases_analysis.json!"
             st.rerun()
                 
         if flash := st.session_state.pop("_phases_flash", None):

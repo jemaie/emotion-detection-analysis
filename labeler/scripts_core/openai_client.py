@@ -20,19 +20,7 @@ class OpenAIRealtimeClient:
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         self.model_name = model_name
         self.use_open_emotion = use_open_emotion
-        self.instructions = instructions or (
-            'Du bist ein System zur Emotionserkennung.\n'
-            'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
-            'Gib genau EINE präzise, gebräuchliche englische Emotion zurück (z.B. neutral, frustrated, anxious, calm).\n\n'
-
-            'Regeln:\n'
-            '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
-            '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
-            '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
-            '- Sei konsistent und eher konservativ.\n\n'
-
-            'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
-        )
+        self.instructions = instructions
 
     async def analyze_stream(self, audio_data, samplerate=24000):
         """

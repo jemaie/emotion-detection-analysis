@@ -1,4 +1,8 @@
 import logging
+import sys
+from pathlib import Path
+sys.path.insert(0, "..")
+
 from storage import get_all_evaluations
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")

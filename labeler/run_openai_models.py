@@ -4,7 +4,7 @@ import asyncio
 import json
 import soundfile as sf
 from tqdm import tqdm
-from openai_client import OpenAIRealtimeClient
+from scripts_core.openai_client import OpenAIRealtimeClient
 from storage import read_evaluation, write_evaluation, update_runner_state, get_evaluation_lock
 
 logger = logging.getLogger(__name__)
@@ -67,12 +67,45 @@ WORKER_NAME = "openai"
 DELAY_SECONDS_CONCAT = 0
 DELAY_SECONDS_SEGMENTS = 1
 
-INSTRUCTIONS = (
+INSTRUCTIONS_BASE = (
+    "You are an emotion analysis system."
+    "Listen to the user input audio."
+    "Classify the emotion of the speaker."
+    "Return a concise JSON object with 'emotion' (string) and 'confidence' (float 0-1)."
+    "Possible emotions: neutral, happy, sad, angry, fearful, disgust, surprised."
+    "Do not output anything else."
+)
+
+#Remeber this variant had a few iterations not listed here
+INSTRUCTIONS_RP = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n\n'
+    'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
+    '[neutral, happy, sad, angry, fearful, disgust, surprised, unknown]\n\n'
+    'Wichtige Regeln:\n'
+    '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
+    '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
+    '- Bestimme die Emotion basierend auf dem tatsächlichen emotionalen Zustand des Sprechers, nicht nur anhand des Themas.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Verwende "unknown", wenn Audio oder Transkript zu unklar, verrauscht oder unvollständig sind.\n'
+    '- Gib eine kurze Begründung (Deutsch, maximal 8 Wörter).\n'
+    '- Sei konsistent und eher konservativ in deiner Einschätzung.\n'
+    '- Gib ausschließlich EIN gültiges JSON-Objekt zurück.\n'
+    '- Beginne direkt mit "{" und ende mit "}".\n\n'
+    'Schema:\n'
+    '{\n'
+    '  "emotion": "neutral|happy|sad|angry|fearful|disgust|surprised|unknown",\n'
+    '  "reason": "<maximal 8 Wörter auf Deutsch>"\n'
+    '}'
+)
+
+INSTRUCTIONS_FT = (
     'Du bist ein System zur Emotionserkennung.\n'
     'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n\n'
     
     'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
     '[neutral, happy, sad, angry, fearful, disgust, surprised, other, unknown]\n\n'
+
     'Regeln:\n'
     '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
     '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
@@ -97,22 +130,67 @@ INSTRUCTIONS_OPEN_EMOTION = (
     'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
 )
 
+INSTRUCTIONS_OPEN_EMOTION_RP = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+    'Gib genau EINE präzise, gebräuchliche englische Emotion zurück (z.B. neutral, frustrated, anxious, calm).\n\n'
+
+    'Regeln:\n'
+    '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+    '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ.\n\n'
+
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+INSTRUCTIONS_FT_RP = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+    'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
+    '[neutral, happy, sad, angry, fearful, disgust, surprised, other, unknown]\n\n'
+
+    'Regeln:\n'
+    '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+    '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ.\n\n'
+
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
 VERSIONS = {
+    "openai_realtime": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS_BASE
+    },
+    "openai_realtime_2": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS_BASE
+    },
+    "openai_realtime_rp": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS_RP
+    },
+    "openai_realtime_rp_2": {
+        "model_name": None,
+        "instructions": INSTRUCTIONS_RP
+    },
     "openai_realtime_ft": {
         "model_name": None,
-        "instructions": INSTRUCTIONS
+        "instructions": INSTRUCTIONS_FT
     },
     "openai_realtime_ft_2": {
         "model_name": None,
-        "instructions": INSTRUCTIONS
+        "instructions": INSTRUCTIONS_FT
     },
     "openai_realtime_1_5_ft": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": INSTRUCTIONS
+        "instructions": INSTRUCTIONS_FT
     },
     "openai_realtime_1_5_ft_2": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": INSTRUCTIONS
+        "instructions": INSTRUCTIONS_FT
     },
     "openai_realtime_1_5_ft_e": {
         "model_name": "gpt-realtime-1.5",
@@ -126,13 +204,21 @@ VERSIONS = {
     },
     "openai_realtime_1_5_ft_erp": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": None,
+        "instructions": INSTRUCTIONS_OPEN_EMOTION_RP,
         "use_open_emotion": True
     },
     "openai_realtime_1_5_ft_erp_2": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": None,
+        "instructions": INSTRUCTIONS_OPEN_EMOTION_RP,
         "use_open_emotion": True
+    },
+    "openai_realtime_1_5_ft_rp": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_RP,
+    },
+    "openai_realtime_1_5_ft_rp_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_RP
     }
 }
 

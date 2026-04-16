@@ -1,0 +1,11 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+ratings/
+exports/
+*.lock
+copy_data.py
+Dockerfile.dev
+Dockerfile.prod
+docker-compose.prod.yml
