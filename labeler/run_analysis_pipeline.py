@@ -15,7 +15,7 @@ def run_pipeline_for_dirs(segments_dir, phases_dir, analysis_dir):
     run_cmd(f".venv\\Scripts\\python.exe analyze_0_consistency.py --segments_dir {segments_dir} --output_dir {analysis_dir} --phases_dir {phases_dir}")
     
     # 1. Aggregate Segments to Phases
-    run_cmd(f".venv\\Scripts\\python.exe aggregate_seg_ratings_to_phase_ratings.py --segments_dir {segments_dir} --output_dir {phases_dir}")
+    run_cmd(f".venv\\Scripts\\python.exe 2_aggregate_seg_ratings_to_phase_ratings.py --segments_dir {segments_dir} --output_dir {phases_dir}")
     
     # 2. Analyze Segments
     run_cmd(f".venv\\Scripts\\python.exe analyze_1_segments.py --segments_dir {segments_dir} --output_dir {analysis_dir}")
