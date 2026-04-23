@@ -15,7 +15,7 @@ import json
 import sys
 from pathlib import Path
 
-OUTPUT_DIR = Path("../output")
+OUTPUT_DIR = Path("output")
 
 def main():
     if len(sys.argv) < 2:

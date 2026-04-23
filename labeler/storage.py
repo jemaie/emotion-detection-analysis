@@ -59,6 +59,9 @@ def write_evaluation(audio_filename: Path, data: dict):
         model_order = [
             "openai_realtime", "openai_realtime_2", "openai_realtime_rp", "openai_realtime_rp_2", "openai_realtime_ft", "openai_realtime_ft_2",
             "openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2", "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2",
+            "openai_realtime_1_5_ft_rp", "openai_realtime_1_5_ft_rp_2",
+            "openai_realtime_1_5_ft_ns", "openai_realtime_1_5_ft_ns_2", "openai_realtime_1_5_ft_rp_ns", "openai_realtime_1_5_ft_rp_ns_2",
+            "openai_realtime_russell", "openai_realtime_russell_2", "openai_realtime_plutchik", "openai_realtime_plutchik_2",
             "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
             "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"
         ]
@@ -66,10 +69,21 @@ def write_evaluation(audio_filename: Path, data: dict):
         preds = data["predictions"]
         new_preds = {}
         
+        # Add individual human raters first
+        for k in sorted(preds.keys()):
+            if k.startswith("human") and k != "human_consensus":
+                new_preds[k] = preds[k]
+                
+        # Add consensus after raters
+        if "human_consensus" in preds:
+            new_preds["human_consensus"] = preds["human_consensus"]
+                
+        # Add models in defined order
         for m in model_order:
             if m in preds:
                 new_preds[m] = preds[m]
                 
+        # Add remaining keys
         for k in sorted(preds.keys()):
             if k not in new_preds:
                 new_preds[k] = preds[k]
@@ -96,6 +110,8 @@ def get_all_evaluations() -> dict[str, list[dict]]:
         return evals
         
     for file in EVALUATIONS_DIR.rglob("*.json"):
+        if "emotion_frameworks" in file.parts:
+            continue
         if file.is_file():
             try:
                 with open(file, 'r', encoding='utf-8') as f:
@@ -113,7 +129,7 @@ def get_all_evaluations() -> dict[str, list[dict]]:
                 logger.error(f"Failed to load {file.name}: {e}")
     return evals
 
-def update_runner_state(worker_key: str, state_update: dict, total_concat_files: int = None, total_segments: int = None, vram_mb: int = None, vram_reserved_mb: int = None):
+def update_runner_state(worker_key: str, state_update: dict, total_concat_files: int = None, total_segments: int = None, total_phases: int = None, vram_mb: int = None, vram_reserved_mb: int = None):
     """Updates the state for a specific worker (e.g. 'local' or 'openai') atomically."""
     with _runner_state_lock:
         current_state = read_runner_state()
@@ -123,6 +139,9 @@ def update_runner_state(worker_key: str, state_update: dict, total_concat_files:
             
         if total_segments is not None:
             current_state["total_segments"] = total_segments
+            
+        if total_phases is not None:
+            current_state["total_phases"] = total_phases
             
         if vram_mb is not None:
             current_state["vram_mb"] = vram_mb

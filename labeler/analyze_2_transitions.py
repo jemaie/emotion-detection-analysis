@@ -1,49 +1,25 @@
-import pandas as pd
+import argparse
+import os
 import json
+import warnings
+import pandas as pd
 from pathlib import Path
 
-INTENSITY_HIERARCHY = {
-    'unusable': 0, 'other': 0, 'neutral': 0, 'calm': 0, 'happy': 0, 'uncertain': 0,
-    'curious': 1, 'surprised': 1,
-    'confused': 2, 'anxious': 2, 'fearful': 2, 'frustrated': 2,
-    'angry': 3
-}
+warnings.filterwarnings('ignore')
 
-def clean_emotion(e):
-    if pd.isna(e): return None
-    return str(e).lower().strip()
 
-def resolve_consensus(emotions):
-    emotions = [e for e in emotions if pd.notna(e)]
-    if not emotions: return None
-    counts = pd.Series(emotions).value_counts()
-    candidates = counts[counts == counts.max()].index.tolist()
-    if len(candidates) == 1: return candidates[0]
-    best_candidate = candidates[0]
-    max_intensity = -1
-    for c in candidates:
-        intensity = INTENSITY_HIERARCHY.get(c, 0)
-        if intensity > max_intensity:
-            max_intensity = intensity
-            best_candidate = c
-    return best_candidate
+def parse_duration(segment_str):
+    parts = str(segment_str).split('_')
+    if len(parts) >= 4:
+        try:
+            return float(parts[3]) - float(parts[2])
+        except ValueError:
+            pass
+    return 0.0
 
-def calculate_transition_matrix(sequences):
-    transitions = {}
-    for seq in sequences:
-        for i in range(len(seq) - 1):
-            curr_state = seq[i]
-            next_state = seq[i+1]
-            if curr_state not in transitions:
-                transitions[curr_state] = {}
-            transitions[curr_state][next_state] = transitions[curr_state].get(next_state, 0) + 1
-    return transitions
-
-def print_transition_matrix(matrix, name):
-    print(f"\n--- Transition Matrix: {name} ---")
+def extract_transition_data(matrix, name, tier, bucket):
     if not matrix:
-        print("No transitions found.")
-        return
+        return pd.DataFrame()
         
     states = set(matrix.keys())
     for v in matrix.values(): states.update(v.keys())
@@ -56,88 +32,133 @@ def print_transition_matrix(matrix, name):
 
     df_prob = df.div(df.sum(axis=1), axis=0).fillna(0)
     
-    import tabulate
-    print("Counts:")
-    print(df.to_markdown())
-    print("\nProbabilities:")
-    print(df_prob.to_markdown(floatfmt=".2f"))
+    records = []
+    for s1 in states:
+        for s2 in states:
+            records.append({
+                'Data Tier': tier,
+                'Duration Bucket': "All" if bucket == 0 else f">{bucket}s",
+                'Model': name,
+                'From_Emotion': s1,
+                'To_Emotion': s2,
+                'Count': df.loc[s1, s2],
+                'Probability': df_prob.loc[s1, s2]
+            })
+    return pd.DataFrame(records)
 
-def analyze_transitions():
-    print("=== Phase 2: Trajectory and Transition Analysis ===\n")
+def analyze_transitions_deep(args):
+    print("=== Phase 2: Deep Trajectory and Transition Analysis ===\n")
     
-    target_models = [
-        "openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2",
-        "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
-        "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2"
-    ]
-    
-    csv_path = Path("output/ratings_segments.csv")
-    if not csv_path.exists():
-        print(f"Error: {csv_path} not found.")
-        return
-        
-    df = pd.read_csv(csv_path, sep=';', on_bad_lines='skip')
-    df['emotion'] = df['emotion'].apply(clean_emotion)
-    df = df.dropna(subset=['emotion'])
-    
-    consensus_df = df.groupby(['conv_id', 'segment'])['emotion'].apply(lambda x: resolve_consensus(x.tolist())).reset_index()
-    consensus_df.rename(columns={'emotion': 'human_consensus'}, inplace=True)
-    consensus_df['segment'] = consensus_df['segment'].apply(lambda x: Path(x).stem)
-    
-    consensus_df.sort_values(by=['conv_id', 'segment'], inplace=True)
-    
-    human_seqs = []
-    for conv_id, group in consensus_df.groupby('conv_id'):
-        human_seqs.append(group['human_consensus'].tolist())
-        
-    human_matrix = calculate_transition_matrix(human_seqs)
-    print_transition_matrix(human_matrix, "Human Consensus")
-    
-    segments_dir = Path("output/caller_segments")
+    target_models = set(["human_consensus"])
+    segments_dir = Path(args.segments_dir)
     model_predictions = []
+    
     for json_file in segments_dir.rglob("*.json"):
         conv_id = json_file.parent.name
         segment = json_file.stem
+        
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             preds = data.get("predictions", {})
-            row = {"conv_id": conv_id, "segment": segment}
-            has_data = False
-            for t_model in target_models:
-                pred_obj = preds.get(t_model)
-                if pred_obj:
-                    if isinstance(pred_obj, dict):
-                        emotion = str(pred_obj.get("emotion", "unknown")).lower().strip()
+                    
+            clean_preds = {
+                'conv_id': conv_id, 
+                'segment': segment,
+                'duration': parse_duration(segment)
+            }
+            
+            has_unusable = False
+            for model_name, pred_obj in preds.items():
+                if not model_name.startswith("human_"):
+                    target_models.add(model_name)
+                    
+                if isinstance(pred_obj, dict):
+                    if model_name.startswith("human_") and model_name != "human_consensus":
+                        human_emotion = pred_obj.get("extracted_normalized_emotion", pred_obj.get("emotion"))
+                        if str(human_emotion).lower().strip() == "unusable":
+                            has_unusable = True
+                            
+                    elif model_name == "human_consensus":
+                        clean_preds["human_consensus"] = str(pred_obj.get("maj_tiebroken", "unknown")).lower().strip()
+                        clean_preds["pairwise_agreement"] = float(pred_obj.get("pairwise_agreement", 0.0))
                     else:
-                        emotion = str(pred_obj).lower().strip()
-                    row[t_model] = emotion
-                    has_data = True
-            if has_data:
-                model_predictions.append(row)
-                
+                        clean_preds[model_name] = str(pred_obj.get("emotion", "unknown")).lower().strip()
+                else:
+                    clean_preds[model_name] = str(pred_obj).lower().strip()
+                    
+            clean_preds['has_unusable'] = has_unusable
+            model_predictions.append(clean_preds)
+            
     if not model_predictions:
-        print("No predictions found for target models")
+        print("No model segments found.")
         return
         
-    model_df = pd.DataFrame(model_predictions)
-    
-    # Methodological Fix: Merge with consensus_df to ensure identical sequence length and segments
-    merged_df = pd.merge(consensus_df[['conv_id', 'segment']], model_df, on=['conv_id', 'segment'], how='inner')
+    merged_df = pd.DataFrame(model_predictions)
     merged_df.sort_values(by=['conv_id', 'segment'], inplace=True)
     
-    for t_model in target_models:
-        if t_model not in merged_df.columns:
-            continue
+    all_dfs = []
+    
+    tiers = [
+        ("All Segments (Unfiltered)", lambda row: True),
+        ("Valid Consensus", lambda row: (row['has_unusable'] == False) and (row['pairwise_agreement'] > 0.0))
+    ]
+    
+    buckets = [0, 1, 2, 3]
+    
+    for tier_name, tier_condition in tiers:
+        for bucket in buckets:
             
-        model_seqs = []
-        for conv_id, group in merged_df.groupby('conv_id'):
-            # Filter NaNs for missing runs if any
-            seq = group[t_model].dropna().tolist()
-            if seq:
-                model_seqs.append(seq)
+            def is_valid(r):
+                return tier_condition(r) and r['duration'] > bucket
                 
-        model_matrix = calculate_transition_matrix(model_seqs)
-        print_transition_matrix(model_matrix, f"Model ({t_model})")
-
+            model_matrices = {m: {} for m in target_models}
+            
+            for conv_id, group in merged_df.groupby('conv_id'):
+                n_segs = len(group)
+                for i in range(n_segs - 1):
+                    row_curr = group.iloc[i]
+                    row_next = group.iloc[i+1]
+                    
+                    if is_valid(row_curr) and is_valid(row_next):
+                        for m in target_models:
+                            if m in row_curr and m in row_next:
+                                state_curr = row_curr[m]
+                                state_next = row_next[m]
+                                if pd.isna(state_curr) or pd.isna(state_next) or state_curr == 'unknown' or state_next == 'unknown':
+                                    continue
+                                
+                                if state_curr not in model_matrices[m]:
+                                    model_matrices[m][state_curr] = {}
+                                model_matrices[m][state_curr][state_next] = model_matrices[m][state_curr].get(state_next, 0) + 1
+                                
+            for m in target_models:
+                m_display = "Human Consensus" if m == "human_consensus" else f"Model ({m})"
+                df_res = extract_transition_data(model_matrices[m], m_display, tier_name, bucket)
+                if not df_res.empty:
+                    all_dfs.append(df_res)
+                    
+    if all_dfs:
+        combined_df = pd.concat(all_dfs, ignore_index=True)
+        results_dir = Path(args.output_dir)
+        results_dir.mkdir(parents=True, exist_ok=True)
+        
+        baseline_df = combined_df[(combined_df['Data Tier'] == 'All Segments (Unfiltered)') & (combined_df['Duration Bucket'] == 'All')]
+        baseline_csv = results_dir / "transitions_baseline.csv"
+        baseline_df.drop(columns=['Data Tier', 'Duration Bucket'], errors='ignore').to_csv(baseline_csv, index=False)
+        
+        deep_csv = results_dir / "transitions_deep.csv"
+        combined_df.to_csv(deep_csv, index=False)
+        
+        print(f"\nExported baseline transition metrics to {baseline_csv}")
+        print(f"Exported deep transition metrics to {deep_csv}")
+        
 if __name__ == "__main__":
-    analyze_transitions()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--segments_dir', default='output/caller_segments')
+    parser.add_argument('--output_dir', default='output/analysis_results')
+    args = parser.parse_args()
+    
+    os.makedirs(Path(args.output_dir), exist_ok=True)
+
+    analyze_transitions_deep(args)

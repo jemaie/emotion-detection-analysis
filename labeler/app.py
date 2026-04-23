@@ -14,6 +14,7 @@ except ImportError:
 
 CONCAT_DIR = Path("data/caller_concat_24kHz")
 SEGMENTS_DIR = Path("data/caller_segments_24kHz")
+PHASES_DIR = Path("data/caller_phases_24kHz")
 
 st.set_page_config(page_title="Emotion Labeler", layout="wide")
 st.markdown(
@@ -41,13 +42,22 @@ def main():
     # --- Top Section: Dashboard and Status ---
     total_concat = state.get("total_concat_files", 0)
     total_segments = state.get("total_segments", 0)
+    total_phases = state.get("total_phases", 0)
     
     evals_concat = evaluations.get("concat", [])
     evals_segments = evaluations.get("segments", [])
+    evals_phases = evaluations.get("phases", [])
     
-    model_names = ["openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2", "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2",
-                    "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
-                    "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"]
+    model_names = [
+        # "openai_realtime", "openai_realtime_2", "openai_realtime_rp", "openai_realtime_rp_2", "openai_realtime_ft", "openai_realtime_ft_2",
+        # "openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2", "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
+        # "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2", "openai_realtime_1_5_ft_rp", "openai_realtime_1_5_ft_rp_2",
+        "openai_realtime_1_5_ft_ns", "openai_realtime_1_5_ft_ns_2", "openai_realtime_1_5_ft_rp_ns", "openai_realtime_1_5_ft_rp_ns_2",
+        "openai_realtime_russell", "openai_realtime_russell_2", "openai_realtime_plutchik", "openai_realtime_plutchik_2",
+        # "ehcalabres/wav2vec2", "speechbrain/wav2vec2", "superb/wav2vec2_base", "superb/wav2vec2_large",
+        # "superb/hubert_base", "superb/hubert_large", "iic/emotion2vec_base", "iic/emotion2vec_large"
+        # "ehcalabres/wav2vec2", "iic/emotion2vec_base", "iic/emotion2vec_large"
+    ]
     
     # Create columns: 1 for each model + 2 for (Rated, VRAM)
     cols1 = st.columns([1] * (len(model_names) + 2))
@@ -66,6 +76,15 @@ def main():
         m_processed_seg = len([e for e in evals_segments if m_name in e.get("predictions", {})])
         cols2[i + 1].metric(label="-", value=f"{m_processed_seg} / {total_segments}", label_visibility="collapsed")
     cols2[-1].metric(label="-", value=f"{state.get('vram_reserved_mb', 0)}", label_visibility="collapsed")
+
+    # Third row for phase metrics
+    cols3 = st.columns([1] * (len(model_names) + 2))
+    rated_phases = len([e for e in evals_phases if e.get("user_rating")])
+    cols3[0].metric(label="-", value=f"{rated_phases} / {total_phases}", label_visibility="collapsed")
+    for i, m_name in enumerate(model_names):
+        m_processed_phase = len([e for e in evals_phases if m_name in e.get("predictions", {})])
+        cols3[i + 1].metric(label="-", value=f"{m_processed_phase} / {total_phases}", label_visibility="collapsed")
+    cols3[-1].metric(label="-", value="", label_visibility="collapsed")
 
     @st.fragment(run_every="1s")
     def render_status():
@@ -98,7 +117,11 @@ def main():
                     with col1:
                         file_name = worker_state.get('file')
                         is_segment = worker_state.get('is_segment', False)
-                        if is_segment:
+                        is_phase = worker_state.get('is_phase', False)
+                        
+                        if is_phase:
+                            st.markdown(f"Running model **{worker_state.get('model')}** on **{file_name}** [running on phases]", unsafe_allow_html=True)
+                        elif is_segment:
                             st.markdown(f"Running model **{worker_state.get('model')}** on **{file_name}** [running on segments]", unsafe_allow_html=True)
                         else:
                             st.markdown(f"Running model **{worker_state.get('model')}** on **{file_name}**", unsafe_allow_html=True)
@@ -258,7 +281,21 @@ def main():
                         row = {"Model": model_n}
                         scores = list(data.get("scores", {}).items())
                         scores.sort(key=lambda x: x[1], reverse=True)
-                        if scores:
+                        if model_n == "human_consensus":
+                            row["1st Em"] = data.get("maj")
+                            row["1st Conf"] = None
+                            row["2nd Em"] = data.get("maj_tiebroken")
+                            row["2nd Conf"] = None
+                            row["3rd Em"] = None
+                            row["3rd Conf"] = None
+                        elif model_n.startswith("human_"):
+                            row["1st Em"] = data.get("emotion")
+                            row["1st Conf"] = data.get("comment", None)
+                            row["2nd Em"] = data.get("extracted_normalized_emotion", None)
+                            row["2nd Conf"] = None
+                            row["3rd Em"] = None
+                            row["3rd Conf"] = None
+                        elif scores:
                             row["1st Em"] = scores[0][0] if len(scores) > 0 else None
                             row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
                             row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
@@ -388,7 +425,21 @@ def main():
                             row = {"Model": model_n}
                             scores = list(data.get("scores", {}).items())
                             scores.sort(key=lambda x: x[1], reverse=True)
-                            if scores:
+                            if model_n == "human_consensus":
+                                row["1st Em"] = data.get("maj")
+                                row["1st Conf"] = None
+                                row["2nd Em"] = data.get("maj_tiebroken")
+                                row["2nd Conf"] = None
+                                row["3rd Em"] = None
+                                row["3rd Conf"] = None
+                            elif model_n.startswith("human_"):
+                                row["1st Em"] = data.get("emotion")
+                                row["1st Conf"] = data.get("comment", None)
+                                row["2nd Em"] = data.get("extracted_normalized_emotion", None)
+                                row["2nd Conf"] = None
+                                row["3rd Em"] = None
+                                row["3rd Conf"] = None
+                            elif scores:
                                 row["1st Em"] = scores[0][0] if len(scores) > 0 else None
                                 row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
                                 row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
@@ -462,62 +513,9 @@ def main():
                         st.rerun()
                 if flash := st.session_state.pop("_seg_flash", None):
                     st.success(flash)
-
-        # --- Aggregate Table ---
-        if c_segs:
-            st.markdown("---")
-            st.markdown("### Aggregated Segment Predictions")
-            
-            agg_rows = []
-            for s in c_segs:
-                row = {"Segment": s.get("filename")}
-                
-                u_rating = s.get("user_rating") or {}
-                row["[Phase]"] = u_rating.get("phase", "-")
-                row["[Notes]"] = u_rating.get("notes", "-")
-                row["[User]"] = u_rating.get("true_emotion", "-")
-                
-                s_preds = s.get("predictions", {})
-                
-                for model_name in model_names:
-                    if not u_rating:
-                        row[model_name] = "Waiting for rating..."
-                    else:
-                        pred_data = s_preds.get(model_name, {})
-                        scores = list(pred_data.get("scores", {}).items())
-                        scores.sort(key=lambda x: x[1], reverse=True)
-                        
-                        if scores:
-                            row[model_name] = f"{scores[0][0]} ({scores[0][1]:.2f})" if len(scores) > 0 else "-"
-                        else:
-                            if pred_data.get('emotion'):
-                                conf = pred_data.get('confidence')
-                                if conf is not None:
-                                    base_pred = f"{pred_data.get('emotion')} ({conf:.2f})"
-                                else:
-                                    base_pred = f"{pred_data.get('emotion')} | {pred_data.get('reason', '-')}"
-                            else:
-                                base_pred = "-"
-                            row[model_name] = base_pred
-                        
-                agg_rows.append(row)
-                
-            agg_df = pd.DataFrame(agg_rows)
-            agg_df = agg_df.set_index("Segment").T
-            agg_df.index.name = "Metric"
-            
-            def highlight_selected(s):
-                selected = st.session_state.get("selected_seg_filename")
-                if s.name == selected:
-                    return ['background-color: rgba(255, 255, 0, 0.2)'] * len(s)
-                return [''] * len(s)
-                
-            styled_df = agg_df.style.apply(highlight_selected, axis=0)
-            st.dataframe(styled_df, width='stretch', height=(len(agg_df) + 1) * 35 + 3)
             
         # --- PHASE SEGMENTATION SECTION ---
         st.markdown("---")
-        st.markdown("### Conversation Phase Tracking")
         
         phase_conv_options = list(conv_dict.keys())
         phase_conv_options.sort() # Sorted alphabetically
@@ -535,17 +533,6 @@ def main():
             idx = phase_conv_options.index(st.session_state.selected_phase_conv_id)
             if idx < len(phase_conv_options) - 1: st.session_state.selected_phase_conv_id = phase_conv_options[idx + 1]
 
-        pcc1, pcc2, pcc3 = st.columns([1, 1, 8])
-        with pcc1: st.button("⏪", key="btn_p_phase_conv", on_click=prev_phase_conv, disabled=curr_phase_idx == 0, width="stretch")
-        with pcc2: st.button("⏩", key="btn_n_phase_conv", on_click=next_phase_conv, disabled=curr_phase_idx == len(phase_conv_options) - 1, width="stretch")
-        with pcc3:
-            st.selectbox(
-                "Select Full Record for Phasing", 
-                phase_conv_options, 
-                key="selected_phase_conv_id",
-                label_visibility="collapsed"
-            )
-            
         phase_c_eval = conv_dict[st.session_state.selected_phase_conv_id]
         phase_c_filename = phase_c_eval["filename"]
         # Use data/normalized_24kHz directly as requested for the full calls
@@ -561,7 +548,258 @@ def main():
                     ai_phases = all_ai_phases.get(phase_c_filename, {})
             except Exception:
                 pass
+
+        st.markdown("### Select Full Record for Phasing")
+        pcc1, pcc2, pcc3 = st.columns([1, 1, 8])
+        with pcc1: st.button("⏪", key="btn_p_phase_conv", on_click=prev_phase_conv, disabled=curr_phase_idx == 0, width="stretch")
+        with pcc2: st.button("⏩", key="btn_n_phase_conv", on_click=next_phase_conv, disabled=curr_phase_idx == len(phase_conv_options) - 1, width="stretch")
+        with pcc3:
+            st.selectbox(
+                "Select Full Record for Phasing", 
+                phase_conv_options, 
+                key="selected_phase_conv_id",
+                label_visibility="collapsed"
+            )
+        st.markdown("---")
+        pc1, pc2 = st.columns(2)
+        with pc1:
+            st.markdown("### Phase Segment Aggregations")
+            p_agg_evals = [p for p in evals_phases if p.get("conv_id") == st.session_state.selected_phase_conv_id]
+            
+            if not p_agg_evals:
+                st.warning("No phase audio files found for this conversation.")
+            else:
+                p_agg_evals.sort(key=lambda x: x.get("filename", ""))
+                p_agg_seg_options = [p.get("filename") for p in p_agg_evals]
                 
+                if "selected_p_agg_seg_filename" not in st.session_state or st.session_state.selected_p_agg_seg_filename not in p_agg_seg_options:
+                    st.session_state.selected_p_agg_seg_filename = p_agg_seg_options[0]
+                    
+                curr_p_agg_seg_idx = p_agg_seg_options.index(st.session_state.selected_p_agg_seg_filename)
+                
+                def prev_p_agg_seg():
+                    idx = p_agg_seg_options.index(st.session_state.selected_p_agg_seg_filename)
+                    if idx > 0: st.session_state.selected_p_agg_seg_filename = p_agg_seg_options[idx - 1]
+                    
+                def next_p_agg_seg():
+                    idx = p_agg_seg_options.index(st.session_state.selected_p_agg_seg_filename)
+                    if idx < len(p_agg_seg_options) - 1: st.session_state.selected_p_agg_seg_filename = p_agg_seg_options[idx + 1]
+
+                p_agg_eval = next(p for p in p_agg_evals if p.get("filename") == st.session_state.selected_p_agg_seg_filename)
+                p_agg_ur = p_agg_eval.get("user_rating") or {}
+
+                pasc1, pasc2, pasc3, pasc4 = st.columns([1, 1, 4, 2])
+                with pasc1: st.button("◀️", key="p_p_agg_seg", on_click=prev_p_agg_seg, disabled=curr_p_agg_seg_idx == 0, width='stretch')
+                with pasc2: st.button("▶️", key="n_p_agg_seg", on_click=next_p_agg_seg, disabled=curr_p_agg_seg_idx == len(p_agg_seg_options) - 1, width='stretch')
+                with pasc3:
+                    st.selectbox(
+                        "Select Phase Audio (Agg)",
+                        p_agg_seg_options,
+                        key="selected_p_agg_seg_filename",
+                        label_visibility="collapsed"
+                    )
+                with pasc4:
+                    if not p_agg_ur:
+                        st.info("Pending", icon="⏳")
+                    elif p_agg_ur.get("true_emotion") == "unusable":
+                        st.error("Unusable", icon="❌")
+                    elif p_agg_ur.get("true_emotion") == "uncertain":
+                        st.warning("Uncertain", icon="⚠️")
+                    else:
+                        st.success(f"{p_agg_ur.get('true_emotion').title()}", icon="✅")
+                
+                p_agg_audio_path = PHASES_DIR / st.session_state.selected_phase_conv_id / st.session_state.selected_p_agg_seg_filename
+                
+                if p_agg_audio_path.exists():
+                    st.audio(str(p_agg_audio_path))
+                else:
+                    st.error("Audio file missing.")
+                    
+                p_agg_preds = p_agg_eval.get("predictions", {})
+                if p_agg_preds:
+                    df_rows = []
+                    for model_n, data in p_agg_preds.items():
+                        row = {
+                            "Model": model_n,
+                            "seg_agg_peak": data.get("seg_agg_peak"),
+                            "seg_agg_maj": data.get("seg_agg_maj"),
+                            "seg_agg_maj_tiebroken": data.get("seg_agg_maj_tiebroken"),
+                            "seg_agg_traj_start": data.get("seg_agg_traj_start"),
+                            "seg_agg_traj_end": data.get("seg_agg_traj_end")
+                        }
+                        df_rows.append(row)
+                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, width="stretch")
+                
+                with st.form(key="phase_agg_rating_form"):
+                    p_agg_ur = p_agg_eval.get("user_rating") or {}
+                    emotions = ["neutral", "frustrated", "calm", "anxious", "curious", "confused", "sad", "angry", "happy", "fearful", "surprised", "disgusted", "other"]
+                    def_idx = emotions.index(p_agg_ur.get("true_emotion")) if p_agg_ur.get("true_emotion") in emotions else 0
+                    
+                    fc1, fc2, fc3, fc4 = st.columns([2, 4, 2, 2])
+                    with fc1: submit_p_agg_seg = st.form_submit_button("Save Rating", width='stretch')
+                    with fc2: p_agg_emotion = st.selectbox("True Emotion", emotions, index=def_idx, label_visibility="collapsed")
+                    with fc3: btn_p_agg_uncertain = st.form_submit_button("Uncertain", width='stretch')
+                    with fc4: btn_p_agg_unusable = st.form_submit_button("Unusable", width='stretch')
+                    
+                    p_agg_notes = st.text_area("Notes (optional)", value=p_agg_ur.get("notes", ""))
+                    
+                    if btn_p_agg_unusable:
+                        with get_evaluation_lock(p_agg_audio_path):
+                            locked_eval = read_evaluation(p_agg_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": "unusable", "notes": p_agg_notes}
+                            write_evaluation(p_agg_audio_path, locked_eval)
+                        st.session_state["_p_agg_seg_flash"] = "Phase marked as unusable."
+                        st.rerun()
+                    elif btn_p_agg_uncertain:
+                        with get_evaluation_lock(p_agg_audio_path):
+                            locked_eval = read_evaluation(p_agg_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": "uncertain", "notes": p_agg_notes}
+                            write_evaluation(p_agg_audio_path, locked_eval)
+                        st.session_state["_p_agg_seg_flash"] = "Phase marked as uncertain."
+                        st.rerun()
+                    elif submit_p_agg_seg:
+                        with get_evaluation_lock(p_agg_audio_path):
+                            locked_eval = read_evaluation(p_agg_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": p_agg_emotion, "notes": p_agg_notes}
+                            write_evaluation(p_agg_audio_path, locked_eval)
+                        st.session_state["_p_agg_seg_flash"] = "Rating saved!"
+                        st.rerun()
+                
+                if flash := st.session_state.pop("_p_agg_seg_flash", None):
+                    st.success(flash)
+        with pc2:
+            st.markdown("### Phase Audio Rating")
+            p_evals = [p for p in evals_phases if p.get("conv_id") == st.session_state.selected_phase_conv_id]
+            
+            if not p_evals:
+                st.warning("No phase audio files found for this conversation.")
+            else:
+                p_evals.sort(key=lambda x: x.get("filename", ""))
+                p_seg_options = [p.get("filename") for p in p_evals]
+                
+                if "selected_p_seg_filename" not in st.session_state or st.session_state.selected_p_seg_filename not in p_seg_options:
+                    st.session_state.selected_p_seg_filename = p_seg_options[0]
+                    
+                curr_p_seg_idx = p_seg_options.index(st.session_state.selected_p_seg_filename)
+                
+                def prev_p_seg():
+                    idx = p_seg_options.index(st.session_state.selected_p_seg_filename)
+                    if idx > 0: st.session_state.selected_p_seg_filename = p_seg_options[idx - 1]
+                    
+                def next_p_seg():
+                    idx = p_seg_options.index(st.session_state.selected_p_seg_filename)
+                    if idx < len(p_seg_options) - 1: st.session_state.selected_p_seg_filename = p_seg_options[idx + 1]
+
+                p_eval = next(p for p in p_evals if p.get("filename") == st.session_state.selected_p_seg_filename)
+                p_ur = p_eval.get("user_rating") or {}
+
+                psc1, psc2, psc3, psc4 = st.columns([1, 1, 4, 2])
+                with psc1: st.button("◀️", key="p_p_seg", on_click=prev_p_seg, disabled=curr_p_seg_idx == 0, width='stretch')
+                with psc2: st.button("▶️", key="n_p_seg", on_click=next_p_seg, disabled=curr_p_seg_idx == len(p_seg_options) - 1, width='stretch')
+                with psc3:
+                    st.selectbox(
+                        "Select Phase Audio",
+                        p_seg_options,
+                        key="selected_p_seg_filename",
+                        label_visibility="collapsed"
+                    )
+                with psc4:
+                    if not p_ur:
+                        st.info("Pending", icon="⏳")
+                    elif p_ur.get("true_emotion") == "unusable":
+                        st.error("Unusable", icon="❌")
+                    elif p_ur.get("true_emotion") == "uncertain":
+                        st.warning("Uncertain", icon="⚠️")
+                    else:
+                        st.success(f"{p_ur.get('true_emotion').title()}", icon="✅")
+                
+                p_audio_path = PHASES_DIR / st.session_state.selected_phase_conv_id / st.session_state.selected_p_seg_filename
+                
+                if p_audio_path.exists():
+                    st.audio(str(p_audio_path))
+                else:
+                    st.error("Audio file missing.")
+                    
+                p_preds = p_eval.get("predictions", {})
+                if p_preds:
+                    df_rows = []
+                    for model_n, data in p_preds.items():
+                        row = {"Model": model_n}
+                        scores = list(data.get("scores", {}).items())
+                        scores.sort(key=lambda x: x[1], reverse=True)
+                        if model_n == "human_consensus":
+                            row["1st Em"] = data.get("maj")
+                            row["1st Conf"] = None
+                            row["2nd Em"] = data.get("maj_tiebroken")
+                            row["2nd Conf"] = None
+                            row["3rd Em"] = None
+                            row["3rd Conf"] = None
+                        elif model_n.startswith("human_"):
+                            row["1st Em"] = data.get("emotion")
+                            row["1st Conf"] = data.get("comment", None)
+                            row["2nd Em"] = data.get("extracted_normalized_emotion", None)
+                            row["2nd Conf"] = None
+                            row["3rd Em"] = None
+                            row["3rd Conf"] = None
+                        elif scores:
+                            row["1st Em"] = scores[0][0] if len(scores) > 0 else None
+                            row["1st Conf"] = str(round(scores[0][1], 2)) if len(scores) > 0 else None
+                            row["2nd Em"] = scores[1][0] if len(scores) > 1 else None
+                            row["2nd Conf"] = str(round(scores[1][1], 2)) if len(scores) > 1 else None
+                            row["3rd Em"] = scores[2][0] if len(scores) > 2 else None
+                            row["3rd Conf"] = str(round(scores[2][1], 2)) if len(scores) > 2 else None
+                        else:
+                            row["1st Em"] = data.get("emotion")
+                            conf = data.get("confidence")
+                            conf_val = round(conf, 2) if conf is not None else data.get("reason") if data.get("emotion") else None
+                            row["1st Conf"] = str(conf_val) if conf_val is not None else None
+                            row["2nd Em"], row["2nd Conf"], row["3rd Em"], row["3rd Conf"] = None, None, None, None
+                            
+                        df_rows.append(row)
+                    _p_pred_col_cfg = {
+                        "1st Conf": st.column_config.TextColumn(width=300),
+                    }
+                    st.dataframe(pd.DataFrame(df_rows), hide_index=True, column_config=_p_pred_col_cfg, width="stretch")
+                
+                with st.form(key="phase_audio_rating_form"):
+                    p_ur = p_eval.get("user_rating") or {}
+                    emotions = ["neutral", "frustrated", "calm", "anxious", "curious", "confused", "sad", "angry", "happy", "fearful", "surprised", "disgusted", "other"]
+                    def_idx = emotions.index(p_ur.get("true_emotion")) if p_ur.get("true_emotion") in emotions else 0
+                    
+                    fc1, fc2, fc3, fc4 = st.columns([2, 4, 2, 2])
+                    with fc1: submit_p_seg = st.form_submit_button("Save Rating", width='stretch')
+                    with fc2: p_emotion = st.selectbox("True Emotion", emotions, index=def_idx, label_visibility="collapsed")
+                    with fc3: btn_p_uncertain = st.form_submit_button("Uncertain", width='stretch')
+                    with fc4: btn_p_unusable = st.form_submit_button("Unusable", width='stretch')
+                    
+                    p_notes = st.text_area("Notes (optional)", value=p_ur.get("notes", ""))
+                    
+                    if btn_p_unusable:
+                        with get_evaluation_lock(p_audio_path):
+                            locked_eval = read_evaluation(p_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": "unusable", "notes": p_notes}
+                            write_evaluation(p_audio_path, locked_eval)
+                        st.session_state["_p_seg_flash"] = "Phase marked as unusable."
+                        st.rerun()
+                    elif btn_p_uncertain:
+                        with get_evaluation_lock(p_audio_path):
+                            locked_eval = read_evaluation(p_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": "uncertain", "notes": p_notes}
+                            write_evaluation(p_audio_path, locked_eval)
+                        st.session_state["_p_seg_flash"] = "Phase marked as uncertain."
+                        st.rerun()
+                    elif submit_p_seg:
+                        with get_evaluation_lock(p_audio_path):
+                            locked_eval = read_evaluation(p_audio_path)
+                            locked_eval["user_rating"] = {"true_emotion": p_emotion, "notes": p_notes}
+                            write_evaluation(p_audio_path, locked_eval)
+                        st.session_state["_p_seg_flash"] = "Rating saved!"
+                        st.rerun()
+                
+                if flash := st.session_state.pop("_p_seg_flash", None):
+                    st.success(flash)
+        st.markdown("---")
+        st.markdown("### Conversation Phase Tracking")
         situation_data = {}
         situation_analysis_path = Path("output/situation_analysis.json")
         if situation_analysis_path.exists():
@@ -643,15 +881,69 @@ def main():
         
         if submit_phases:
             final_data = edited_df.to_dict(orient="records")
-            all_ai_phases[phase_c_filename] = {"phases": final_data}
+            if phase_c_filename not in all_ai_phases:
+                all_ai_phases[phase_c_filename] = {}
+            # Maintain any existing user_rating when saving phases
+            ur = all_ai_phases[phase_c_filename].get("user_rating", {}) 
+            all_ai_phases[phase_c_filename] = {"phases": final_data, "user_rating": ur}
             with open(phases_analysis_path, "w", encoding="utf-8") as f:
                 json.dump(all_ai_phases, f, ensure_ascii=False, indent=4)
             st.session_state["_phases_flash"] = "Phases saved directly to phases_analysis.json!"
             st.rerun()
-                
-        if flash := st.session_state.pop("_phases_flash", None):
-            st.success(flash)
+
         # --- END PHASE SEGMENTATION SECTION ---
+
+        # --- Aggregate Table ---
+        if c_segs:
+            st.markdown("---")
+            st.markdown("### Aggregated Segment Predictions")
+            
+            agg_rows = []
+            for s in c_segs:
+                row = {"Segment": s.get("filename")}
+                
+                u_rating = s.get("user_rating") or {}
+                row["[Phase]"] = u_rating.get("phase", "-")
+                row["[Notes]"] = u_rating.get("notes", "-")
+                row["[User]"] = u_rating.get("true_emotion", "-")
+                
+                s_preds = s.get("predictions", {})
+                
+                for model_name in model_names:
+                    if not u_rating:
+                        row[model_name] = "Waiting for rating..."
+                    else:
+                        pred_data = s_preds.get(model_name, {})
+                        scores = list(pred_data.get("scores", {}).items())
+                        scores.sort(key=lambda x: x[1], reverse=True)
+                        
+                        if scores:
+                            row[model_name] = f"{scores[0][0]} ({scores[0][1]:.2f})" if len(scores) > 0 else "-"
+                        else:
+                            if pred_data.get('emotion'):
+                                conf = pred_data.get('confidence')
+                                if conf is not None:
+                                    base_pred = f"{pred_data.get('emotion')} ({conf:.2f})"
+                                else:
+                                    base_pred = f"{pred_data.get('emotion')} | {pred_data.get('reason', '-')}"
+                            else:
+                                base_pred = "-"
+                            row[model_name] = base_pred
+                        
+                agg_rows.append(row)
+                
+            agg_df = pd.DataFrame(agg_rows)
+            agg_df = agg_df.set_index("Segment").T
+            agg_df.index.name = "Metric"
+            
+            def highlight_selected(s):
+                selected = st.session_state.get("selected_seg_filename")
+                if s.name == selected:
+                    return ['background-color: rgba(255, 255, 0, 0.2)'] * len(s)
+                return [''] * len(s)
+                
+            styled_df = agg_df.style.apply(highlight_selected, axis=0)
+            st.dataframe(styled_df, width='stretch', height=(len(agg_df) + 1) * 35 + 3)
 
     all_evaluations_list = evals_concat + evals_segments
 

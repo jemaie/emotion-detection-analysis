@@ -19,9 +19,9 @@ AUDIO_DIR_CONCAT = Path("data/caller_concat_24kHz")
 AUDIO_DIR_SEGMENTS = Path("data/caller_segments_24kHz")
 AUDIO_DIR_PHASES = Path("data/caller_phases_24kHz")
 
-CONCAT_FILES_TO_PROCESS = sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10]
-SEGMENT_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_SEGMENTS.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
-PHASE_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_PHASES.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
+CONCAT_FILES_TO_PROCESS = [f for f in sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10] if "j_spranz" not in f.name.lower()]
+SEGMENT_FOLDERS_TO_PROCESS = [d for d in sorted([d for d in AUDIO_DIR_SEGMENTS.iterdir() if d.is_dir()], key=lambda x: x.name)[:10] if "j_spranz" not in d.name.lower()]
+PHASE_FOLDERS_TO_PROCESS = [d for d in sorted([d for d in AUDIO_DIR_PHASES.iterdir() if d.is_dir()], key=lambda x: x.name)[:10] if "j_spranz" not in d.name.lower()]
 
 SPECIFIC_CONVERSATIONS = [
     "conv__+4915203230182_22-08-2024_8_06_41",
@@ -74,7 +74,7 @@ TOTAL_PHASES = sum(len(list(f.rglob("*.wav"))) for f in PHASE_FOLDERS_TO_PROCESS
 
 WORKER_NAME = "openai"
 DELAY_SECONDS_CONCAT = 0
-DELAY_SECONDS_SEGMENTS = 1
+DELAY_SECONDS_SEGMENTS = 0
 
 INSTRUCTIONS_BASE = (
     "You are an emotion analysis system."
@@ -168,67 +168,179 @@ INSTRUCTIONS_FT_RP = (
     'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
 )
 
+INSTRUCTIONS_FT_NEW_SET = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf dem bereitgestellten Audio und Transkript.\n\n'
+    
+    'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
+    '[neutral, calm, happy, curious, annoyed, frustrated, angry, confused, anxious, concerned, sad, surprised, disgusted, relieved, grateful, other]\n\n'
+
+    'Regeln:\n'
+    '- Verwende sowohl die stimmliche Ausdrucksweise als auch den Inhalt des Gesagten.\n'
+    '- Berücksichtige Tonfall, Prosodie, Sprechgeschwindigkeit und Wortwahl.\n'
+    '- Bestimme die Emotion basierend auf dem tatsächlichen emotionalen Zustand des Sprechers, nicht nur anhand des Themas.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ in deiner Einschätzung.\n\n'
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+INSTRUCTIONS_FT_RP_NEW_SET = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+    'Klassifiziere die Emotion in genau EINE der folgenden Kategorien:\n'
+    '[neutral, calm, happy, curious, annoyed, frustrated, angry, confused, anxious, concerned, sad, surprised, disgusted, relieved, grateful, other]\n\n'
+
+    'Regeln:\n'
+    '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+    '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ.\n\n'
+
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+INSTRUCTIONS_RUSSELL = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+    'Klassifiziere den emotionalen Zustand nach dem Russell-Zirkumplex-Modell (Valenz und Arousal) in genau EINE der folgenden Kategorien:\n'
+    '[high_arousal_negative, low_arousal_negative, high_arousal_positive, low_arousal_positive, neutral]\n\n'
+    'Definitionen:\n'
+    '- high_arousal_negative: Hohe Energie, negativ (z.B. wütend, frustriert, ängstlich)\n'
+    '- low_arousal_negative: Niedrige Energie, negativ (z.B. traurig, besorgt, genervt)\n'
+    '- high_arousal_positive: Hohe Energie, positiv (z.B. glücklich, überrascht)\n'
+    '- low_arousal_positive: Niedrige Energie, positiv (z.B. ruhig, erleichtert)\n'
+    '- neutral: Keine klare Ausprägung in Valenz oder Arousal.\n\n'
+    'Regeln:\n'
+    '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+    '- Sei konsistent und eher konservativ.\n\n'
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+INSTRUCTIONS_PLUTCHIK = (
+    'Du bist ein System zur Emotionserkennung.\n'
+    'Analysiere die Emotion des Sprechers basierend auf Audio und Transkript.\n'
+    'Klassifiziere den emotionalen Zustand nach Plutchiks Rad der Emotionen in genau EINE der folgenden Kategorien:\n'
+    '[anger, fear, joy, sadness, surprise, anticipation, disgust, trust, neutral]\n\n'
+    'Regeln:\n'
+    '- Nutze sowohl die stimmliche Ausdrucksweise (Tonfall, Prosodie, Sprechtempo) als auch den Inhalt.\n'
+    '- Beurteile den tatsächlichen emotionalen Zustand, nicht nur das Thema.\n'
+    '- Verwende "neutral", wenn keine klare Emotion erkennbar ist.\n'
+    '- Sei konsistent und eher konservativ.\n\n'
+    'WICHTIG: Du MUSST für deine Antwort zwingend die Funktion `record_emotion` aufrufen!'
+)
+
+FT_EMOTIONS = ["neutral", "happy", "sad", "angry", "fearful", "disgust", "surprised", "other", "unknown"]
+NEW_SET_EMOTIONS = ["neutral", "calm", "happy", "curious", "annoyed", "frustrated", "angry", "confused", "anxious", "concerned", "sad", "surprised", "disgusted", "relieved", "grateful", "other"]
+RUSSELL_EMOTIONS = ["high_arousal_negative", "low_arousal_negative", "high_arousal_positive", "low_arousal_positive", "neutral"]
+PLUTCHIK_EMOTIONS = ["anger", "fear", "joy", "sadness", "surprise", "anticipation", "disgust", "trust", "neutral"]
+
 VERSIONS = {
-    "openai_realtime": {
-        "model_name": None,
-        "instructions": INSTRUCTIONS_BASE
-    },
-    "openai_realtime_2": {
-        "model_name": None,
-        "instructions": INSTRUCTIONS_BASE
-    },
-    "openai_realtime_rp": {
-        "model_name": None,
-        "instructions": INSTRUCTIONS_RP
-    },
-    "openai_realtime_rp_2": {
-        "model_name": None,
-        "instructions": INSTRUCTIONS_RP
-    },
+    # "openai_realtime": {
+    #     "model_name": None,
+    #     "instructions": INSTRUCTIONS_BASE
+    # },
+    # "openai_realtime_2": {
+    #     "model_name": None,
+    #     "instructions": INSTRUCTIONS_BASE
+    # },
+    # "openai_realtime_rp": {
+    #     "model_name": None,
+    #     "instructions": INSTRUCTIONS_RP
+    # },
+    # "openai_realtime_rp_2": {
+    #     "model_name": None,
+    #     "instructions": INSTRUCTIONS_RP
+    # },
     "openai_realtime_ft": {
         "model_name": None,
-        "instructions": INSTRUCTIONS_FT
+        "instructions": INSTRUCTIONS_FT,
+        "allowed_emotions": FT_EMOTIONS
     },
     "openai_realtime_ft_2": {
         "model_name": None,
-        "instructions": INSTRUCTIONS_FT
+        "instructions": INSTRUCTIONS_FT,
+        "allowed_emotions": FT_EMOTIONS
     },
     "openai_realtime_1_5_ft": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": INSTRUCTIONS_FT
+        "instructions": INSTRUCTIONS_FT,
+        "allowed_emotions": FT_EMOTIONS
     },
     "openai_realtime_1_5_ft_2": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": INSTRUCTIONS_FT
+        "instructions": INSTRUCTIONS_FT,
+        "allowed_emotions": FT_EMOTIONS
     },
     "openai_realtime_1_5_ft_e": {
         "model_name": "gpt-realtime-1.5",
         "instructions": INSTRUCTIONS_OPEN_EMOTION,
-        "use_open_emotion": True
+        "allowed_emotions": None
     },
     "openai_realtime_1_5_ft_e_2": {
         "model_name": "gpt-realtime-1.5",
         "instructions": INSTRUCTIONS_OPEN_EMOTION,
-        "use_open_emotion": True
+        "allowed_emotions": None
     },
     "openai_realtime_1_5_ft_erp": {
         "model_name": "gpt-realtime-1.5",
         "instructions": INSTRUCTIONS_OPEN_EMOTION_RP,
-        "use_open_emotion": True
+        "allowed_emotions": None
     },
     "openai_realtime_1_5_ft_erp_2": {
         "model_name": "gpt-realtime-1.5",
         "instructions": INSTRUCTIONS_OPEN_EMOTION_RP,
-        "use_open_emotion": True
+        "allowed_emotions": None
     },
     "openai_realtime_1_5_ft_rp": {
         "model_name": "gpt-realtime-1.5",
         "instructions": INSTRUCTIONS_FT_RP,
+        "allowed_emotions": FT_EMOTIONS
     },
     "openai_realtime_1_5_ft_rp_2": {
         "model_name": "gpt-realtime-1.5",
-        "instructions": INSTRUCTIONS_FT_RP
-    }
+        "instructions": INSTRUCTIONS_FT_RP,
+        "allowed_emotions": FT_EMOTIONS
+    },
+    "openai_realtime_1_5_ft_ns": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_NEW_SET,
+        "allowed_emotions": NEW_SET_EMOTIONS
+    },
+    "openai_realtime_1_5_ft_ns_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_NEW_SET,
+        "allowed_emotions": NEW_SET_EMOTIONS
+    },
+    "openai_realtime_1_5_ft_rp_ns": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_RP_NEW_SET,
+        "allowed_emotions": NEW_SET_EMOTIONS
+    },
+    "openai_realtime_1_5_ft_rp_ns_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_FT_RP_NEW_SET,
+        "allowed_emotions": NEW_SET_EMOTIONS
+    },
+    "openai_realtime_russell": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_RUSSELL,
+        "allowed_emotions": RUSSELL_EMOTIONS
+    },
+    "openai_realtime_russell_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_RUSSELL,
+        "allowed_emotions": RUSSELL_EMOTIONS
+    },
+    "openai_realtime_plutchik": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_PLUTCHIK,
+        "allowed_emotions": PLUTCHIK_EMOTIONS
+    },
+    "openai_realtime_plutchik_2": {
+        "model_name": "gpt-realtime-1.5",
+        "instructions": INSTRUCTIONS_PLUTCHIK,
+        "allowed_emotions": PLUTCHIK_EMOTIONS
+    },
 }
 
 def cleanup_stale_states(status="stopped"):
@@ -239,11 +351,13 @@ def cleanup_stale_states(status="stopped"):
         WORKER_NAME, {
             "file": None,
             "is_segment": False,
+            "is_phase": False,
             "model": None,
             "status": status,
         }, 
         total_concat_files=TOTAL_CONCAT_FILES,
         total_segments=TOTAL_SEGMENTS,
+        total_phases=TOTAL_PHASES,
     )
 
 async def analyze_file(client: OpenAIRealtimeClient, audio_path: Path) -> dict:
@@ -307,7 +421,7 @@ async def process_model(model_key: str, config: dict):
     client = OpenAIRealtimeClient(
         model_name=config.get("model_name"), 
         instructions=config.get("instructions"), 
-        use_open_emotion=config.get("use_open_emotion", False)
+        allowed_emotions=config.get("allowed_emotions", None)
     )
     
     # 1. Process Concat Files
@@ -327,12 +441,14 @@ async def process_model(model_key: str, config: dict):
                 {
                     "file": file_val,
                     "is_segment": False,
+                    "is_phase": False,
                     "model": model_key,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
                 total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
             )
             
             result_obj = await analyze_file(client, audio_path)
@@ -362,12 +478,14 @@ async def process_model(model_key: str, config: dict):
                 {
                     "file": file_val,
                     "is_segment": True,
+                    "is_phase": False,
                     "model": model_key,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
                 total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
             )
             
             for wav_path in folder.rglob("*.wav"):
@@ -401,13 +519,15 @@ async def process_model(model_key: str, config: dict):
                 WORKER_NAME, 
                 {
                     "file": file_val,
-                    "is_segment": True,
+                    "is_segment": False,
+                    "is_phase": True,
                     "model": model_key,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
-                total_segments=TOTAL_SEGMENTS + TOTAL_PHASES,
+                total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
             )
             
             for wav_path in folder.rglob("*.wav"):
@@ -431,12 +551,14 @@ async def process_model(model_key: str, config: dict):
         {
             "file": None,
             "is_segment": False,
+            "is_phase": False,
             "model": model_key,
             "status": "idle",
             "tqdm_dict": {},
         }, 
         total_concat_files=TOTAL_CONCAT_FILES,
         total_segments=TOTAL_SEGMENTS,
+        total_phases=TOTAL_PHASES,
     )
 
 

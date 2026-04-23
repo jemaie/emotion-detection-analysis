@@ -150,12 +150,13 @@ class SituationRealtimeClient:
         return final_response
 
 async def main():
-    AUDIO_DIR = Path("data/normalized_24kHz")
-    OUTPUT_JSON = Path("output/situation_analysis.json")
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    AUDIO_DIR = BASE_DIR / "data/normalized_24kHz"
+    OUTPUT_JSON = BASE_DIR / "output/situation_analysis.json"
     
     # We will use the 31 specific files we analyzed earlier
     # Extracted from our previous listing of caller_concat
-    CONCAT_DIR = Path("output/caller_concat")
+    CONCAT_DIR = BASE_DIR / "output/caller_concat"
     if not CONCAT_DIR.exists():
         logger.error("Could not find caller_concat directory to get the file list.")
         return

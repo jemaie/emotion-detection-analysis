@@ -17,9 +17,9 @@ AUDIO_DIR_CONCAT = Path("data/caller_concat_16kHz")
 AUDIO_DIR_SEGMENTS = Path("data/caller_segments_16kHz")
 AUDIO_DIR_PHASES = Path("data/caller_phases_16kHz")
 
-CONCAT_FILES_TO_PROCESS = sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10]
-SEGMENT_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_SEGMENTS.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
-PHASE_FOLDERS_TO_PROCESS = sorted([d for d in AUDIO_DIR_PHASES.iterdir() if d.is_dir()], key=lambda x: x.name)[:10]
+CONCAT_FILES_TO_PROCESS = [f for f in sorted([f for f in AUDIO_DIR_CONCAT.iterdir() if f.suffix == ".wav"], key=lambda x: x.name)[:10] if "j_spranz" not in f.name.lower()]
+SEGMENT_FOLDERS_TO_PROCESS = [d for d in sorted([d for d in AUDIO_DIR_SEGMENTS.iterdir() if d.is_dir()], key=lambda x: x.name)[:10] if "j_spranz" not in d.name.lower()]
+PHASE_FOLDERS_TO_PROCESS = [d for d in sorted([d for d in AUDIO_DIR_PHASES.iterdir() if d.is_dir()], key=lambda x: x.name)[:10] if "j_spranz" not in d.name.lower()]
 
 SPECIFIC_CONVERSATIONS = [
     "conv__+4915203230182_22-08-2024_8_06_41",
@@ -78,11 +78,13 @@ def cleanup_stale_states(status="stopped"):
         WORKER_NAME, {
             "file": None,
             "is_segment": False,
+            "is_phase": False,
             "model": None,
             "status": status,
         }, 
         total_concat_files=TOTAL_CONCAT_FILES, 
         total_segments=TOTAL_SEGMENTS,
+        total_phases=TOTAL_PHASES,
         vram_mb=0,
         vram_reserved_mb=0
     )
@@ -91,7 +93,8 @@ def process_model(model_name: str, config: dict):
     pending_concat = []
     for audio_path in CONCAT_FILES_TO_PROCESS:
         evaluation = read_evaluation(audio_path)
-        if model_name not in evaluation.get("predictions", {}):
+        pred = evaluation.get("predictions", {}).get(model_name)
+        if not pred or "error" in pred or "error" in str(pred.get("emotion", "")):
             pending_concat.append(audio_path)
             
     pending_segments = []
@@ -99,7 +102,8 @@ def process_model(model_name: str, config: dict):
         missing = False
         for wav_path in folder.rglob("*.wav"):
             evaluation = read_evaluation(wav_path)
-            if model_name not in evaluation.get("predictions", {}):
+            pred = evaluation.get("predictions", {}).get(model_name)
+            if not pred or "error" in pred or "error" in str(pred.get("emotion", "")):
                 missing = True
                 break
         if missing:
@@ -110,7 +114,8 @@ def process_model(model_name: str, config: dict):
         missing = False
         for wav_path in folder.rglob("*.wav"):
             evaluation = read_evaluation(wav_path)
-            if model_name not in evaluation.get("predictions", {}):
+            pred = evaluation.get("predictions", {}).get(model_name)
+            if not pred or "error" in pred or "error" in str(pred.get("emotion", "")):
                 missing = True
                 break
         if missing:
@@ -143,12 +148,14 @@ def process_model(model_name: str, config: dict):
                 {
                     "file": file_val,
                     "is_segment": False,
+                    "is_phase": False,
                     "model": model_name,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
                 total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
                 vram_mb=vram_mb, 
                 vram_reserved_mb=vram_reserved_mb
             )
@@ -182,19 +189,22 @@ def process_model(model_name: str, config: dict):
                 {
                     "file": file_val,
                     "is_segment": True,
+                    "is_phase": False,
                     "model": model_name,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
                 total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
                 vram_mb=vram_mb, 
                 vram_reserved_mb=vram_reserved_mb
             )
             
             for wav_path in folder.rglob("*.wav"):
                 evaluation = read_evaluation(wav_path)
-                if model_name in evaluation.get("predictions", {}):
+                pred = evaluation.get("predictions", {}).get(model_name)
+                if pred and "error" not in pred and "error" not in str(pred.get("emotion", "")):
                     continue
                 result = model_instance.predict(wav_path)
                 with get_evaluation_lock(wav_path):
@@ -223,20 +233,23 @@ def process_model(model_name: str, config: dict):
                 WORKER_NAME, 
                 {
                     "file": file_val,
-                    "is_segment": True,
+                    "is_segment": False,
+                    "is_phase": True,
                     "model": model_name,
                     "status": "processing",
                     "tqdm_dict": tqdm_dict,
                 }, 
                 total_concat_files=TOTAL_CONCAT_FILES,
-                total_segments=TOTAL_SEGMENTS + TOTAL_PHASES,
+                total_segments=TOTAL_SEGMENTS,
+                total_phases=TOTAL_PHASES,
                 vram_mb=vram_mb, 
                 vram_reserved_mb=vram_reserved_mb
             )
             
             for wav_path in folder.rglob("*.wav"):
                 evaluation = read_evaluation(wav_path)
-                if model_name in evaluation.get("predictions", {}):
+                pred = evaluation.get("predictions", {}).get(model_name)
+                if pred and "error" not in pred and "error" not in str(pred.get("emotion", "")):
                     continue
                 result = model_instance.predict(wav_path)
                 with get_evaluation_lock(wav_path):
@@ -252,12 +265,14 @@ def process_model(model_name: str, config: dict):
         {
             "file": None,
             "is_segment": False,
+            "is_phase": False,
             "model": model_name,
             "status": "idle",
             "tqdm_dict": {},
         }, 
         total_concat_files=TOTAL_CONCAT_FILES,
         total_segments=TOTAL_SEGMENTS,
+        total_phases=TOTAL_PHASES,
     )
         
     logger.info(f"[{model_name}] Unloading model to free memory...")

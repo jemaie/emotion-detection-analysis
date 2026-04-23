@@ -1,3 +1,4 @@
+import argparse
 import json
 from pathlib import Path
 from collections import defaultdict
@@ -38,13 +39,15 @@ def load_human_ratings(csv_path):
     
     return unusable_segments, uncertain_segments
 
-def analyze_consistency():
-    segments_dir = Path("output/caller_segments")
+def analyze_consistency(args):
+    segments_dir = Path(args.segments_dir)
     if not segments_dir.exists():
         print("No segments found.")
         return
 
-    csv_path = Path("output/ratings_segments.csv")
+    csv_path = segments_dir.parent / "ratings_segments.csv"
+    if not csv_path.exists():
+        csv_path = Path("output/ratings_segments.csv")
     unusable_set, uncertain_set = load_human_ratings(csv_path)
 
     # results format: results[tier][duration_bucket][model] = {"match": 0, "total": 0}
@@ -61,6 +64,9 @@ def analyze_consistency():
     }
     
     found_models_ordered = []
+    
+    phase_results = defaultdict(lambda: {"direct_match": 0, "maj_match": 0, "peak_match": 0, "total": 0})
+    phases_dir = Path(args.phases_dir)
     
     for json_file in segments_dir.rglob("*.json"):
         conv_id = json_file.parent.name
@@ -112,6 +118,41 @@ def analyze_consistency():
                         results[t][b][base_model]["total"] += 1
                         results[t][b][base_model]["match"] += match
 
+    if phases_dir.exists():
+        for json_file in phases_dir.rglob("*.json"):
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            preds = data.get("predictions", {})
+            for key in preds.keys():
+                if not key.endswith("_2"):
+                    continue
+                base_model = key[:-2]
+                model_2 = key
+                if base_model in preds and model_2 in preds:
+                    if base_model not in found_models_ordered:
+                        found_models_ordered.append(base_model)
+                    pred_1 = preds.get(base_model)
+                    pred_2 = preds.get(model_2)
+                    
+                    e1 = str(pred_1.get("emotion") if isinstance(pred_1, dict) else pred_1).lower().strip()
+                    e2 = str(pred_2.get("emotion") if isinstance(pred_2, dict) else pred_2).lower().strip()
+                    
+                    if isinstance(pred_1, dict) and isinstance(pred_2, dict):
+                        maj1 = str(pred_1.get("seg_agg_maj_tiebroken", "none")).lower().strip()
+                        maj2 = str(pred_2.get("seg_agg_maj_tiebroken", "none")).lower().strip()
+                        peak1 = str(pred_1.get("seg_agg_peak", "none")).lower().strip()
+                        peak2 = str(pred_2.get("seg_agg_peak", "none")).lower().strip()
+                    else:
+                        maj1, maj2, peak1, peak2 = "none", "none", "none", "none"
+                    
+                    phase_results[base_model]["total"] += 1
+                    if e1 == e2 and e1 != "none":
+                        phase_results[base_model]["direct_match"] += 1
+                    if maj1 == maj2 and maj1 != "none":
+                        phase_results[base_model]["maj_match"] += 1
+                    if peak1 == peak2 and peak1 != "none":
+                        phase_results[base_model]["peak_match"] += 1
+
     if not found_models_ordered:
         print("No paired runs (base and _2) found.")
         return
@@ -150,8 +191,33 @@ def analyze_consistency():
         # Save tier dataframe to a dictionary for CSV exporting
         tier_dfs[tier] = df
 
+    print("\n--- Phase-Level Consistency ---")
+    if sum(stats["total"] for stats in phase_results.values()) == 0:
+        print("No phase data found.")
+    else:
+        phase_rows = []
+        for model in found_models_ordered:
+            stats = phase_results[model]
+            total = stats["total"]
+            if total > 0:
+                direct_pct = (stats["direct_match"] / total) * 100
+                maj_pct = (stats["maj_match"] / total) * 100
+                peak_pct = (stats["peak_match"] / total) * 100
+                phase_rows.append({
+                    "Model Config": model,
+                    "Total Phases": total,
+                    "Direct Match (%)": f"{direct_pct:.1f}%",
+                    "Majority Match (%)": f"{maj_pct:.1f}%",
+                    "Peak Match (%)": f"{peak_pct:.1f}%"
+                })
+        if phase_rows:
+            phase_df = pd.DataFrame(phase_rows)
+            import tabulate
+            print(phase_df.to_markdown(index=False))
+            print("\n")
+
     # Prepare analysis_results directory
-    results_dir = Path("output/analysis_results")
+    results_dir = Path(args.output_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
     
     # Export 1: Basic Baseline (Baseline Tier, All Segments only)
@@ -174,5 +240,16 @@ def analyze_consistency():
         pd.concat(deep_rows, ignore_index=True).to_csv(deep_csv, index=False)
         print(f"Exported Deep Analysis CSV to {deep_csv}")
 
+    if 'phase_df' in locals() and not phase_df.empty:
+        phase_csv = results_dir / "consistency_phase.csv"
+        phase_df.to_csv(phase_csv, index=False)
+        print(f"Exported Phase Consistency CSV to {phase_csv}")
+
 if __name__ == "__main__":
-    analyze_consistency()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--segments_dir', default='output/caller_segments')
+    parser.add_argument('--output_dir', default='output/analysis_results')
+    parser.add_argument('--phases_dir', default='output/caller_phases')
+    args = parser.parse_args()
+    
+    analyze_consistency(args)

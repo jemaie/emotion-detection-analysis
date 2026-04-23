@@ -1,187 +1,149 @@
-import pandas as pd
+import os
 import json
+import argparse
+import pandas as pd
 from pathlib import Path
 
-INTENSITY_HIERARCHY = {
-    'unusable': 0, 'other': 0, 'neutral': 0, 'calm': 0, 'happy': 0, 'uncertain': 0,
-    'curious': 1, 'surprised': 1,
-    'confused': 2, 'anxious': 2, 'fearful': 2, 'frustrated': 2,
-    'angry': 3
-}
-
 def clean_emotion(e):
-    if pd.isna(e): return None
-    return str(e).lower().strip()
+    if e is None or pd.isna(e): return "unknown"
+    e = str(e).lower().strip()
+    mapping = {
+        'hap': 'happy', 'neu': 'neutral', 'ang': 'angry', 
+        'sad': 'sad', 'dis': 'disgust', 'fea': 'fearful', 
+        'sur': 'surprised', 'cal': 'calm'
+    }
+    return mapping.get(e, e)
 
-def resolve_consensus(emotions):
-    emotions = [e for e in emotions if pd.notna(e)]
-    if not emotions: return None
-    counts = pd.Series(emotions).value_counts()
-    candidates = counts[counts == counts.max()].index.tolist()
-    if len(candidates) == 1: return candidates[0]
-    best_candidate = candidates[0]
-    max_intensity = -1
-    for c in candidates:
-        intensity = INTENSITY_HIERARCHY.get(c, 0)
-        if intensity > max_intensity:
-            max_intensity = intensity
-            best_candidate = c
-    return best_candidate
-
-def parse_time(t_str):
-    if t_str == "-" or pd.isna(t_str): return None
-    parts = t_str.split(':')
-    if len(parts) == 2:
-        return int(parts[0]) * 60 + int(parts[1])
-    return None
-
-def parse_segment_midpoint(segment_name):
-    # e.g., seg_0000_0.01_3.29
-    parts = segment_name.split('_')
-    if len(parts) >= 4:
-        try:
-            start = float(parts[2])
-            end = float(parts[3])
-            return (start + end) / 2.0
-        except ValueError:
-            pass
-    return 0.0
-
-def evaluate_phase(emotions):
-    if not emotions: return None, {}, None
-    
-    # Approach A: Peak Emotion
-    peak_emotion = emotions[0]
-    max_intensity = -1
-    for e in emotions:
-        intensity = INTENSITY_HIERARCHY.get(e, 0)
-        if intensity > max_intensity:
-            max_intensity = intensity
-            peak_emotion = e
-            
-    # Approach B: Distribution
-    dist = pd.Series(emotions).value_counts(normalize=True).to_dict()
-    
-    # Approach C: Trajectory
-    start = emotions[0]
-    end = emotions[-1]
-    traj = f"{start} -> {peak_emotion} -> {end}"
-    
-    return peak_emotion, dist, traj
-
-def analyze_phases():
-    print("=== Phase 3: Phase-Level Analysis ===\n")
+def analyze_phases(args):
+    print("=== Phase 3: Phase-Level Analysis (From Pre-Calculated JSONs) ===\n")
     
     target_models = [
+        "openai_realtime", "openai_realtime_2",
+        "openai_realtime_rp", "openai_realtime_rp_2",
+        "openai_realtime_ft", "openai_realtime_ft_2",
         "openai_realtime_1_5_ft", "openai_realtime_1_5_ft_2",
         "openai_realtime_1_5_ft_e", "openai_realtime_1_5_ft_e_2",
-        "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2"
+        "openai_realtime_1_5_ft_erp", "openai_realtime_1_5_ft_erp_2",
+        "openai_realtime_1_5_ft_rp", "openai_realtime_1_5_ft_rp_2",
+        "openai_realtime_1_5_new_taxonomy", "openai_realtime_1_5_new_taxonomy_2",
+        "openai_realtime_1_5_ft_ns", "openai_realtime_1_5_ft_ns_2",
+        "openai_realtime_1_5_ft_rp_ns", "openai_realtime_1_5_ft_rp_ns_2",
+        "ehcalabres/wav2vec2", "superb/hubert_large", "iic/emotion2vec_large"
     ]
     
-    phases_path = Path("output/phases_analysis.json")
-    if not phases_path.exists():
-        print("Phase file not found.")
+    phases_dir = Path(args.phases_dir)
+    if not phases_dir.exists():
+        print(f"Directory {phases_dir} not found. Run aggregate_seg_ratings_to_phase_ratings.py first.")
         return
-        
-    with open(phases_path, 'r', encoding='utf-8') as f:
-        phases_data = json.load(f)
-        
-    csv_path = Path("output/ratings_segments.csv")
-    df = pd.read_csv(csv_path, sep=';', on_bad_lines='skip')
-    df['emotion'] = df['emotion'].apply(clean_emotion)
-    df = df.dropna(subset=['emotion'])
-    
-    consensus_df = df.groupby(['conv_id', 'segment'])['emotion'].apply(lambda x: resolve_consensus(x.tolist())).reset_index()
-    consensus_df.rename(columns={'emotion': 'human_consensus'}, inplace=True)
-    consensus_df['segment_stem'] = consensus_df['segment'].apply(lambda x: Path(x).stem)
-    consensus_df['midpoint'] = consensus_df['segment_stem'].apply(parse_segment_midpoint)
-    consensus_df.sort_values(by=['conv_id', 'midpoint'], inplace=True)
 
-    segments_dir = Path("output/caller_segments")
-    model_predictions = []
-    for json_file in segments_dir.rglob("*.json"):
-        conv_id = json_file.parent.name
-        segment_stem = json_file.stem
-        with open(json_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            preds = data.get("predictions", {})
-            row = {"conv_id": conv_id, "segment_stem": segment_stem}
-            has_data = False
-            for t_model in target_models:
-                pred_obj = preds.get(t_model)
-                if pred_obj:
-                    val = pred_obj.get("emotion", "unknown") if isinstance(pred_obj, dict) else pred_obj
-                    row[t_model] = str(val).lower().strip()
-                    has_data = True
-            if has_data:
-                model_predictions.append(row)
-                
-    model_df = pd.DataFrame(model_predictions)
-    if 'segment_stem' in model_df:
-        model_df['midpoint'] = model_df['segment_stem'].apply(parse_segment_midpoint)
-        model_df.sort_values(by=['conv_id', 'midpoint'], inplace=True)
-    else:
-        print("No predictions found to parse.")
-        return
-    
-    merged_segments = pd.merge(consensus_df, model_df, on=['conv_id', 'segment_stem', 'midpoint'], how='inner')
-    print(f"Matched {len(merged_segments)} segments with both Human Consensus and Model Predictions\n")
-    
-    import tabulate
-    for t_model in target_models:
-        if t_model not in merged_segments.columns:
-            continue
-            
+    all_results = []
+
+    for model in target_models:
         results = []
-        for conv_file, conv_phases in phases_data.items():
-            conv_id = conv_file.replace(".wav", "")
+        for json_file in phases_dir.rglob("*.json"):
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
             
-            conv_segments = merged_segments[merged_segments['conv_id'] == conv_id]
-            if len(conv_segments) == 0:
+            preds = data.get("predictions", {})
+            
+            human = preds.get("human_consensus")
+            if not human:
                 continue
+                
+            model_pred = preds.get(model)
+            if not model_pred:
+                continue
+                
+            # Extract Human Metrics
+            h_peak = human.get("seg_agg_peak", "unknown")
+            h_maj = human.get("seg_agg_maj_tiebroken", "unknown")
+            h_traj_start = human.get("seg_agg_traj_start", "unknown")
+            h_traj_end = human.get("seg_agg_traj_end", "unknown")
+            h_traj = f"{h_traj_start} -> {h_peak} -> {h_traj_end}"
             
-            for phase in conv_phases["phases"]:
-                start_s = parse_time(phase["start_time"])
-                end_s = parse_time(phase["end_time"])
-                if start_s is None or end_s is None:
-                    continue
-                    
-                phase_segs = conv_segments[(conv_segments['midpoint'] >= start_s) & (conv_segments['midpoint'] <= end_s)]
-                if len(phase_segs) == 0:
-                    continue
-                    
-                human_emotions = phase_segs['human_consensus'].tolist()
-                model_emotions = phase_segs[t_model].dropna().tolist()
-                if not model_emotions:
-                    continue
-                
-                h_peak, h_dist, h_traj = evaluate_phase(human_emotions)
-                m_peak, m_dist, m_traj = evaluate_phase(model_emotions)
-                
-                results.append({
-                    "Conv": conv_id[:20] + "...",
-                    "Phase": phase["phase_name"],
-                    "Segments": len(human_emotions),
-                    "H-Peak": h_peak,
-                    "M-Peak": m_peak,
-                    "H-Trajectory": h_traj,
-                    "M-Trajectory": m_traj
-                })
-                
+            # Format human distribution as string
+            h_dist_raw = human.get("seg_agg_dist", {})
+            h_dist = ", ".join([f"{k}: {v:.0%}" for k, v in h_dist_raw.items()])
+            
+            # Extract Model Metrics
+            m_peak = model_pred.get("seg_agg_peak", "unknown")
+            m_maj = model_pred.get("seg_agg_maj_tiebroken", "unknown")
+            m_traj_start = model_pred.get("seg_agg_traj_start", "unknown")
+            m_traj_end = model_pred.get("seg_agg_traj_end", "unknown")
+            m_traj = f"{m_traj_start} -> {m_peak} -> {m_traj_end}"
+            
+            m_dist_raw = model_pred.get("seg_agg_dist", {})
+            m_dist = ", ".join([f"{k}: {v:.0%}" for k, v in m_dist_raw.items()])
+            
+            # Direct Model Rating
+            m_direct_raw = model_pred.get("emotion") if isinstance(model_pred, dict) else model_pred
+            m_direct = clean_emotion(m_direct_raw)
+            
+            # Approach B Metric: Histogram Intersection
+            all_keys = set(h_dist_raw.keys()).union(set(m_dist_raw.keys()))
+            hist_intersection = sum(min(h_dist_raw.get(k, 0), m_dist_raw.get(k, 0)) for k in all_keys)
+            
+            conv_id = json_file.parent.name.replace("conv__", "")
+            phase_filename = json_file.name
+            
+            results.append({
+                "Model": model,
+                "Conv": conv_id,
+                "Phase_File": phase_filename,
+                "H-Peak": h_peak,
+                "M-Peak": m_peak,
+                "H-Majority": h_maj,
+                "M-Majority": m_maj,
+                "M-Direct": m_direct,
+                "H-Trajectory": h_traj,
+                "M-Trajectory": m_traj,
+                "H-Distribution": h_dist,
+                "M-Distribution": m_dist,
+                "Dist_Overlap": hist_intersection
+            })
+            
+        all_results.extend(results)
         res_df = pd.DataFrame(results)
         if len(res_df) == 0:
-            print(f"No matches between segments and phase timings for {t_model}.")
+            print(f"\n--- Model ({model}) ---")
+            print("No matches found.")
             continue
             
-        print(f"\n--- Model ({t_model}) ---")
-        print("Sample Phase-Level Interpretations:")
-        print(res_df.head(20).to_markdown(index=False))
+        print(f"\n--- Model ({model}) ---")
+        
+        dir_matches = (res_df['H-Peak'] == res_df['M-Direct']).sum()
+        print(f"Direct Phase Rating Match: {dir_matches} / {len(res_df)} phases ({dir_matches/len(res_df)*100:.2f}%)")
         
         matches = (res_df['H-Peak'] == res_df['M-Peak']).sum()
-        print(f"\nPeak Emotion Mapping Match (Approach A): {matches} / {len(res_df)} phases ({matches/len(res_df)*100:.2f}%)")
+        print(f"Peak Emotion Match (Approach A): {matches} / {len(res_df)} phases ({matches/len(res_df)*100:.2f}%)")
+        
+        maj_matches = (res_df['H-Majority'] == res_df['M-Majority']).sum()
+        print(f"Phase Majority Match (Approach B): {maj_matches} / {len(res_df)} phases ({maj_matches/len(res_df)*100:.2f}%)")
+        
+        avg_overlap = res_df['Dist_Overlap'].mean() * 100
+        print(f"Distribution Overlap (Approach C): {avg_overlap:.2f}%")
         
         traj_matches = (res_df['H-Trajectory'] == res_df['M-Trajectory']).sum()
-        print(f"Full Trajectory Match (Approach C): {traj_matches} / {len(res_df)} phases ({traj_matches/len(res_df)*100:.2f}%)")
+        print(f"Full Trajectory Match (Approach D): {traj_matches} / {len(res_df)} phases ({traj_matches/len(res_df)*100:.2f}%)")
+
+    # Save to CSV
+    combined_df = pd.DataFrame(all_results)
+    if not combined_df.empty:
+        out_dir = Path(args.output_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        csv_path = out_dir / "phase_level_metrics.csv"
+        combined_df.to_csv(csv_path, index=False, sep=";")
+        print(f"\nSaved combined phase metrics to {csv_path}")
+    else:
+        print("\nNo data generated to save.")
 
 if __name__ == "__main__":
-    analyze_phases()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output_dir', default='output/analysis_results')
+    parser.add_argument('--phases_dir', default='output/caller_phases')
+    args = parser.parse_args()
+    
+    os.makedirs(Path(args.output_dir), exist_ok=True)
+
+    analyze_phases(args)
