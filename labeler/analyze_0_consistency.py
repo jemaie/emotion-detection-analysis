@@ -4,6 +4,7 @@ from pathlib import Path
 from collections import defaultdict
 import pandas as pd
 
+
 def parse_duration(segment_str):
     # expect format: seg_0000_1.50_3.00
     parts = segment_str.split('_')
@@ -44,6 +45,10 @@ def analyze_consistency(args):
     if not segments_dir.exists():
         print("No segments found.")
         return
+
+    exclude_models = set()
+    if hasattr(args, 'exclude_models') and args.exclude_models:
+        exclude_models = set(args.exclude_models.split(','))
 
     csv_path = segments_dir.parent / "ratings_segments.csv"
     if not csv_path.exists():
@@ -100,6 +105,10 @@ def analyze_consistency(args):
             base_model = key[:-2]
             model_2 = key
             
+            # Skip excluded model configs
+            if base_model in exclude_models or model_2 in exclude_models:
+                continue
+            
             if base_model in preds and model_2 in preds:
                 if base_model not in found_models_ordered:
                     found_models_ordered.append(base_model)
@@ -128,6 +137,11 @@ def analyze_consistency(args):
                     continue
                 base_model = key[:-2]
                 model_2 = key
+                
+                # Skip excluded model configs
+                if base_model in exclude_models or model_2 in exclude_models:
+                    continue
+                
                 if base_model in preds and model_2 in preds:
                     if base_model not in found_models_ordered:
                         found_models_ordered.append(base_model)
@@ -250,6 +264,7 @@ if __name__ == "__main__":
     parser.add_argument('--segments_dir', default='output/caller_segments')
     parser.add_argument('--output_dir', default='output/analysis_results')
     parser.add_argument('--phases_dir', default='output/caller_phases')
+    parser.add_argument('--exclude_models', default=None, help='Comma-separated list of model config names to exclude from analysis')
     args = parser.parse_args()
     
     analyze_consistency(args)

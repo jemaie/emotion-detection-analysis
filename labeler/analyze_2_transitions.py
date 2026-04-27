@@ -8,6 +8,7 @@ from pathlib import Path
 warnings.filterwarnings('ignore')
 
 
+
 def parse_duration(segment_str):
     parts = str(segment_str).split('_')
     if len(parts) >= 4:
@@ -53,6 +54,10 @@ def analyze_transitions_deep(args):
     segments_dir = Path(args.segments_dir)
     model_predictions = []
     
+    exclude_models = set()
+    if hasattr(args, 'exclude_models') and args.exclude_models:
+        exclude_models = set(args.exclude_models.split(','))
+    
     for json_file in segments_dir.rglob("*.json"):
         conv_id = json_file.parent.name
         segment = json_file.stem
@@ -69,7 +74,7 @@ def analyze_transitions_deep(args):
             
             has_unusable = False
             for model_name, pred_obj in preds.items():
-                if not model_name.startswith("human_"):
+                if not model_name.startswith("human_") and model_name not in exclude_models:
                     target_models.add(model_name)
                     
                 if isinstance(pred_obj, dict):
@@ -157,6 +162,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--segments_dir', default='output/caller_segments')
     parser.add_argument('--output_dir', default='output/analysis_results')
+    parser.add_argument('--exclude_models', default=None, help='Comma-separated list of model config names to exclude from analysis')
     args = parser.parse_args()
     
     os.makedirs(Path(args.output_dir), exist_ok=True)

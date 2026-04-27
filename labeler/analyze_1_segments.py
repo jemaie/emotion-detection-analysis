@@ -9,6 +9,7 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 
 warnings.filterwarnings('ignore')
 
+
 def clean_emotion(e):
     if pd.isna(e): return None
     return str(e).lower().strip()
@@ -42,6 +43,10 @@ def analyze_segment_metrics(args):
     model_predictions = []
     human_irr_records = []
     
+    exclude_models = set()
+    if hasattr(args, 'exclude_models') and args.exclude_models:
+        exclude_models = set(args.exclude_models.split(','))
+    
     for json_file in segments_dir.rglob("*.json"):
         conv_id = json_file.parent.name
         segment = json_file.stem
@@ -53,6 +58,9 @@ def analyze_segment_metrics(args):
             clean_preds = {}
             has_unusable = False
             for model_name, pred_obj in preds.items():
+                # Skip excluded model configs
+                if model_name in exclude_models:
+                    continue
                 if isinstance(pred_obj, dict):
                     # For humans, capture IRR data using extracted_normalized_emotion if available
                     if model_name.startswith("human_") and model_name != "human_consensus":
@@ -182,6 +190,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--segments_dir', default='output/caller_segments')
     parser.add_argument('--output_dir', default='output/analysis_results')
+    parser.add_argument('--exclude_models', default=None, help='Comma-separated list of model config names to exclude from analysis')
     args = parser.parse_args()
     
     os.makedirs(Path(args.output_dir), exist_ok=True)
